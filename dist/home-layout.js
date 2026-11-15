@@ -8,7 +8,7 @@
  copy.querySelectorAll('h1 br').forEach(br=>br.after(document.createTextNode(' ')));
  document.getElementById('homeWorlds')?.remove();home.querySelector('.worlds-caption')?.remove();
  const choices=home.querySelector('.audience-choices'),game=home.querySelector('.citizen-game-card');choices.append(game);
- game.querySelector('h2').textContent='Jugá con Félicette';game.querySelector('.citizen-copy>p').textContent='Pilotá el rover, practicá un alunizaje suave y explorá el terreno.';
+ game.querySelector('h2').textContent='¿Querés ayudar a NASA jugando?';game.querySelector('.citizen-copy>p').textContent='¡Félicette tiene una misión para vos! Pilotá el rover y explorá dónde podríamos alunizar.';game.querySelector('.eyebrow').textContent='MISIÓN ESPECIAL · TU CURIOSIDAD CUENTA';game.querySelector('.citizen-art span').textContent='¿Venís conmigo?';game.querySelector('#playHomeRover').textContent='🐾 ¡Quiero jugar con Félicette!';
  for(const card of choices.children){const ul=card.querySelector('ul');if(ul){const details=document.createElement('details');details.className='home-card-details';const summary=document.createElement('summary');summary.textContent='Qué vas a descubrir';details.append(summary,ul);const button=card.querySelector('button');button.before(details);}}
  function place(){const onHome=!home.hidden;document.body.classList.toggle('home-scene-open',onHome);if(onHome){if(scene.parentElement!==dock)dock.append(scene);scene.hidden=false;scene.classList.add('home-scene');}else{if(scene.parentElement===dock)technicalDock.after(scene);scene.classList.remove('home-scene');}}
  const observer=new MutationObserver(place);observer.observe(home,{attributes:true,attributeFilter:['hidden']});window.addEventListener('hashchange',place);place();
