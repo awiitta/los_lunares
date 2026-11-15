@@ -1,0 +1,15 @@
+{
+  "game": "Descenso perfecto",
+  "source": "site01_luna_proyecto (4).zip",
+  "source_data_preserved": true,
+  "mission_real_site_only": true,
+  "physics_checks": "node test_descenso.mjs: OK",
+  "videos_preserved": 9,
+  "version": 4,
+  "two_stage_rescue_preserved": true,
+  "publication_target": "GitHub awiitta/los_lunares → Vercel",
+  "checks": [
+    "node test_descenso.mjs: OK",
+    "node test_rescate_secuencia.mjs: OK"
+  ]
+}
