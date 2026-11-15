@@ -68,3 +68,7 @@ $RECYCLE.BIN/
 
 # Configuración local del CLI de Vercel.
 .vercel/
+
+# Copias anteriores del rover; la fuente vigente v4 se conserva.
+/fuentes/descenso-v3-integrado/
+/fuentes/descenso-original/

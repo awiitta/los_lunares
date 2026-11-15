@@ -105,7 +105,7 @@ def main():
         "rule":{"slope_threshold_deg":8,"minimum_fraction_percent":80,"maximum_relief_p95_p5_m":20,"minimum_valid_fraction":.99},
         "limits":"Criterio de entrenamiento, no certifica seguridad. No detecta cráteres, profundidad de cráter ni rocas; el relieve local es una señal para revisar.",
         "rounds":rounds})
-    for filename in ["index.html","juego.css","juego.js","game-model.js","mission-challenge.js"]:
+    for filename in ["index.html","juego.css","juego.js","game-model.js","mission-challenge.js","descenso.html","descenso-data.js","descenso-engine.js","descenso-lunares.css"]:
         shutil.copyfile(ROOT/"herramientas/plantilla_minijuego"/filename,DEST/filename)
     original=(SOURCE/"web/site01_luna3d.html").read_text(encoding="utf-8")
     themed=original.replace('</head>','<link rel="stylesheet" href="visor-equipo.css"></head>',1)
@@ -113,8 +113,10 @@ def main():
     themed=themed.replace('<h1>Site01 — ¿dónde queda en la Luna?</h1>','<h1>LOS LUNARES · Visor del equipo · Site01</h1>',1)
     (DEST/"visor-equipo.html").write_text(themed,encoding="utf-8")
     (DEST/"visor-equipo.css").write_text(':root{--bg:#070e1f;--panel:#0e1a33;--line:#294460;--txt:#e7eef9;--mut:#a2b6cd;--acc:#22d3ee}body{font-family:Inter,"Segoe UI",sans-serif}header{background:#0a1429;padding:18px 20px}button.on{background:#123e50;color:#d7fcff}button,select,.info,.mini,.legend,.note{border-radius:12px}h1{color:#77dfe9}',encoding="utf-8")
+    descent_moon=ROOT/"fuentes/descenso-original/assets/moon_1024.jpg"
+    if descent_moon.exists():shutil.copyfile(descent_moon,assets/"moon_1024.jpg")
     shared=ROOT/"dist/assets"
-    for name in ["felicette-green.png","felicette-terrain.png","los-lunares-dashboard.png"]:
+    for name in ["felicette-green.png","felicette-terrain.png","los-lunares-huellita.png"]:
         source=shared/name
         if source.exists():shutil.copyfile(source,assets/name)
     print(json.dumps({"directory":str(DEST),"rounds":len(rounds),"candidates":[sum(t['status']=='candidate' for t in r['tiles']) for r in rounds]},indent=2))

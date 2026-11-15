@@ -41,3 +41,23 @@ Para verificar: `python -m unittest test_minijuego -v` y `node test_minijuego.mj
 
 ## Ventana compacta
 El rescate se abre sobre las elecciones de la misión. El mapa, la revisión y el regreso quedan en la misma ventana, sin desplazar la página. En celulares el mapa conserva sus proporciones. Los criterios, el consentimiento y la exportación siguen disponibles en «Datos y aportes». La práctica independiente conserva su presentación completa.
+
+
+## Juego recibido: Descenso perfecto
+La ventana de rescate combina selección de zonas y `dist/minijuego/descenso.html`, adaptado del aporte del equipo. La fuente vigente se conserva en `fuentes/descenso-v4-original/site01_luna3d.html`. Los datos, física, puntuación y cortes provienen de ese juego.
+
+La misión usa únicamente Site01 real. Girar, controlar el motor y alunizar dentro de los límites completa el rescate y habilita el regreso a la elección original. La selección de cuadrantes es el primer paso y el alunizaje del rover es el segundo.
+
+Los registros del juego se guardan localmente con la clave `los-lunares-descenso-v1` y se pueden exportar desde «Cómo jugar · Datos». No se envían a NASA. La vista del juego usa cortes muestreados a 100 m y relieve exagerado ×2; no es un cálculo de seguridad operacional.
+
+Verificación específica: `node test_descenso.mjs`.
+
+
+## Rescate en dos pasos
+La misión abre primero la selección de zonas y, al completar ese ejercicio, habilita Descenso perfecto. El agradecimiento y el regreso aparecen después de lograr el alunizaje. Ambas prácticas usan Site01, pero el corte del descenso no reproduce exactamente el cuadrante elegido. Se valida origen, ventana emisora, orden de etapas y final de descenso sobre sitio real.
+
+
+## Actualización a versión 4
+Integrado el juego de `site01_luna_proyecto (4).zip`: altímetro, palanca, objetivos, alarmas, sonido, cámara de seguimiento y repetición del contacto en tres fotogramas, con explicación final. Se conservan la paleta del dashboard, la ayuda, la exportación local y la conexión al rescate de dos pasos. Las explicaciones sobre energía y comunicación son estimaciones ilustrativas del juego; no sustituyen las ventanas temporales del dashboard.
+
+Original recibido: `fuentes/descenso-v4-original/`. Versión integrada anterior: `fuentes/descenso-v3-integrado/`. Pruebas: `node test_descenso.mjs`, `node test_rescate_secuencia.mjs`, `node test_rescates.cjs`.

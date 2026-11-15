@@ -56,3 +56,7 @@ Validación de esta entrega: nueve MP4 decodificados completos, H.264, sin audio
 
 ## Minijuego de terreno Site01
 Se incorporó el entrenamiento de selección de cuadrantes con estética Los Lunares, datos reales y devolución de Félicette. Ver `MINIJUEGO_SITE01.md`. Los cierres en video se conservan.
+
+
+### Juego actualizado: Descenso perfecto
+El rescate combina dos partes: elegir una zona candidata y después completar el alunizaje del rover, con la estética de Los Lunares. Abrí `iniciar_dashboard.bat` para jugar dentro de la misión, o `iniciar_minijuego.bat` para practicar. Si tenés la página abierta, recargala con Ctrl+F5. La ayuda, los límites y la exportación local están en «Cómo jugar · Datos».

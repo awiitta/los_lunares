@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los Lunares · Descenso perfecto</title>
+
+
+<style>
+  :root{--bg:#07080c;--panel:#10131b;--line:#232838;--txt:#e7e9ef;--mut:#8a91a6;--acc:#ff5a3c;}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',system-ui,sans-serif}
+  header{padding:14px 20px 10px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline}
+  h1{font-size:17px;font-weight:600;margin:0;letter-spacing:.2px}
+  .coords{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--mut)}
+  .coords b{color:var(--txt);font-weight:500}
+  main{display:flex;gap:1px;background:var(--line);height:calc(100% - 52px);min-height:560px}
+  section{position:relative;flex:1;background:var(--bg);min-width:0;display:flex;flex-direction:column}
+  .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line);font-size:13px}
+  .bar .t{font-weight:600;margin-right:auto}
+  .stage{position:relative;flex:1;min-height:0}
+  canvas{display:block;width:100%;height:100%;touch-action:none}
+  button,select{font:inherit;font-size:12.5px;color:var(--txt);background:#1a1f2c;border:1px solid #2e3548;border-radius:6px;padding:5px 10px;cursor:pointer}
+  button:hover,select:hover{border-color:#4a5470}
+  button.on{background:#2a1712;border-color:var(--acc);color:#ffd9cf}
+  label.sl{display:flex;align-items:center;gap:6px;color:var(--mut)}
+  input[type=range]{width:90px;accent-color:var(--acc)}
+  .tag{position:absolute;pointer-events:none;font-size:12px;white-space:nowrap;transform:translate(-50%,-130%);
+       background:rgba(16,19,27,.88);border:1px solid var(--acc);color:#fff;padding:3px 7px;border-radius:5px}
+  .tag.small{border-color:#3a4258;color:var(--mut);font-size:11px;transform:translate(-50%,-50%);background:rgba(7,8,12,.6)}
+  .legend{position:absolute;left:12px;bottom:12px;background:rgba(16,19,27,.9);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:11.5px;color:var(--mut);max-width:260px}
+  .legend .gr{height:10px;border-radius:3px;margin:5px 0 3px;width:200px}
+  .legend .row{display:flex;justify-content:space-between;width:200px;font-family:'IBM Plex Mono',monospace;font-size:10.5px}
+  .cls{display:grid;grid-template-columns:repeat(4,auto);gap:3px 8px;margin-top:5px;font-family:'IBM Plex Mono',monospace;font-size:10.5px}
+  .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+  .biv{display:grid;grid-template-columns:auto repeat(3,26px);gap:2px;margin-top:5px;font-size:10px;align-items:center}
+  .biv div.c{height:18px;border-radius:2px}
+  .note{position:absolute;right:12px;bottom:12px;max-width:250px;font-size:11.5px;color:var(--mut);background:rgba(16,19,27,.9);border:1px solid var(--line);border-radius:8px;padding:9px 11px;line-height:1.45}
+  .note b{color:var(--txt);font-weight:500}
+  .info{position:absolute;left:12px;top:12px;background:rgba(16,19,27,.92);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--mut);min-width:210px}
+  .info h3{margin:0 0 5px;font-size:14px;color:var(--txt);font-weight:600}
+  .info .k{display:grid;grid-template-columns:auto auto;gap:2px 12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+  .info .k b{color:var(--txt);font-weight:500;text-align:right}
+  .pill{display:inline-block;font-size:10.5px;padding:1px 6px;border-radius:9px;margin-left:6px;vertical-align:2px}
+  .mini{position:absolute;right:12px;top:12px;background:rgba(16,19,27,.92);border:1px solid var(--line);border-radius:8px;padding:8px}
+  .mini .mt{font-size:10.5px;color:var(--mut);max-width:190px}
+  .g5{display:grid;grid-template-columns:repeat(5,36px);gap:2px;margin-top:5px}
+  .g5 button{height:32px;padding:0;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.1;color:#fff;border:1px solid transparent}
+  .g5 button.real{border-color:#ff5a3c}
+  .g5 button.sel{outline:2px solid #ffe14d;outline-offset:0}
+  .seg{display:flex;border:1px solid #2e3548;border-radius:7px;overflow:hidden;margin-right:auto}
+  .seg button{border:0;border-radius:0;background:#141925}
+  .seg button.on{background:#2a1712;color:#ffd9cf;box-shadow:inset 0 -2px 0 var(--acc)}
+  #game{position:absolute;inset:0}
+  #game[hidden]{display:none}
+  #cGame{position:absolute;inset:0;width:100%;height:100%;outline:none}
+  .hud{position:absolute;left:12px;top:12px;background:rgba(16,19,27,.9);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mut);min-width:220px;pointer-events:none}
+  .hud h3{margin:0 0 6px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:var(--txt)}
+  .hud .r{display:flex;justify-content:space-between;gap:14px}
+  .hud b{color:var(--txt);font-weight:500}
+  .hud .bad{color:#ff7a5c}.hud .ok{color:#7fd3ff}
+  .fuel{height:6px;background:#232838;border-radius:3px;margin:5px 0 3px;overflow:hidden}.fuel i{display:block;height:100%;background:#ffb14a}
+  .gmsg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(430px,86%);background:rgba(12,14,20,.95);border:1px solid #39415a;border-radius:12px;padding:18px 20px;font-size:13.5px;line-height:1.5;color:#c9cede;text-align:center}
+  .gmsg h2{margin:0 0 6px;font-size:19px;color:#fff}
+  .gmsg .big{font-size:30px;font-weight:600;color:#fff;margin:4px 0}
+  .gmsg ul{text-align:left;margin:8px 0;padding-left:18px}
+  .gmsg kbd{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:#1d2230;border:1px solid #39415a;border-radius:4px;padding:1px 5px}
+  .gmsg .btns{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+  .gmsg .btns button.pri{background:#ff5a3c;border-color:#ff5a3c;color:#fff;font-weight:600}
+  .gmsg[hidden]{display:none}
+  .touch{position:absolute;right:12px;bottom:12px;display:flex;gap:8px}
+  .touch button{width:58px;height:52px;font-size:20px;border-radius:10px;background:rgba(26,31,44,.9);touch-action:none;user-select:none}
+  .touch .thr{width:96px;font-size:14px;background:rgba(58,26,18,.92);border-color:#ff5a3c}
+  @media (hover:hover) and (pointer:fine){.touch{opacity:.55}}
+  .err{position:absolute;inset:0;display:none;align-items:center;justify-content:center;color:var(--mut);font-size:14px;padding:30px;text-align:center}
+  @media (max-width:860px){main{flex-direction:column;height:auto}section{height:78vh}.note{display:none}}
+  #bPitch{margin-left:4px}
+  body.pitch header,body.pitch #sGlobe{display:none}
+  body.pitch main{height:100%}
+  #tStage.pitch .mini{display:none}
+  @media (hover:hover) and (pointer:fine){#tStage.pitch .touch{display:none}}
+  .eq,.dset,.pcap,.pend{display:none}
+  #tStage.pitch .eq,#tStage.pitch .dset,#tStage.pitch .pcap{display:block}
+  .eq{position:absolute;right:12px;top:12px;width:310px;background:rgba(12,14,20,.93);border:1px solid #39415a;border-radius:10px;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#c9cede;pointer-events:none}
+  .eq h4{margin:0 0 6px;font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8a91a6}
+  .eq .sym{font-size:16px;color:#fff;margin-bottom:6px}
+  .eq .num{font-size:13.5px;color:#e7e9ef;line-height:1.7}
+  .eq .num small{font-size:10.5px;color:#6b7288}
+  .eq .tm{padding:1px 5px;border-radius:4px;transition:background .15s,color .15s}
+  .eq .tm.thr{color:#6b7288}.eq .tm.thr.on{background:#5a2a0e;color:#ffb14a;box-shadow:0 0 12px rgba(255,177,74,.45)}
+  .eq .tm.grav{color:#9ec5ff;background:#132238}
+  .eq .res{font-size:16px;font-weight:500;color:#fff}
+  .eq .chk{display:grid;grid-template-columns:1fr auto 16px;gap:3px 8px;font-size:12px}
+  .eq .chk b{text-align:right;font-weight:500}
+  .eq .ok{color:#7fd3a0}.eq .bad{color:#ff7a5c}
+  .eq .sep{height:1px;background:#2a3042;margin:10px 0}
+  .eq.final .chk{font-size:13.5px}
+  .eq .verdict{margin-top:9px;font:600 16px 'IBM Plex Sans',sans-serif;text-align:center;padding:7px;border-radius:7px}
+  .eq .vok{background:#123524;color:#8ff0b5}.eq .vbad{background:#3a1712;color:#ffb3a1}
+  .pcap{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:rgba(12,14,20,.86);border:1px solid #39415a;border-radius:20px;padding:5px 14px;font-size:12.5px;color:#e7e9ef;white-space:nowrap;pointer-events:none}
+  .pcap i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff5a3c;margin-right:7px}
+  .dset{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);background:rgba(12,14,20,.93);border:1px solid #39415a;border-radius:10px;padding:7px 10px;font-size:12px;color:#c9cede;white-space:nowrap;max-width:96%;overflow-x:auto}
+  .dset .n{font:600 19px 'IBM Plex Mono',monospace;color:#fff;margin:0 5px;vertical-align:-2px}
+  .dset button{font-size:11.5px;padding:3px 8px;margin-left:6px}
+  .pend{position:absolute;inset:0;z-index:5;background:radial-gradient(ellipse at center,rgba(7,8,12,.8),rgba(7,8,12,.97));align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;cursor:pointer}
+  #tStage.pitch .pend.show{display:flex}
+  .pend h2{font-size:clamp(26px,4.6vw,52px);margin:0 0 12px;color:#fff;font-weight:600}
+  .pend .n{font:600 clamp(34px,7vw,72px) 'IBM Plex Mono',monospace;color:#ffb14a;line-height:1.1}
+  .pend p{color:#c9cede;font-size:16px;margin:5px}
+  .pend .m{color:#8a91a6;font-size:13.5px}.pend .s{font-size:11.5px;margin-top:16px}
+  .pend textarea{width:min(640px,90%);height:45%;background:#0c0e14;color:#c9cede;border:1px solid #39415a;border-radius:8px;font:11px 'IBM Plex Mono',monospace;padding:8px}
+  @media (max-width:860px){.eq{width:235px;font-size:11px;padding:9px 10px}.eq .sym{font-size:13.5px}.pcap{top:auto;bottom:78px}.dset{bottom:8px}}
+  .instw{position:absolute;left:12px;top:228px;width:232px;background:rgba(16,19,27,.9);border:1px solid var(--line);border-radius:10px;padding:6px 6px 4px;pointer-events:auto}
+  .instw canvas{display:block;width:220px;height:178px}
+  .instw .mute{position:absolute;right:6px;top:5px;font-size:12px;padding:1px 6px;border-radius:5px}
+  .stick{position:absolute;left:12px;bottom:34px;width:132px;background:rgba(16,19,27,.9);border:1px solid var(--line);border-radius:12px;padding:6px 4px 4px;touch-action:none;user-select:none;cursor:grab}
+  .stick svg{display:block;width:124px;height:132px}
+  .danger{position:absolute;left:50%;top:56px;transform:translateX(-50%);padding:7px 18px;border-radius:8px;font:700 15px 'IBM Plex Mono',monospace;letter-spacing:.12em;white-space:nowrap;pointer-events:none;display:none;z-index:4}
+  .danger.red{display:block;background:#5c0f08;color:#fff;border:2px solid #ff4a33;animation:dblink .5s steps(2) infinite}
+  .danger.amber{display:block;background:#3f2a07;color:#ffd27a;border:2px solid #ffb14a}
+  .danger small{display:block;font:500 11px 'IBM Plex Sans',sans-serif;letter-spacing:0;margin-top:2px;opacity:.9}
+  @keyframes dblink{50%{opacity:.35}}
+  #game.al-red::after,#game.al-amber::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:3}
+  #game.al-red::after{box-shadow:inset 0 0 0 4px rgba(255,60,40,.95),inset 0 0 90px rgba(255,40,30,.5);animation:dblink .5s steps(2) infinite}
+  #game.al-amber::after{box-shadow:inset 0 0 0 3px rgba(255,177,74,.8),inset 0 0 60px rgba(255,177,74,.25)}
+  @media (max-width:860px){.instw{top:auto;bottom:150px;transform:scale(.8);transform-origin:left bottom}.stick{transform:scale(.8);transform-origin:left bottom;bottom:12px}}
+  .cine{position:absolute;left:50%;top:96px;transform:translateX(-50%);display:none;gap:8px;z-index:4;pointer-events:none;background:rgba(7,8,12,.88);border:1px solid #39415a;border-radius:12px;padding:8px 8px 6px}
+  .cine.show{display:flex;flex-direction:column}
+  .cine .ct{font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8a91a6;display:flex;justify-content:space-between}
+  .cine .fr{display:flex;gap:8px}
+  .cine figure{margin:0;width:236px;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s}
+  .cine figure.on{opacity:1;transform:none}
+  .cine canvas{display:block;width:236px;height:150px;border-radius:7px;border:1px solid #2e3548;background:#05060a}
+  .cine figcaption{font:11px 'IBM Plex Mono',monospace;color:#c9cede;margin-top:4px;line-height:1.35}
+  .cine figcaption b{font-weight:600}
+  .cine .ok{color:#8ff0b5}.cine .bad{color:#ff8a70}
+  .gmsg.low{top:auto;bottom:90px;transform:translateX(-50%)}
+  @media (max-width:860px){.cine{top:60px;transform:translateX(-50%) scale(.62);transform-origin:top center}}
+  #tStage.pitch .hud{display:none}
+  #tStage.pitch .eq{left:12px;right:auto;top:12px;width:236px;padding:9px 10px;font-size:10.5px}
+  #tStage.pitch .eq h4{font-size:9.5px;margin-bottom:4px}
+  #tStage.pitch .eq .sym{font-size:13px;margin-bottom:3px}
+  #tStage.pitch .eq .num{font-size:11px;line-height:1.55}
+  #tStage.pitch .eq .res{font-size:12.5px}
+  #tStage.pitch .eq .chk,#tStage.pitch .eq.final .chk{font-size:10.5px}
+  #tStage.pitch .eq .sep{margin:7px 0}
+  #tStage.pitch .eq .verdict{font-size:12.5px;padding:4px;margin-top:6px}
+  #tStage.pitch .instw{top:auto;bottom:196px}
+  .gmsg.wide{width:min(660px,94%);text-align:left;overflow:auto;font-size:12.5px}
+  .gmsg.wide h2,.gmsg.wide .big,.gmsg.wide>.btns{text-align:center}
+  .gmsg.wide.low{top:340px;bottom:70px}
+  .gmsg .fin{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:10px 0 4px}
+  .gmsg .fin h4{margin:0 0 3px;font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#ffb199}
+  .gmsg .fin p{margin:0 0 4px;line-height:1.45;color:#c9cede}
+  .gmsg .fin b{color:#fff}
+  .gmsg .fin .cur{grid-column:1/-1;background:#141a26;border:1px solid #2e3548;border-radius:8px;padding:7px 10px;color:#d9e2f2;line-height:1.45}
+  .gmsg .fin .src{grid-column:1/-1;font-size:10.5px;color:#6b7288}
+  @media (max-width:760px){.gmsg .fin{grid-template-columns:1fr}.gmsg.wide.low{top:auto;bottom:12px;max-height:60%}}
+  .goals{position:absolute;right:12px;top:245px;width:258px;background:rgba(12,14,20,.93);border:1px solid #39415a;border-radius:10px;padding:10px 12px;font-family:'IBM Plex Mono',monospace;color:#c9cede;pointer-events:none;z-index:2}
+  #tStage.pitch .goals{top:12px}
+  .goals h4{margin:0 0 7px;font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.07em;text-transform:uppercase;color:#ffb199}
+  .goals .chk{display:grid;grid-template-columns:1fr auto 16px;gap:5px 8px;font-size:12px}
+  .goals .chk b{text-align:right;font-weight:500}
+  .goals .ok{color:#7fd3a0}.goals .bad{color:#ff7a5c}.goals .na{color:#6b7288}
+  .goals .gn{margin-top:8px;font:11px 'IBM Plex Sans',sans-serif;color:#8a91a6;line-height:1.4}
+  .goals .gn b{color:#7fd3ff;font-weight:600}
+  .goals .verdict{margin-top:8px;font:600 14px 'IBM Plex Sans',sans-serif;text-align:center;padding:5px;border-radius:6px}
+  .goals .vok{background:#123524;color:#8ff0b5}.goals .vbad{background:#3a1712;color:#ffb3a1}
+  .popwrap{position:absolute;inset:0;z-index:6;display:none;flex-direction:column;align-items:center;justify-content:safe center;gap:10px;padding:16px 12px;overflow:auto;background:rgba(5,6,10,.62)}
+  .popwrap.show{display:flex}
+  .popwrap .gmsg,.popwrap .gmsg.low,.popwrap .gmsg.wide.low{position:relative;left:auto;top:auto;bottom:auto;transform:none;margin:0;flex:none;max-height:none;overflow:visible;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+  .popwrap .cine{position:relative;left:auto;top:auto;transform:none;flex:none}
+  @media (max-width:860px){.goals{top:auto;bottom:150px;right:8px;transform:scale(.8);transform-origin:right bottom}}
+</style>
+<link rel="stylesheet" href="descenso-lunares.css"></head>
+<body>
+<header class="descent-brand"><img src="assets/felicette-terrain.png" alt="Félicette"><div><h1>Descenso perfecto</h1><p>Ayudá a Félicette a alunizar suavemente.</p></div><button id="descentHelp">Cómo jugar · Datos</button></header>
+<main>
+  <section id="sGlobe">
+    <div class="bar">
+      <span class="t">La Luna</span>
+      <button id="bWhole">Luna entera</button>
+      <button id="bPole">Polo sur</button>
+      <button id="bExt">Grilla de sitios</button>
+      <button id="bSite" class="on">Acercar al sitio</button>
+      <label class="sl"><input type="checkbox" id="cGrid" checked> grilla</label>
+      <label class="sl"><input type="checkbox" id="cExt" checked> sitios simulados</label>
+    </div>
+    <div class="stage" id="gStage"><canvas id="cGlobe"></canvas>
+      <div class="tag" id="tagSite">Site01</div>
+      <div class="tag small" id="tagPole">Polo sur</div>
+      <div class="note"><b>Escala real.</b> El sitio mide 16 km sobre una Luna de 3.474 km: desde lejos es un punto (anillo naranja). <b>Grilla de sitios</b> muestra 25 sitios de 16 km alrededor de Site01; el amarillo es el elegido a la derecha.<br><br><b style="color:#ff8a70">Naranja = Site01, dato real.</b> <b style="color:#cfd5e6">Punteado = sitios simulados</b> (estadísticamente parecidos a Site01, no son la Luna real de esa zona).<br><br>Textura lunar de fondo: mapa ilustrativo de baja resolución.</div>
+    </div>
+  </section>
+  <section id="sTerrain">
+    <div class="bar">
+      <div class="seg"><button id="mRel" class="on">Relieve 3D</button><button id="mGame">Descenso perfecto</button></div><button id="bPitch" title="Ecuación en vivo, dataset y cierre para grabar el pitch">🎬 Modo pitch</button>
+      <select id="selArea"></select>
+      <select id="selTex" class="relOnly">
+        <option value="elev">Elevación z</option>
+        <option value="slope">Pendiente</option>
+        <option value="biv">Elevación × pendiente</option>
+      </select>
+      <label class="sl relOnly">exag. vertical <input type="range" id="rEx" min="1" max="5" step="0.5" value="1.5"><span id="vEx">1,5×</span></label>
+    </div>
+    <div class="stage" id="tStage"><canvas id="cTerrain"></canvas>
+      <div class="tag small" id="tagDir">→ polo sur (~16 km)</div>
+      <div class="tag" id="tagPoleT">Polo sur</div>
+      <div class="tag small" id="tagRealT" style="border-color:#ff5a3c;color:#ffd9cf">dato real</div>
+      <div class="legend" id="legend"></div>
+      <div class="info" id="info"></div>
+      <div id="game" hidden>
+        <canvas id="cGame" tabindex="0" aria-label="Simulación de descenso lunar. Usá izquierda y derecha para girar y arriba o espacio para encender el motor."></canvas>
+        <div class="hud" id="hud"></div><div class="pcap" id="pcap"></div><div class="eq" id="eq"></div><div class="dset" id="dset"></div><div class="pend" id="pend"></div><div class="instw" id="instw"><canvas id="alti"></canvas><button class="mute" id="mute" aria-label="Activar o silenciar sonidos" title="Sonido de la alarma">🔊</button></div><div class="stick" id="stick" title="Palanca de mando: arrastrala o usá el teclado"></div><div class="danger" id="danger"></div><div class="cine" id="cine"></div><div class="goals" id="goals"></div><div class="popwrap" id="popwrap"></div>
+        <div class="gmsg" id="gmsg"></div>
+        <div class="touch"><button data-k="left" aria-label="girar a la izquierda">⟲</button><button data-k="right" aria-label="girar a la derecha">⟳</button><button data-k="up" class="thr" aria-label="motor">▲ motor</button></div>
+      </div>
+      <div class="mini"><div class="mt">% del sitio con pendiente &lt; 10°</div><div class="g5" id="g5"></div><div class="mt" style="margin-top:4px">clic = ver sitio · naranja = real</div></div>
+    </div>
+  </section>
+</main>
+<div class="err" id="err">No se pudo cargar el motor 3D. Probá recargar la página.</div>
+
+
+
+
+
+<dialog id="descentInfo" aria-labelledby="descentInfoTitle"><div class="help-head"><h2 id="descentInfoTitle">Tu guía de alunizaje</h2><button id="closeDescentInfo">Cerrar ✕</button></div><p><b>← →</b> giran el módulo; <b>↑ o espacio</b> enciende el motor. En celular mantené pulsados los controles inferiores. R reinicia y N cambia de corte. También podés arrastrar la palanca de mando. El altímetro y las alarmas te ayudan a vigilar la aproximación; el botón de sonido permite silenciarlas.</p><p>Buscá una plataforma celeste. Para ganar: descenso ≤ 2 m/s, velocidad horizontal ≤ 1,2 m/s, inclinación ≤ 12° y ambas patas sobre una plataforma.</p><p>Las plataformas usan pendiente &lt; 8° calculada con θ = atan(√((∂z/∂x)² + (∂z/∂y)²)). El juego original toma cortes del terreno muestreado a 100 m, escala 1:20 y relieve exagerado ×2. La gravedad es 1,62 m/s².</p><p>En la misión usamos únicamente Site01 real, a partir del DEM LOLA del archivo del equipo. Los otros 24 sitios del visor original son simulados. El fondo terrestre y la nave son ilustrativos.</p><p>Esta es una simulación didáctica: ganar no certifica un aterrizaje, ni identifica rocas o profundidad de cráteres. Los descensos se guardan solo en este navegador (hasta 5000 registros), sin datos de contacto ni envíos automáticos a NASA.</p><button id="exportDescent">↓ Exportar mis descensos</button></dialog><script src="descenso-data.js"></script><script src="../assets/three.min.js"></script><script src="../assets/OrbitControls.js"></script><script src="descenso-engine.js"></script></body>
+</html>

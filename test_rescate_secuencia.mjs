@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const source=fs.readFileSync('dist/minijuego/mission-challenge.js','utf8');
+const declaration=source.split('\n').find(s=>s.includes('function nextRescuePhase('));
+const next=vm.runInNewContext(declaration+';nextRescuePhase');
+assert.equal(next('terrain','lunar-terrain-complete'),'descent-ready');
+assert.equal(next('descent','lunar-descent-complete'),'complete');
+for(const [phase,type] of [['intro','lunar-descent-complete'],['terrain','lunar-descent-complete'],['descent-ready','lunar-descent-complete'],['descent','lunar-terrain-complete'],['complete','lunar-descent-complete'],['terrain','unknown']])assert.equal(next(phase,type),null);
+assert.match(source,/sequence=1/);assert.match(source,/e\.data\.real!==true/);
+console.log('OK: dos etapas obligatorias en orden, eventos incompatibles rechazados y descenso real requerido.');

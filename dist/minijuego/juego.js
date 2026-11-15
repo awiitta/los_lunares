@@ -2,6 +2,8 @@ import {assess,annotation} from './game-model.js';
 const $=id=>document.getElementById(id),storageKey='los-lunares-site01-annotations-v1';
 const embedded=new URLSearchParams(location.search).get('embedded')==='1';
 document.body.classList.toggle('embedded',embedded);
+// En el rescate sequence=1, la selección es el primer paso, no el final.
+if(embedded&&new URLSearchParams(location.search).get('sequence')==='1')$('continue').textContent='Zona lista · pasar al descenso →';
 
 // En la misión, mostrar solo el mapa y las acciones; ampliar datos bajo demanda.
 if(embedded){
