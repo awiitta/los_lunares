@@ -5,7 +5,7 @@ const engine=fs.readFileSync('dist/minijuego/descenso-engine.js','utf8');
 const data=fs.readFileSync('dist/minijuego/descenso-data.js','utf8');
 let message=null,html='';
 const controls=[];
-const msg={hidden:true,set innerHTML(v){html=v;controls.length=0;for(const m of v.matchAll(/data-a="([^"]+)"/g))controls.push({dataset:{a:m[1]}});},querySelectorAll(){return controls;}};
+const msg={hidden:true,set innerHTML(v){html=v;controls.length=0;for(const m of v.matchAll(/data-a="([^"]+)"/g))controls.push({dataset:{a:m[1]}});},querySelectorAll(selector){return selector==='video'?[]:controls;}};
 const gc={getContext:()=>({}),focus(){}};
 const ctx=vm.createContext({window:{parent:{postMessage(v,origin){message={v,origin};}}},location:{origin:'http://localhost'},document:{getElementById:id=>id==='gmsg'?msg:id==='cGame'?gc:{}},localStorage:{getItem:()=>null,setItem(){}},ResizeObserver:class{observe(){}},Float32Array,Int16Array,Uint8Array,Math,console,atob:s=>Buffer.from(s,'base64').toString('binary')});
 vm.runInContext(data,ctx);

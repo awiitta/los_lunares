@@ -217,10 +217,10 @@ function newGame(ci){const s=gameSite(),L=buildLevel(s,ci==null?(game&&game.L&&g
    <ul><li>Velocidad vertical ≤ ${fmt(LIM.vy,1)} m/s y horizontal ≤ ${fmt(LIM.vx,1)} m/s</li><li>Nave derecha (± ${LIM.ang}°)</li><li>Gravedad lunar: 1,62 m/s² · combustible limitado</li></ul>
    <kbd>←</kbd> <kbd>→</kbd> girar · <kbd>↑</kbd> o <kbd>espacio</kbd> motor · <kbd>R</kbd> reiniciar · <kbd>N</kbd> otro corte
    <div class="btns"><button class="pri" data-a="go">Empezar</button><button data-a="next">Otro corte (${L.ci+1}/${L.cuts.length})</button></div>`);}
-function showMsg(h){gmsg.innerHTML=h;gmsg.hidden=false;
+function showMsg(h){gmsg.querySelectorAll('video').forEach(v=>v.pause());gmsg.innerHTML=h;gmsg.hidden=false;
   gmsg.querySelectorAll('button[data-a]').forEach(b=>b.onclick=()=>{const a=b.dataset.a;
     if(a==='go')start();if(a==='retry')newGame(game.L.ci),start();if(a==='next')newGame(game.L.ci+1);if(a==='site')setMode('relief');if(a==='return'&&game?.res==='ok'&&embedded)window.parent.postMessage({type:'lunar-descent-complete',version:1,site_id:game.L.s.id,real:!!game.L.s.real},location.origin);});}
-function start(){if(!game||!game.L)return;gmsg.hidden=true;game.state='fly';game.last=null;gc.focus();}
+function start(){audioOn();if(!game||!game.L)return;gmsg.hidden=true;game.state='fly';game.last=null;gc.focus();}
 function feet(g){const c=Math.cos(g.a),s=Math.sin(g.a);return [[-LEGS[0],-LEGS[1]],[LEGS[0],-LEGS[1]]].map(([px,py])=>[g.x+px*c+py*s,g.y-px*s+py*c]);}
 function step(g,dt){const L=g.L;g.thr=keys.up&&g.fuel>0;
   g.a+=((keys.right?1:0)-(keys.left?1:0))*ROT*dt;g.a=Math.max(-1.4,Math.min(1.4,g.a));
@@ -240,7 +240,7 @@ function land(g,F){const vy0=g.vy,L=g.L,ang=Math.abs(g.a*180/Math.PI),pad=L.pads
     g.res='ok';showMsg(`<h2 style="color:#7fd3ff">¡Aterrizaje perfecto!</h2><div class="big">${fmt(score)} pts</div><p>¡Félicette llegó a salvo! Es un logro del juego; el terreno todavía necesita evaluación.</p>
      plataforma ×${pad.mult} · ${fmt(pad.len)} m reales · combustible ${fmt(g.fuel)} %${rec?'<br><b style="color:#ffb14a">¡Nuevo récord en '+s.id+'!</b>':''}
      <div class="btns">${embedded?'<button class="pri" data-a="return">Volver a mi misión →</button>':''}<button data-a="retry">Otra vez</button><button data-a="next">Otro corte</button>${embedded?'':'<button data-a="site">Elegir sitio</button>'}</div>`);}
-  else{g.res='crash';showMsg(`<h2 style="color:#ff7a5c">El módulo se dañó</h2><ul>${why.map(w=>'<li>'+w+'</li>').join('')}</ul>
+  else{g.res='crash';showMsg(`<h2 style="color:#ffca91">¡Podés mejorar este alunizaje!</h2><p>Mirá las cuatro pistas de Félicette y elegí qué vas a practicar en tu próximo intento.</p>
      <div class="btns"><button class="pri" data-a="retry">Reintentar</button><button data-a="next">Otro corte</button>${embedded?'':'<button data-a="site">Elegir sitio</button>'}</div>`);}}
 function sizeGame(){const r=tEl.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);gc.width=Math.round(r.width*d);gc.height=Math.round(r.height*d);gc.dataset.d=d;}
 new ResizeObserver(()=>{if(mode==='game')sizeGame();}).observe(tEl);
@@ -420,10 +420,10 @@ function drawStick(g){const on=g.thr&&g.state==='fly';
 // sonido de alarma (Web Audio; arranca con la primera tecla o toque)
 let AC=null,muted=false,nextBeep=0;
 try{muted=localStorage.getItem('site01_mute')==='1';}catch(e){}
-muteB.textContent=muted?'🔇':'🔊';
-function audioOn(){if(AC||muted)return;try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){AC=null;}}
+muteB.textContent=muted?'🔇 Sonido apagado':'🔊 Sonido activo';muteB.setAttribute('aria-pressed',String(!muted));
+function audioOn(){if(muted)return;if(AC){if(AC.state==='suspended')AC.resume();return;}try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){AC=null;}}
 addEventListener('keydown',()=>{if(mode==='game')audioOn();});addEventListener('pointerdown',()=>{if(mode==='game')audioOn();});
-muteB.onclick=e=>{e.stopPropagation();muted=!muted;muteB.textContent=muted?'🔇':'🔊';try{localStorage.setItem('site01_mute',muted?'1':'0');}catch(err){}if(!muted)audioOn();gc.focus();};
+muteB.onclick=e=>{e.stopPropagation();muted=!muted;muteB.textContent=muted?'🔇 Sonido apagado':'🔊 Sonido activo';muteB.setAttribute('aria-pressed',String(!muted));try{localStorage.setItem('site01_mute',muted?'1':'0');}catch(err){}if(!muted)audioOn();gc.focus();};
 function beep(f,dur){if(!AC||muted)return;try{if(AC.state==='suspended')AC.resume();const o=AC.createOscillator(),v=AC.createGain(),t=AC.currentTime;
   o.type='square';o.frequency.value=f;v.gain.setValueAtTime(0.0001,t);v.gain.exponentialRampToValueAtTime(0.08,t+0.01);v.gain.exponentialRampToValueAtTime(0.0001,t+dur);
   o.connect(v).connect(AC.destination);o.start(t);o.stop(t+dur+0.02);}catch(e){}}
@@ -565,11 +565,20 @@ function placeInfo(g,vy0,ang,pad,sreal,why){const L=g.L,s=L.s,ok=!why.length,v=M
   const com=`La Tierra nunca sube más de ~${fmt(e0+6.7)}° sobre el horizonte acá y, por la libración, aparece y se esconde cada ~27 días. Hacia la Tierra el relieve sube hasta ${f(hE)}°: tendrías <b>enlace directo ~${fmt(frac*100)} % del tiempo</b>`+
     (frac<0.35?'; haría falta un satélite relé.':frac<0.6?'; conviene sumar un satélite relé.':'.')+` Cada mensaje tarda ~1,3 s en llegar (2,6 s ida y vuelta).`;
   const cur=CURIO[Math.floor(Math.random()*CURIO.length)];
-  return `<div class="fin"><div><h4>${ok?'Por qué salió bien':'Por qué no llegaste'}</h4>${fis.map(p=>'<p>'+p+'</p>').join('')}</div>
-   <div><h4>El lugar</h4><p>${lugar}</p></div>
-   <div><h4>☀ Energía</h4><p>${ene}</p></div>
-   <div><h4>📡 Comunicación</h4><p>${com}</p></div>
-   <div class="cur">💡 ${cur}</div><div class="src">Estimaciones didácticas del juego, con relieve muestreado a 100 m y curvatura lunar. Los rayos de horizonte pueden recorrer sitios vecinos simulados. Los porcentajes de luz y enlace son aproximaciones ilustrativas; revisá las ventanas temporales del dashboard para tu plan.</div></div>`;}
+  const lessons=[
+   {icon:'↓',title:'Bajá despacito',value:f(v)+' m/s',limit:'Meta: hasta '+LIM.vy+' m/s',good:v<=LIM.vy,tip:'Encendé el motor antes de estar cerca del suelo. No esperes al último segundo.'},
+   {icon:'↔',title:'Frená de costado',value:f(vx)+' m/s',limit:'Meta: hasta '+LIM.vx+' m/s',good:vx<=LIM.vx,tip:'Incliná un poco la nave hacia el lado contrario al movimiento y luego enderezala.'},
+   {icon:'↥',title:'Llegá derechito',value:fmt(ang)+'°',limit:'Meta: hasta '+LIM.ang+'°',good:ang<=LIM.ang,tip:'Enderezá el módulo antes de tocar: las dos patas necesitan apoyar juntas.'},
+   {icon:'▱',title:'Buscá una plataforma',value:f(sreal)+'°',limit:'Meta: las dos patas en celeste',good:!!pad,tip:'Apuntá al centro de un tramo celeste. Un punto llano puede ser demasiado angosto.'}
+  ];
+  const next=lessons.find(q=>!q.good);
+  const tip=ok?'¡Gracias, me salvaste! ¡Sabía que podías lograrlo! Bajaste suave y apoyaste las dos patas. Ahora podemos continuar.':next.tip;
+  return `<section class="landing-lesson"><div class="landing-cat"><img src="../assets/felicette-terrain.png" alt="Félicette te acompaña"><div><span>FÉLICETTE · APRENDEMOS EN CADA INTENTO</span><h3>${ok?'¡Lo logramos!':'¡Probemos una vez más!'}</h3><p>${tip}</p></div></div>
+  <div class="landing-checks">${lessons.map(q=>`<article class="${q.good?'passed':'practice'}"><span class="lesson-symbol" aria-hidden="true">${q.icon}</span><h4>${q.title}</h4><strong>${q.value}</strong><small>${q.limit}</small><b>${q.good?'✓ Lo lograste':'↻ Para practicar'}</b></article>`).join('')}</div>
+  <div class="landing-world"><article><h4>☀ ¿Y la energía?</h4><p>Las montañas pueden tapar el Sol. Cuando no llega luz al panel, el rover necesita una batería.</p><div class="horizon-picture" aria-label="Sol bajo, montaña y panel"><span>☀</span><i>◢</i><b>▱ → ▰</b></div></article><article><h4>🌍 ¿Cómo volvemos a hablar?</h4><p>Necesitamos ver la Tierra por encima de las montañas. Si queda tapada, guardamos los datos o usamos un relé.</p><div class="radio-picture" aria-label="Antena, obstáculo y Tierra">📡 · · · ◢ · · 🌍</div></article></div>
+  ${ok?`<video class="landing-celebration" controls playsinline muted ${matchMedia('(prefers-reduced-motion: reduce)').matches?'':'autoplay'} preload="metadata" poster="../assets/videos/final-exploracion_portada.jpg" src="../assets/videos/final-exploracion.mp4" aria-label="Félicette celebra: sabía que podías lograrlo"></video>`:''}
+  <details class="landing-science"><summary>Ver los datos de mi intento y del terreno</summary><div class="fin"><div><h4>Mi alunizaje</h4>${fis.map(p=>'<p>'+p+'</p>').join('')}</div><div><h4>El lugar</h4><p>${lugar}</p></div><div><h4>Energía · modelo simplificado</h4><p>${ene}</p></div><div><h4>Comunicación · modelo simplificado</h4><p>${com}</p></div></div><p>Estimaciones didácticas con relieve muestreado a 100 m; parte del horizonte puede usar sitios vecinos simulados. Los porcentajes no son ventanas calculadas con efemérides. Compará tu plan en el laboratorio.</p></details><p class="landing-note">Los límites son reglas de este juego, no una certificación de seguridad para una misión real.</p></section>`;}
+
 let finPending=null;const _showMsg=showMsg;showMsg=function(h){if(finPending){h=h+finPending;finPending=null;gmsg.classList.add('wide');}else gmsg.classList.remove('wide');_showMsg(h);};
 /* ================= SONIDOS ================= */
 let engG=null,lastPing=0;

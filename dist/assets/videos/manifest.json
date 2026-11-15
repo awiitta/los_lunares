@@ -1,74 +1,83 @@
 [
   {
-    "name": "cierre-objetivo",
+    "name": "cierre-conexion",
     "durationSeconds": 3.5,
-    "bytes": 38114,
-    "sha256": "45fff7ecaf77af14c9760fdf6fc1e994ac25b7468b3040698884827fe773eae7",
+    "bytes": 93275,
+    "sha256": "fe5515a1e00a6ce443bcebd222721a6a03f33fbff92d3bf4d68dac0f78aea934",
     "regeneratedFromSuppliedProject": false,
-    "poster": "cierre-objetivo_portada.jpg"
-  },
-  {
-    "name": "cierre-terreno",
-    "durationSeconds": 3.5,
-    "bytes": 41197,
-    "sha256": "4d8bbf5e33cf98191fc299bc3c5dc31bfc17bc657ec66b279652907486c1f740",
-    "regeneratedFromSuppliedProject": false,
-    "poster": "cierre-terreno_portada.jpg"
-  },
-  {
-    "name": "cierre-fecha",
-    "durationSeconds": 3.5,
-    "bytes": 56157,
-    "sha256": "52a90cde462c04f0a3b6f04573037a415bea7052c3911bbb4366c2e7595ebe4d",
-    "regeneratedFromSuppliedProject": false,
-    "poster": "cierre-fecha_portada.jpg"
+    "poster": "cierre-conexion_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
   },
   {
     "name": "cierre-energia",
     "durationSeconds": 3.5,
-    "bytes": 37943,
-    "sha256": "f6ea9855e916da9b2931ab6c0336270ef09b45d45dd9ecd348ec07d6fefeb652",
+    "bytes": 90964,
+    "sha256": "7a347154fe7556460f877508545b4117c9311ed6813e3395ad4baa1b24c0e847",
     "regeneratedFromSuppliedProject": false,
-    "poster": "cierre-energia_portada.jpg"
+    "poster": "cierre-energia_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
   },
   {
-    "name": "cierre-conexion",
+    "name": "cierre-fecha",
     "durationSeconds": 3.5,
-    "bytes": 40552,
-    "sha256": "07112f4ac1cc6c3b304c9cbbcd76184d37934963997508e7ff004fcea15550c2",
+    "bytes": 114622,
+    "sha256": "98b9bd753604093ff6fbbe00832566af26608b8067e18ce9f39aac129fb4d8fa",
     "regeneratedFromSuppliedProject": false,
-    "poster": "cierre-conexion_portada.jpg"
+    "poster": "cierre-fecha_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
+  },
+  {
+    "name": "cierre-objetivo",
+    "durationSeconds": 3.5,
+    "bytes": 92118,
+    "sha256": "723887f8d670759ec293cb88e024e4f70fbb08cc793f476fd4d3e7e4b282736e",
+    "regeneratedFromSuppliedProject": false,
+    "poster": "cierre-objetivo_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
   },
   {
     "name": "cierre-plan",
     "durationSeconds": 3.5,
-    "bytes": 72610,
-    "sha256": "a1409c86f409a1c563d3d9ab4ee12df3b0d4354b4d7c52467d39366fee9fc04e",
+    "bytes": 139326,
+    "sha256": "9d7a4b54b6ed7183e64159364f5b7ddcb57b3175dba3fd7f35304fcc13bd46eb",
     "regeneratedFromSuppliedProject": false,
-    "poster": "cierre-plan_portada.jpg"
+    "poster": "cierre-plan_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
   },
   {
-    "name": "final-exploracion",
-    "durationSeconds": 10.0,
-    "bytes": 237802,
-    "sha256": "a1b2a43d423d7cdf7aef960e1f6fe6dd5a32e57e5ab4fa8a2cf1c98932cbd6e5",
+    "name": "cierre-terreno",
+    "durationSeconds": 3.5,
+    "bytes": 94293,
+    "sha256": "00f92ec3923174776367730e1318f3b69b76dc1918d3df3ad3a722753dbef45a",
     "regeneratedFromSuppliedProject": false,
-    "poster": "final-exploracion_portada.jpg"
+    "poster": "cierre-terreno_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
   },
   {
     "name": "final-comunicacion",
     "durationSeconds": 10.0,
-    "bytes": 224353,
-    "sha256": "87e01738ae2f92e5a03ecf730145e1b5b3d543f4af086f3a8592da4dd3187731",
-    "regeneratedFromSuppliedProject": true,
-    "poster": "final-comunicacion_portada.jpg"
+    "bytes": 436462,
+    "sha256": "da618880226f692acb646b3087e8b07722583a2f365870e9d2a3e153dc17e3cb",
+    "regeneratedFromSuppliedProject": false,
+    "poster": "final-comunicacion_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
+  },
+  {
+    "name": "final-exploracion",
+    "durationSeconds": 10.0,
+    "bytes": 457999,
+    "sha256": "f3b61056b22b3ad9b0776433e5b17653292a087511f3c6d20e6f19326dbe8551",
+    "regeneratedFromSuppliedProject": false,
+    "poster": "final-exploracion_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
   },
   {
     "name": "final-revisar",
     "durationSeconds": 9.5,
-    "bytes": 120654,
-    "sha256": "23e498b8f1e7c30edf40c9374b3733177ba48aeb035dda7734c4817588db532e",
+    "bytes": 288566,
+    "sha256": "8c31172007f2e19c5bcf6e798a10833761759fef88c1421d814ed096036cea91",
     "regeneratedFromSuppliedProject": false,
-    "poster": "final-revisar_portada.jpg"
+    "poster": "final-revisar_portada.jpg",
+    "source": "videos_finales: archivo entregado sin editar"
   }
 ]

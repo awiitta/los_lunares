@@ -7,3 +7,5 @@
 .window-date-panel .window-data-coverage{grid-column:1/-1;margin:0;color:#b7d5ce;font-size:11px;line-height:1.65;padding:10px 12px;background:#173a4433;border:1px solid #2b5362;border-radius:10px}.window-date-panel select{min-height:39px}.window-date-panel label{min-width:0}
 
 .window-date-panel{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.window-date-panel>div:first-child{grid-column:1/-1}.window-date-panel #applyGameDate{grid-column:1/-1;justify-self:start}.window-date-panel #gameDateStatus,.window-date-panel .date-shortcuts{grid-column:1/-1}@media(max-width:650px){.window-date-panel{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.real-clock-hint{padding:10px 14px;border:1px solid #568b87;border-radius:10px;background:#153943;color:#d4f2de;font-size:12px;line-height:1.6}.window-time-controls{position:relative;z-index:1;flex-wrap:wrap}

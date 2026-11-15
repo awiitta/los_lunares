@@ -527,8 +527,15 @@ $('rng').addEventListener('input', e => setCursor(+e.target.value));
 $('bD-').onclick = () => setCursor(cursor - 24); $('bD+').onclick = () => setCursor(cursor + 24);
 $('bH-').onclick = () => setCursor(cursor - 6); $('bH+').onclick = () => setCursor(cursor + 6);
 let playT = null;
-$('bPlay').onclick = () => { playing = !playing; $('bPlay').textContent = playing ? '❚❚ pausa' : '▶ reproducir';
-  if (playing){ if (cursor >= nSlots*SLOT_H) cursor = 0; const tick = () => { if (!playing) return; if (cursor >= nSlots*SLOT_H){ $('bPlay').click(); return; } setCursor(cursor + 2); playT = setTimeout(tick,450); }; tick(); } };
+let lessonVisible=window.parent===window,manualPause=false;
+function pauseClock(){playing=false;clearTimeout(playT);playT=null;$('bPlay').textContent='▶ Reanudar movimiento';}
+function startClock(){clearTimeout(playT);playing=true;$('bPlay').textContent='❚❚ Pausar movimiento';const tick=()=>{if(!playing)return;setCursor(cursor>=nSlots*SLOT_H?0:cursor+2);playT=setTimeout(tick,450);};tick();}
+$('bPlay').onclick=()=>{if(playing){manualPause=true;pauseClock();}else{manualPause=false;startClock();}};
+function autoClock(){if(lessonVisible&&!manualPause&&!document.hidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startClock();}
+function takeControl(e){if(e.target.closest('#bPlay'))return;if(e.type==='keydown'&&e.key==='Tab')return;manualPause=true;pauseClock();}
+for(const event of ['pointerdown','keydown','input','change','click'])document.addEventListener(event,takeControl,{capture:true});
+const clockHint=document.createElement('p');clockHint.className='auto-clock-hint';clockHint.textContent='↔ Se puede mover: el reloj avanza solo. Tocá un botón o arrastrá la barra para detenerlo y explorar a tu ritmo.';$('cardTl').prepend(clockHint);
+
 
 let paint = null, lastI = 0;
 const cTl = $('cTl');
@@ -608,10 +615,10 @@ function showResult(){
 
 
 function updateLessonDateButton(){const ok=M&&M.start>='2025-01-01'&&M.start<='2026-12-24';$('useMissionDate').disabled=!ok;$('lessonStartStatus').textContent=ok?'Inicio '+M.start+'. Al aplicarlo, la misión vuelve a calcular siete días con tu terreno real.':'Este escenario sirve para entrenar. Su inicio está fuera del archivo NASA de la misión (2025–2026).';}
-function stopLessonMotion(){if(playing){playing=false;$('bPlay').textContent='▶ reproducir';}if(running){running=false;run=null;$('resBox').hidden=true;$('btnRun').disabled=false;$('btnRun').textContent='▶ Ejecutar misión';}}
+function stopLessonMotion(){pauseClock();if(running){running=false;run=null;$('resBox').hidden=true;$('btnRun').disabled=false;$('btnRun').textContent='▶ Ejecutar misión';}}
 $('useMissionDate').onclick=()=>{if(!$('useMissionDate').disabled)window.parent.postMessage({type:'lunares-window-lesson-date',version:1,start:M.start+'T00:00'},location.origin);};
-window.addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==window.parent||e.data?.type!=='lunares-lesson-visibility'||e.data.version!==1)return;if(!e.data.visible)stopLessonMotion();});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stopLessonMotion();});
+window.addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==window.parent||e.data?.type!=='lunares-lesson-visibility'||e.data.version!==1)return;lessonVisible=!!e.data.visible;if(!lessonVisible)stopLessonMotion();else autoClock();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopLessonMotion();else autoClock();});
 
 // misiones
 for (const m of MISSIONS){ const o = document.createElement('option'); o.value = m.id; o.textContent = m.name; $('selMis').appendChild(o); }
@@ -621,7 +628,7 @@ $('selMis').onchange = () => { const m = MISSIONS.find(v => v.id === $('selMis')
   if (m.id === 'free') m.start = $('freeDate').value; buildMission(m); };
 $('freeDate').onchange = () => { if (!$('freeDate').value) return; freeM.start = $('freeDate').value; store.set('enlace_free_date', freeM.start); buildMission(freeM); };
 window.addEventListener('resize', () => drawAll());
-buildMission(MISSIONS[0]);
+buildMission(MISSIONS[0]);autoClock();
 })();
 </script>
 </body>
