@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {assess,annotation} from './dist/minijuego/game-model.js';
+const dataset=JSON.parse(readFileSync('dist/minijuego/assets/desafios.json','utf8'));
+const round=dataset.rounds[0],good=round.tiles.find(t=>t.status==='candidate'),bad=round.tiles.find(t=>t.status==='review');
+assert.equal(assess(round,[]).completed,false);
+assert.equal(assess(round,[good.id]).completed,true);
+assert.equal(assess(round,[good.id,bad.id]).completed,false);
+assert.throws(()=>assess(round,['X9']),/desconocido/);
+const record=annotation(dataset,round,new Set([good.id]),true,1);
+assert.equal(record.selection_stage,'before_feedback');
+assert.equal(record.purpose,'team_review_not_NASA_submission');
+assert.deepEqual(record.cells[0].bounds_xy_m,good.bounds_xy_m);
+console.log('OK: selección vacía, candidata, mezcla, ids inválidos y trazabilidad de la anotación.');

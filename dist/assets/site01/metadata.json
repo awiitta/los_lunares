@@ -1,0 +1,28 @@
+{
+  "name": "Site01 LOLA",
+  "source": "Site01_final_adj_5mpp_surf.tif",
+  "sourceURL": "https://pgda.gsfc.nasa.gov/products/78",
+  "sha256": "3ba7b97cb00a2bcf21189c3aeb535f65afc21207154ab9f0d43c5bdc1f7e747e",
+  "width": 800,
+  "height": 800,
+  "cellM": 20,
+  "nativeCellM": 5,
+  "xmin": -19000.0,
+  "ymax": -4000.0,
+  "xmax": -3000.0,
+  "ymin": -20000.0,
+  "radiusM": 1737400,
+  "minM": -523.1834106445312,
+  "maxM": 1959.4962158203125,
+  "encoding": "Float32 little endian; north to south",
+  "mean": "Mean of 4x4 native pixels for geometry and observer ground",
+  "peak": "Maximum of 4x4 native pixels for sampled horizon, conservative spatial aggregation",
+  "slope": "Maximum native central-difference slope in each 20m cell",
+  "synthetic": false,
+  "excluded": "24 simulated surrounding sites excluded; only original Site01",
+  "limitations": [
+    "No per-pixel uncertainty map supplied",
+    "Native 5m grid includes interpolated elevations",
+    "20m aggregation and angular/radial sampling do not resolve every obstruction"
+  ]
+}

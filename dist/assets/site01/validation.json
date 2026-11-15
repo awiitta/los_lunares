@@ -1,0 +1,91 @@
+{
+  "dateUTC": "2026-11-14T22:00:12.409Z",
+  "checks": [
+    "Polar projection roundtrip",
+    "Spherical flat-surface horizon analytic comparison",
+    "Coverage rejection",
+    "Angular margin and unknown states",
+    "Censored temporal events",
+    "Three real presets with full radial coverage",
+    "SVS spherical approximation versus 50 JPL samples"
+  ],
+  "terrainSource": {
+    "name": "Site01 LOLA",
+    "source": "Site01_final_adj_5mpp_surf.tif",
+    "sourceURL": "https://pgda.gsfc.nasa.gov/products/78",
+    "sha256": "3ba7b97cb00a2bcf21189c3aeb535f65afc21207154ab9f0d43c5bdc1f7e747e",
+    "width": 800,
+    "height": 800,
+    "cellM": 20,
+    "nativeCellM": 5,
+    "xmin": -19000,
+    "ymax": -4000,
+    "xmax": -3000,
+    "ymin": -20000,
+    "radiusM": 1737400,
+    "minM": -523.1834106445312,
+    "maxM": 1959.4962158203125,
+    "encoding": "Float32 little endian; north to south",
+    "mean": "Mean of 4x4 native pixels for geometry and observer ground",
+    "peak": "Maximum of 4x4 native pixels for sampled horizon, conservative spatial aggregation",
+    "slope": "Maximum native central-difference slope in each 20m cell",
+    "synthetic": false,
+    "excluded": "24 simulated surrounding sites excluded; only original Site01",
+    "limitations": [
+      "No per-pixel uncertainty map supplied",
+      "Native 5m grid includes interpolated elevations",
+      "20m aggregation and angular/radial sampling do not resolve every obstruction"
+    ]
+  },
+  "astronomyComparison": [
+    {
+      "case": "a",
+      "coordinates": {
+        "lon": -171.89280908299654,
+        "lat": -89.76674147713055
+      },
+      "count": 25,
+      "source": "NASA/JPL Horizons saved reference; 2026-11-14/15",
+      "errors": {
+        "sun": {
+          "maxAzDeg": 0.0006837257199094893,
+          "maxElDeg": 0.0006451838086491968,
+          "meanElDeg": 0.00043850117406252665
+        },
+        "earth": {
+          "maxAzDeg": 0.0006578768684448733,
+          "maxElDeg": 0.0004974114538578434,
+          "meanElDeg": 0.00027653460902328676
+        }
+      }
+    },
+    {
+      "case": "b",
+      "coordinates": {
+        "lon": -175.9361891381537,
+        "lat": -89.76849059183895
+      },
+      "count": 25,
+      "source": "NASA/JPL Horizons saved reference; 2026-11-14/15",
+      "errors": {
+        "sun": {
+          "maxAzDeg": 0.0006837070554865932,
+          "maxElDeg": 0.0006450964284048233,
+          "meanElDeg": 0.0004383499214023079
+        },
+        "earth": {
+          "maxAzDeg": 0.0006578305119546712,
+          "maxElDeg": 0.000497535411235539,
+          "meanElDeg": 0.0002765525986129269
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Only two reference locations and 24-hour time series tested against JPL",
+    "No statistical error guarantee for other coordinates/dates",
+    "20m/2deg/radius horizon sampling does not resolve all features",
+    "No propagated DEM uncertainty, eclipse or solar disk model",
+    "No human usability study completed"
+  ]
+}

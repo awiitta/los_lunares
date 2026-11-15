@@ -1,0 +1,15 @@
+{
+  "javascript_rules": "12 comprobaciones OK",
+  "existing_javascript_game": "OK",
+  "existing_python_terrain": "4 pruebas OK con entorno .venv del proyecto NASA",
+  "browser": [
+    "Luna global 3D y tarjetas",
+    "decisión incompatible abre diálogo",
+    "minijuego completado A1 sector 1",
+    "agradecimiento y explicación",
+    "volver a elegir no avanza con problema pendiente",
+    "elección válida reanuda microvideo"
+  ],
+  "video_assets": "9 SHA-256 coinciden con manifest original",
+  "publication": "local_only"
+}

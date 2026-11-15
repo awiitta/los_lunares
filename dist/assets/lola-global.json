@@ -1,0 +1,14 @@
+{
+  "source": "NASA SVS CGI Moon Kit / LRO LOLA",
+  "url": "https://svs.gsfc.nasa.gov/4720/",
+  "file": "ldem_4.tif",
+  "sha256": "330afa2556a86fd05ac6ba2f912f246600fdade35de2a0d90593d50d07b01b65",
+  "width": 1440,
+  "height": 720,
+  "pixelsPerDegree": 4,
+  "radiusM": 1737400,
+  "units": "signed integer meters relative to radius; rounded from float kilometers",
+  "encoding": "Int16 little-endian row-major, north to south; longitude -180 to +180",
+  "minM": -8878,
+  "maxM": 10504
+}

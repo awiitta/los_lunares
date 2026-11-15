@@ -1,0 +1,70 @@
+# Los Lunares: Python + web estática.
+# IMPORTANTE: dist/ ES la web de este proyecto. No excluirla.
+# También se conservan fuentes/, herramientas/, pruebas y datos de la web.
+
+# Entornos y cachés de Python (no excluir los archivos .py).
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+__pypackages__/
+*.egg-info/
+.eggs/
+
+# Variables locales; las plantillas sin credenciales sí se comparten.
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Dependencias instaladas de JavaScript, si se incorporan en el futuro.
+# Las librerías que usa dist/assets/ se mantienen en Git.
+node_modules/
+
+# Capturas, copias anteriores, paquetes para entregar y trabajo temporal.
+/outputs/
+/work/
+/tmp/
+/temp/
+/Los_Lunares*.zip
+/Los_Lunares*.rar
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+
+# Resultados locales de pruebas y registros.
+*.log
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+coverage/
+playwright-report/
+test-results/
+.cache/
+.ipynb_checkpoints/
+
+# Archivos del sistema y preferencias personales del editor.
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.idea/
+.history/
+*.code-workspace
+# .vscode/ puede contener configuración útil compartida: no excluirla completa.
+
+# Configuración local del CLI de Vercel.
+.vercel/

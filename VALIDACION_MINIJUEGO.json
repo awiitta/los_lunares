@@ -1,0 +1,30 @@
+{
+  "project_directory": "C:\\Users\\agusj\\Downloads\\nasa\\Los_Lunares_Con_Videos\\Los_Lunares",
+  "videos_preserved": 9,
+  "video_sha256": {
+    "cierre-conexion.mp4": "07112f4ac1cc6c3b304c9cbbcd76184d37934963997508e7ff004fcea15550c2",
+    "cierre-energia.mp4": "f6ea9855e916da9b2931ab6c0336270ef09b45d45dd9ecd348ec07d6fefeb652",
+    "cierre-fecha.mp4": "52a90cde462c04f0a3b6f04573037a415bea7052c3911bbb4366c2e7595ebe4d",
+    "cierre-objetivo.mp4": "45fff7ecaf77af14c9760fdf6fc1e994ac25b7468b3040698884827fe773eae7",
+    "cierre-plan.mp4": "a1409c86f409a1c563d3d9ab4ee12df3b0d4354b4d7c52467d39366fee9fc04e",
+    "cierre-terreno.mp4": "4d8bbf5e33cf98191fc299bc3c5dc31bfc17bc657ec66b279652907486c1f740",
+    "final-comunicacion.mp4": "87e01738ae2f92e5a03ecf730145e1b5b3d543f4af086f3a8592da4dd3187731",
+    "final-exploracion.mp4": "a1b2a43d423d7cdf7aef960e1f6fe6dd5a32e57e5ab4fa8a2cf1c98932cbd6e5",
+    "final-revisar.mp4": "23e498b8f1e7c30edf40c9374b3733177ba48aeb035dda7734c4817588db532e"
+  },
+  "source_demo": "site01_luna_proyecto.zip",
+  "minigame_real_only": true,
+  "rounds": 4,
+  "rule_version": "training-v1",
+  "rule_is_operational": false,
+  "NASA_submission": false,
+  "verification": {
+    "python_tests_passed": 4,
+    "javascript_checks_passed": true,
+    "mission_gate_passed": true,
+    "return_to_mission_passed": true,
+    "video_closure_after_game_passed": true,
+    "target_project_verified": true,
+    "publication_updated": false
+  }
+}
