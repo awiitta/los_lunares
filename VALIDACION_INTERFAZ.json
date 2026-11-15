@@ -1,0 +1,24 @@
+{
+  "languages": [
+    "es",
+    "en",
+    "pt"
+  ],
+  "translation_entries": 743,
+  "verified": [
+    "English and Portuguese home and rover UI",
+    "Spanish language restoration and persistent preference",
+    "3D scene with original NASA model geometry",
+    "Mobile home without horizontal overflow",
+    "Direct rover modal and return to home",
+    "2026-11-15 applied in mission calendar",
+    "Incorrect terrain choice cleared and automatic hint displayed",
+    "Second wrong choice suggests A1; corrected choice completes sector"
+  ],
+  "date_coverage": "2025-01-01 to 2026-12-24 (seven complete days)",
+  "data_sources": [
+    "NASA SVS hourly archives 2025–2026",
+    "LOLA Site01 terrain supplied by the team"
+  ],
+  "automatic_NASA_submission": false
+}

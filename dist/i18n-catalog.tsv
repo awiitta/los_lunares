@@ -1,0 +1,744 @@
+Idioma|Language|Idioma
+⌂ Elegir experiencia|⌂ Choose an experience|⌂ Escolher experiência
+↗ Compartir para opinar|↗ Share for feedback|↗ Compartilhar para opinar
+PROTOTIPO EDUCATIVO|EDUCATIONAL PROTOTYPE|PROTÓTIPO EDUCATIVO
+Equipo Los Lunares|Team Los Lunares|Equipe Los Lunares
+TRES CAMINOS. UNA MISMA LUNA.|THREE WAYS TO EXPLORE. ONE MOON.|TRÊS CAMINHOS. UMA MESMA LUA.
+Tu próxima misión|Your next mission|Sua próxima missão
+empieza con una decisión.|starts with a decision.|começa com uma decisão.
+¿Dónde alunizar? ¿Cuándo habrá luz? ¿Cómo volvemos a comunicarnos con la Tierra? Exploralo a tu manera.|Where should we land? When will there be sunlight? How do we contact Earth? Explore your way.|Onde pousar? Quando haverá luz? Como voltar a nos comunicar com a Terra? Explore do seu jeito.
+Tierra|Earth|Terra
+Luna|Moon|Lua
+Sol|Sun|Sol
+Arrastrá para girar · representación sin escala|Drag to rotate · not to scale|Arraste para girar · representação sem escala
+Pausar rotación|Pause rotation|Pausar rotação
+Activar rotación|Start rotation|Ativar rotação
+PARA TODAS LAS PERSONAS|FOR EVERYONE|PARA TODAS AS PESSOAS
+Mi primera misión lunar|My first lunar mission|Minha primeira missão lunar
+Armá una misión paso a paso. Tocá, compará y descubrí por qué cada decisión importa.|Plan a mission step by step. Tap, compare and discover why every decision matters.|Planeje uma missão passo a passo. Toque, compare e descubra por que cada decisão importa.
+Decisiones simples con consecuencias visibles|Simple choices with visible outcomes|Decisões simples com consequências visíveis
+Pistas de energía, sombra y comunicación|Clues about energy, shadow and communication|Pistas de energia, sombra e comunicação
+Tu plan de misión al terminar|Your mission plan at the end|Seu plano de missão ao terminar
+Preparar mi primera misión →|Plan my first mission →|Preparar minha primeira missão →
+No necesitás saber de física ni programación.|No physics or programming knowledge needed.|Não precisa saber física nem programação.
+PARA UNIVERSITARIOS Y TÉCNICOS|FOR STUDENTS AND TECHNICAL EXPLORERS|PARA UNIVERSITÁRIOS E TÉCNICOS
+Laboratorio de misión|Mission laboratory|Laboratório de missão
+Compará sitios y fechas con horizontes, ventanas temporales y parámetros de ingeniería.|Compare sites and dates using horizons, time windows and engineering parameters.|Compare locais e datas com horizontes, janelas de tempo e parâmetros de engenharia.
+Azimut y elevación del Sol y de la Tierra|Sun and Earth azimuth and elevation|Azimute e elevação do Sol e da Terra
+Comparación A/B y exportación de resultados|A/B comparisons and result exports|Comparação A/B e exportação de resultados
+Relieve, radioenlace, energía y fuentes|Terrain, radio link, energy and sources|Relevo, enlace de rádio, energia e fontes
+Entrar al laboratorio →|Enter the laboratory →|Entrar no laboratório →
+Los mismos conceptos, con mayor profundidad.|The same concepts in greater depth.|Os mesmos conceitos, com mais profundidade.
+TU CURIOSIDAD TAMBIÉN CUENTA|YOUR CURIOSITY COUNTS TOO|SUA CURIOSIDADE TAMBÉM CONTA
+¿Querés ayudar a NASA jugando?|Want to help NASA through play?|Quer ajudar a NASA jogando?
+Jugá con datos lunares de NASA y ayudá a nuestro equipo a explorar cómo elegimos un lugar para alunizar.|Play with NASA lunar data and help our team explore how we choose a landing site.|Jogue com dados lunares da NASA e ajude nossa equipe a explorar como escolhemos um local de pouso.
+Pilotá el rover y buscá un alunizaje suave|Pilot the rover and aim for a gentle landing|Pilote o rover e tente fazer um pouso suave
+Aprendé con el altímetro, las pendientes y el combustible|Learn with the altimeter, slopes and fuel|Aprenda com o altímetro, as inclinações e o combustível
+Exportá tus intentos si querés compartirlos con el equipo|Export your attempts if you want to share them with the team|Exporte suas tentativas se quiser compartilhá-las com a equipe
+Jugar con Félicette →|Play with Félicette →|Jogar com Félicette →
+Los intentos se guardan en tu navegador. No se envían automáticamente a NASA; este es un proyecto educativo independiente.|Attempts are saved in your browser. They are not sent to NASA automatically; this is an independent educational project.|As tentativas ficam salvas no seu navegador. Não são enviadas automaticamente à NASA; este é um projeto educativo independente.
+DATOS REALES · PRÁCTICA VIRTUAL|REAL DATA · VIRTUAL PRACTICE|DADOS REAIS · PRÁTICA VIRTUAL
+Practicá un alunizaje con Félicette|Practice a lunar landing with Félicette|Pratique um pouso lunar com Félicette
+Volver al inicio ✕|Back to home ✕|Voltar ao início ✕
+¡Buen alunizaje! Podés volver a jugar o explorar tu primera misión.|Nice landing! Play again or explore your first mission.|Bom pouso! Você pode jogar novamente ou explorar sua primeira missão.
+Prototipo educativo: datos astronómicos NASA de 2025–2026 y horizontes LOLA muestreados. No es un simulador de vuelo ni una herramienta operativa.|Educational prototype: NASA astronomy data for 2025–2026 and sampled LOLA horizons. Not a flight simulator or an operational tool.|Protótipo educativo: dados astronômicos da NASA de 2025–2026 e horizontes LOLA amostrados. Não é um simulador de voo nem uma ferramenta operacional.
+PLANIFICACIÓN DE MISIÓN|MISSION PLANNING|PLANEJAMENTO DE MISSÃO
+Centro de misión|Mission control|Centro de missão
+Comparar sitios y fechas|Compare sites and dates|Comparar locais e datas
+Relieve y pendientes|Terrain and slopes|Relevo e inclinações
+Radioenlace|Radio link|Enlace de rádio
+Energía y supervivencia|Energy and survival|Energia e sobrevivência
+Dar feedback|Give feedback|Dar feedback
+Datos y metodología|Data and methods|Dados e metodologia
+MODO EXPLORACIÓN|EXPLORATION MODE|MODO EXPLORAÇÃO
+De la topografía a la ventana de comunicación.|From topography to communication windows.|Da topografia à janela de comunicação.
+Interfaz adaptada del dashboard ZCS.COM del equipo.|Interface adapted from the team's ZCS.COM dashboard.|Interface adaptada do dashboard ZCS.COM da equipe.
+← Elegir experiencia|← Choose an experience|← Escolher experiência
+SIMULACIÓN EDUCATIVA|EDUCATIONAL SIMULATION|SIMULAÇÃO EDUCATIVA
+Simulación educativa|Educational simulation|Simulação educativa
+↺ Empezar de nuevo|↺ Start over|↺ Começar de novo
+✦ Jugar a Descenso perfecto con Félicette ↗|✦ Play Perfect Descent with Félicette ↗|✦ Jogar Descida perfeita com Félicette ↗
+Alunizaje sobre un corte de Site01; simulación educativa.|Landing on a Site01 profile; educational simulation.|Pouso em um perfil de Site01; simulação educativa.
+← Volver|← Back|← Voltar
+Continuar →|Continue →|Continuar →
+Tu misión|Your mission|Sua missão
+El lugar|The site|O local
+La fecha|The date|A data
+La energía|Energy|A energia
+La conexión|Communication|A conexão
+Tu plan|Your plan|Seu plano
+Resultado|Result|Resultado
+Elegí tu objetivo|Choose your goal|Escolha seu objetivo
+Explorá el terreno|Explore the terrain|Explore o terreno
+Mové el tiempo|Move through time|Avance no tempo
+Cuidá tu batería|Manage your battery|Cuide da sua bateria
+Buscá la Tierra|Look for Earth|Procure a Terra
+Uní las decisiones|Connect your decisions|Junte as decisões
+¿Explorar con luz o enviar noticias a casa?|Explore in sunlight or send news home?|Explorar com luz ou enviar notícias para casa?
+Mirá la Luna en colores y compará sitios.|Explore the Moon in color and compare sites.|Veja a Lua em cores e compare locais.
+Descubrí cómo cambia el cielo durante tu misión.|Discover how the sky changes during your mission.|Descubra como o céu muda durante sua missão.
+Orientá el panel y preparate para la sombra.|Point your panel and prepare for shadow.|Oriente o painel e prepare-se para a sombra.
+Evitá obstáculos o guardá datos para después.|Avoid obstacles or store data for later.|Evite obstáculos ou guarde dados para depois.
+Revisá tu misión y probá otras combinaciones.|Review your mission and try other combinations.|Revise sua missão e teste outras combinações.
+TU AVENTURA EN SEIS DECISIONES|YOUR ADVENTURE IN SIX DECISIONS|SUA AVENTURA EM SEIS DECISÕES
+Una misión se construye paso a paso.|A mission is built step by step.|Uma missão se constrói passo a passo.
+Conocé el recorrido. Cuando estés listo, tocá|Explore the journey. When you are ready, tap|Conheça o percurso. Quando estiver pronto, toque em
+para empezar con Félicette.|to start with Félicette.|para começar com Félicette.
+Empezar por aquí →|Start here →|Começar por aqui →
+Ver qué vamos a descubrir ↗|See what we will discover ↗|Veja o que vamos descobrir ↗
+Ver el recorrido completo ⌄|See the full journey ⌄|Ver o percurso completo ⌄
+COMANDANTE, TE NECESITAMOS|COMMANDER, WE NEED YOU|COMANDANTE, PRECISAMOS DE VOCÊ
+¿Tu primera misión lunar?|Your first lunar mission?|Sua primeira missão lunar?
+Vas a elegir dónde y cuándo alunizar, cómo conseguir energía y cuándo enviar noticias a casa. ¿Qué te gustaría priorizar?|Choose where and when to land, how to get energy and when to send news home. What would you like to prioritize?|Você vai escolher onde e quando pousar, como obter energia e quando enviar notícias para casa. O que gostaria de priorizar?
+☼ EXPLORAR|☼ EXPLORE|☼ EXPLORAR
+◎ CONECTAR|◎ CONNECT|◎ CONECTAR
+Explorar con energía solar|Explore with solar power|Explorar com energia solar
+Enviar noticias a la Tierra|Send news to Earth|Enviar notícias para a Terra
+Buscá más oportunidades de luz para operar tu rover.|Find more opportunities for sunlight to operate your rover.|Busque mais oportunidades de luz para operar seu rover.
+Buscá ventanas para compartir tus fotos y descubrimientos.|Find windows to share your photos and discoveries.|Busque janelas para compartilhar suas fotos e descobertas.
+✓ Elegido|✓ Selected|✓ Escolhido
+No existe una misión ideal para todo. Vas a descubrir qué combinación se adapta mejor a tu objetivo.|There is no ideal mission for every goal. Discover which combination best fits yours.|Não existe uma missão ideal para tudo. Descubra qual combinação funciona melhor para seu objetivo.
+Planificamos un rover robótico durante siete días. No simulamos vuelos tripulados ni el lanzamiento de un cohete.|We plan a robotic rover mission lasting seven days. We do not simulate crewed flights or rocket launches.|Planejamos um rover robótico durante sete dias. Não simulamos voos tripulados nem o lançamento de um foguete.
+Listos… ¡a planificar! →|Ready… let's plan! →|Prontos… vamos planejar! →
+PASO 1 · EL LUGAR|STEP 1 · THE SITE|PASSO 1 · O LOCAL
+¿Dónde querés alunizar?|Where would you like to land?|Onde você quer pousar?
+Compará tres ubicaciones del terreno real de Site01. Un lugar puede ofrecer mucha luz y otro más tiempo de comunicación.|Compare three locations on real Site01 terrain. One may offer more sunlight and another more communication time.|Compare três locais no terreno real de Site01. Um pode oferecer mais luz e outro mais tempo de comunicação.
+TU DESTINO, EN CONTEXTO|YOUR DESTINATION IN CONTEXT|SEU DESTINO EM CONTEXTO
+Una Luna. Muchos caminos.|One Moon. Many paths.|Uma Lua. Muitos caminhos.
+Acercarme al terreno y sus pendientes →|Explore the terrain and its slopes →|Explorar o terreno e suas inclinações →
+COMPARÁ Y ELEGÍ TU LUGAR|COMPARE AND CHOOSE YOUR SITE|COMPARE E ESCOLHA SEU LOCAL
+Así se ve el cielo desde tu sitio|The sky as seen from your site|O céu visto do seu local
+✦ ¿Qué significa el verde?|✦ What does green mean?|✦ O que significa o verde?
+✦ ¿Por qué una montaña cambia la misión?|✦ How can a mountain change the mission?|✦ Por que uma montanha muda a missão?
+✦ TU GUÍA DE ESTA ETAPA|✦ YOUR GUIDE FOR THIS STAGE|✦ SEU GUIA DESTA ETAPA
+¿Qué tengo que hacer?|What should I do?|O que tenho que fazer?
+Cerrar guía|Close guide|Fechar guia
+¡Entendido, vamos! →|Got it, let's go! →|Entendi, vamos! →
+Elegí qué querés lograr|Choose what you want to achieve|Escolha o que quer realizar
+Encontrá un lugar para tu rover|Find a site for your rover|Encontre um local para seu rover
+Tu rover necesita una prioridad. Las dos opciones son válidas.|Your rover needs a priority. Both options are valid.|Seu rover precisa de uma prioridade. As duas opções são válidas.
+Elegí explorar con energía solar o enviar noticias a la Tierra.|Choose to explore with solar power or send news to Earth.|Escolha explorar com energia solar ou enviar notícias para a Terra.
+Leé el consejo de Félicette para conocer qué cambia.|Read Félicette's advice to learn what changes.|Leia o conselho de Félicette para saber o que muda.
+Tocá Continuar y preparemos el lugar.|Tap Continue and let's choose a site.|Toque em Continuar e vamos preparar o local.
+Al terminar tendrás un objetivo para comparar tus próximas decisiones.|You will have a goal to guide your next decisions.|Ao terminar, terá um objetivo para comparar suas próximas decisões.
+La Luna completa te ubica. Las tarjetas comparan tres lugares del terreno real.|The whole Moon gives you context. The cards compare three real terrain locations.|A Lua inteira oferece contexto. Os cartões comparam três locais do terreno real.
+Girá la Luna y compará las horas de luz y Tierra visible de cada tarjeta.|Rotate the Moon and compare the hours of sunlight and Earth visibility on each card.|Gire a Lua e compare as horas de luz e de Terra visível em cada cartão.
+Acercate al relieve para explorar alturas y pendientes.|Zoom into the terrain to explore heights and slopes.|Aproxime-se do relevo para explorar alturas e inclinações.
+Elegí un sitio según tu objetivo; Félicette explica si algo necesita cambiar.|Choose a site for your goal; Félicette explains what needs adjusting.|Escolha um local conforme seu objetivo; Félicette explica se algo precisa mudar.
+El verde es una pista de pendiente, no una garantía de aterrizaje.|Green is a slope clue, not a landing guarantee.|O verde é uma pista de inclinação, não uma garantia de pouso.
+FÉLICETTE DICE…|FÉLICETTE SAYS…|FÉLICETTE DIZ…
+Otro dato ✦|Another fact ✦|Outra curiosidade ✦
+Tu copilota ✦|Your copilot ✦|Sua copilota ✦
+¡Hola! Soy Félicette.|Hi! I'm Félicette.|Olá! Sou Félicette.
+Antes de despegar, mirá las seis decisiones. Tocá la primera tarjeta y preparemos tu rover.|Before takeoff, explore the six decisions. Tap the first card and let's prepare your rover.|Antes de decolar, veja as seis decisões. Toque no primeiro cartão e vamos preparar seu rover.
+¡Empecemos por tu objetivo!|Let's start with your goal!|Vamos começar pelo seu objetivo!
+Primero elegí tu prioridad: luz para explorar o ventanas para comunicar. La elección cambia cómo vamos a evaluar los siguientes pasos.|First choose your priority: sunlight to explore or communication windows. Your choice changes how we assess the next steps.|Primeiro escolha sua prioridade: luz para explorar ou janelas para comunicar. A escolha muda como avaliamos os próximos passos.
+¿Dónde apoyamos las ruedas?|Where should we put our wheels?|Onde vamos apoiar as rodas?
+Las montañas pueden ocultar el Sol o la Tierra. Compará los tres sitios según tu prioridad y después explorá el terreno.|Mountains can hide the Sun or Earth. Compare the three sites for your priority, then explore the terrain.|As montanhas podem ocultar o Sol ou a Terra. Compare os três locais conforme sua prioridade e depois explore o terreno.
+UNA AVENTURA CON FÉLICETTE|AN ADVENTURE WITH FÉLICETTE|UMA AVENTURA COM FÉLICETTE
+← Volver a las elecciones|← Back to the choices|← Voltar às escolhas
+¡Oh, no! Tenemos un contratiempo espacial.|Oh no! We have a space setback.|Ah, não! Tivemos um imprevisto espacial.
+Es un rescate de nuestra historia: podés probar sin límite de tiempo.|This rescue is part of our story: try without a time limit.|É um resgate da nossa história: você pode tentar sem limite de tempo.
+1 · Elegí una zona|1 · Choose a zone|1 · Escolha uma zona
+2 · Alunizá tu rover|2 · Land your rover|2 · Pouse seu rover
+1 · Elegir una zona →|1 · Choose a zone →|1 · Escolher uma zona →
+2 · Alunizar mi rover →|2 · Land my rover →|2 · Pousar meu rover →
+¡Zona elegida! Ahora vamos a alunizar.|Zone selected! Now let's land.|Zona escolhida! Agora vamos pousar.
+Completaste la lectura del mapa. En el segundo paso, usá el motor y la dirección para lograr un descenso suave. Practicamos sobre un corte de Site01; no es una reproducción exacta de los cuadrantes que marcaste.|You completed the map exercise. Next, use thrust and steering for a gentle descent. We practice on a Site01 profile, not an exact copy of your selected cells.|Você concluiu a leitura do mapa. Agora use o motor e a direção para uma descida suave. Praticamos em um perfil de Site01, não em uma reprodução exata dos quadrantes selecionados.
+Volver a elegir|Choose again|Escolher novamente
+Volver a las elecciones|Back to the choices|Voltar às escolhas
+¡Gracias, me salvaste!|Thank you, you saved me!|Obrigada, você me salvou!
+Volver a elegir y continuar →|Choose again and continue →|Escolher novamente e continuar →
+Elegí otra configuración para seguir|Choose another configuration to continue|Escolha outra configuração para continuar
+Descenso perfecto|Perfect Descent|Descida perfeita
+Ayudá a Félicette a alunizar suavemente.|Help Félicette make a gentle lunar landing.|Ajude Félicette a pousar suavemente na Lua.
+Cómo jugar · Datos|How to play · Data|Como jogar · Dados
+Relieve 3D|3D terrain|Relevo 3D
+Empezar|Start|Começar
+Otra vez|Play again|Jogar novamente
+Otro corte|Another profile|Outro perfil
+Elegir sitio|Choose a site|Escolher local
+Reintentar|Try again|Tentar novamente
+¡Aterrizaje perfecto!|Perfect landing!|Pouso perfeito!
+El módulo se dañó|The module was damaged|O módulo foi danificado
+¡Félicette llegó a salvo! Es un logro del juego; el terreno todavía necesita evaluación.|Félicette arrived safely! This is an in-game achievement; the terrain still needs evaluation.|Félicette chegou em segurança! É uma conquista no jogo; o terreno ainda precisa de avaliação.
+Volver a mi misión →|Back to my mission →|Voltar à minha missão →
+altura|altitude|altura
+vel. de descenso|descent speed|vel. de descida
+vel. horizontal|horizontal speed|vel. horizontal
+inclinación|tilt|inclinação
+pendiente debajo|slope below|inclinação abaixo
+combustible|fuel|combustível
+récord del sitio|site record|recorde do local
+▲ MOTOR|▲ THRUST|▲ MOTOR
+GIRO|TURN|GIRO
+ALTÍMETRO|ALTIMETER|ALTÍMETRO
+m sobre el suelo|m above ground|m acima do solo
+velocidad de bajada|descent speed|velocidade de descida
+suave|gentle|suave
+rápido|fast|rápido
+peligroso|dangerous|perigoso
+subiendo|ascending|subindo
+flotando|hovering|flutuando
+DESCENSO RÁPIDO|FAST DESCENT|DESCIDA RÁPIDA
+DERIVA LATERAL|SIDEWAYS DRIFT|DERIVA LATERAL
+NAVE INCLINADA|MODULE TILTED|MÓDULO INCLINADO
+TERRENO EMPINADO|STEEP TERRAIN|TERRENO ÍNGREME
+SIN COMBUSTIBLE|OUT OF FUEL|SEM COMBUSTÍVEL
+COMBUSTIBLE BAJO|LOW FUEL|POUCO COMBUSTÍVEL
+⚠ ATENCIÓN|⚠ CAUTION|⚠ ATENÇÃO
+⚠ DANGER|⚠ DANGER|⚠ PERIGO
+OBJETIVOS PARA UN BUEN ALUNIZAJE|GOALS FOR A GOOD LANDING|OBJETIVOS PARA UM BOM POUSO
+Objetivos para un buen alunizaje|Goals for a good landing|Objetivos para um bom pouso
+RESULTADO DEL CONTACTO|TOUCHDOWN RESULT|RESULTADO DO CONTATO
+Resultado del contacto|Touchdown result|Resultado do contato
+Apoyá las dos patas sobre una|Place both landing legs on a|Apoie as duas pernas em uma
+plataforma celeste|cyan platform|plataforma azul-clara
+cumpliendo las cuatro condiciones.|while meeting all four conditions.|cumprindo as quatro condições.
+Aterrizá suave sobre una|Land gently on a|Pouse suavemente em uma
+: son los tramos de este corte con pendiente real < 8°. Las chicas valen más (×2, ×3).|: these sections of the profile have a real slope < 8°. Smaller ones score more (×2, ×3).|: são os trechos deste perfil com inclinação real < 8°. Os menores valem mais (×2, ×3).
+Gravedad lunar: 1,62 m/s² · combustible limitado|Lunar gravity: 1.62 m/s² · limited fuel|Gravidade lunar: 1,62 m/s² · combustível limitado
+←|←|←
+girar ·|rotate ·|girar ·
+o|or|ou
+espacio|space|espaço
+motor ·|thrust ·|motor ·
+reiniciar ·|restart ·|reiniciar ·
+otro corte|another profile|outro perfil
+Repetición del aterrizaje|Landing replay|Repetição do pouso
+ilustración sobre el perfil real|illustration on the real terrain profile|ilustração sobre o perfil real
+1 · a 5 m|1 · at 5 m|1 · a 5 m
+2 · contacto|2 · touchdown|2 · contato
+3 · aterrizaje válido|3 · valid landing|3 · pouso válido
+3 · módulo destruido|3 · module destroyed|3 · módulo destruído
+A 5 m|At 5 m|A 5 m
+CONTACTO|TOUCHDOWN|CONTATO
+RESULTADO|RESULT|RESULTADO
+Por qué salió bien|Why it worked|Por que deu certo
+Por qué no llegaste|Why the landing failed|Por que o pouso falhou
+El lugar|The site|O local
+☀ Energía|☀ Energy|☀ Energia
+📡 Comunicación|📡 Communication|📡 Comunicação
+Tu guía de alunizaje|Your lunar landing guide|Seu guia de pouso lunar
+Cerrar ✕|Close ✕|Fechar ✕
+giran el módulo;|rotate the module;|giram o módulo;
+↑ o espacio|↑ or space|↑ ou espaço
+enciende el motor. En celular mantené pulsados los controles inferiores. R reinicia y N cambia de corte. También podés arrastrar la palanca de mando. El altímetro y las alarmas te ayudan a vigilar la aproximación; el botón de sonido permite silenciarlas.|turns on thrust. On mobile, hold the controls at the bottom. R restarts and N changes the profile. You can also drag the joystick. The altimeter and alarms help you monitor your approach; use the sound button to mute them.|liga o motor. No celular, mantenha pressionados os controles inferiores. R reinicia e N muda o perfil. Você também pode arrastar a alavanca. O altímetro e os alarmes ajudam a acompanhar a aproximação; o botão de som permite silenciá-los.
+Buscá una plataforma celeste. Para ganar: descenso ≤ 2 m/s, velocidad horizontal ≤ 1,2 m/s, inclinación ≤ 12° y ambas patas sobre una plataforma.|Find a cyan platform. To win: descent ≤ 2 m/s, horizontal speed ≤ 1.2 m/s, tilt ≤ 12° and both legs on a platform.|Busque uma plataforma azul-clara. Para vencer: descida ≤ 2 m/s, velocidade horizontal ≤ 1,2 m/s, inclinação ≤ 12° e ambas as pernas sobre uma plataforma.
+Las plataformas usan pendiente < 8° calculada con θ = atan(√((∂z/∂x)² + (∂z/∂y)²)). El juego original toma cortes del terreno muestreado a 100 m, escala 1:20 y relieve exagerado ×2. La gravedad es 1,62 m/s².|Platforms use slope < 8° calculated with θ = atan(√((∂z/∂x)² + (∂z/∂y)²)). The original game uses terrain profiles sampled at 100 m, scale 1:20 and relief exaggerated ×2. Gravity is 1.62 m/s².|As plataformas usam inclinação < 8° calculada com θ = atan(√((∂z/∂x)² + (∂z/∂y)²)). O jogo original usa perfis do terreno amostrado a 100 m, escala 1:20 e relevo exagerado ×2. A gravidade é 1,62 m/s².
+En la misión usamos únicamente Site01 real, a partir del DEM LOLA del archivo del equipo. Los otros 24 sitios del visor original son simulados. El fondo terrestre y la nave son ilustrativos.|The mission uses only real Site01 terrain from the team's LOLA DEM. The other 24 sites in the original viewer are simulated. Earth and the spacecraft are illustrative.|Na missão usamos apenas Site01 real, a partir do DEM LOLA do arquivo da equipe. Os outros 24 locais do visualizador original são simulados. A Terra e a nave são ilustrativas.
+Esta es una simulación didáctica: ganar no certifica un aterrizaje, ni identifica rocas o profundidad de cráteres. Los descensos se guardan solo en este navegador (hasta 5000 registros), sin datos de contacto ni envíos automáticos a NASA.|This is an educational simulation: winning does not certify a landing or identify rocks or crater depths. Descents are stored only in this browser (up to 5000 records), without contact details or automatic transmission to NASA.|Esta é uma simulação educativa: vencer não certifica um pouso nem identifica rochas ou a profundidade de crateras. As descidas ficam salvas apenas neste navegador (até 5000 registros), sem dados de contato nem envio automático à NASA.
+↓ Exportar mis descensos|↓ Export my descents|↓ Exportar minhas descidas
+Elegí una zona candidata|Choose a candidate zone|Escolha uma zona candidata
+Marcá al menos una y revisá tu elección.|Select at least one and review your choice.|Marque pelo menos uma e revise sua escolha.
+Datos y aportes|Data and contributions|Dados e contribuições
+Relieve sombreado|Shaded relief|Relevo sombreado
+Ver pendientes|Show slopes|Ver inclinações
+La luz del sombreado es cartográfica, no una fecha de misión.|Shading is cartographic lighting, not a mission date.|A luz do sombreado é cartográfica, não uma data de missão.
+Sin cuadrantes seleccionados|No cells selected|Nenhum quadrante selecionado
+Tocá un cuadrante para inspeccionarlo.|Tap a cell to inspect it.|Toque em um quadrante para inspecioná-lo.
+Revisar mi elección →|Review my choice →|Revisar minha escolha →
+Una pista de Félicette ✦|A hint from Félicette ✦|Uma pista de Félicette ✦
+Datos y criterios|Data and criteria|Dados e critérios
+Regla de esta práctica|Practice rule|Regra desta prática
+≥ 80% de píxeles con pendiente < 8°|≥ 80% of pixels with slope < 8°|≥ 80% dos pixels com inclinação < 8°
+Relieve local P95–P5 ≤ 20 m|Local relief P95–P5 ≤ 20 m|Relevo local P95–P5 ≤ 20 m
+Umbrales didácticos, no requisitos de un vehículo.|Educational thresholds, not vehicle requirements.|Limites educativos, não requisitos de um veículo.
+TU MIRADA PUEDE AYUDAR AL EQUIPO|YOUR OBSERVATIONS CAN HELP THE TEAM|SEU OLHAR PODE AJUDAR A EQUIPE
+Jugá, aprendé y decidí si querés guardar tu aporte.|Play, learn and decide whether to save your contribution.|Jogue, aprenda e decida se quer salvar sua contribuição.
+Estas selecciones son anotaciones para revisar. No se envían automáticamente a NASA ni se usan para aprobar aterrizajes.|These selections are annotations for review. They are not sent to NASA automatically or used to approve landings.|Estas seleções são anotações para revisão. Não são enviadas automaticamente à NASA nem usadas para aprovar pousos.
+Guardar mis elecciones en este navegador para que pueda exportarlas y compartirlas con el equipo.|Save my choices in this browser so I can export them and share them with the team.|Salvar minhas escolhas neste navegador para exportá-las e compartilhá-las com a equipe.
+Sin anotaciones guardadas.|No annotations saved.|Nenhuma anotação salva.
+↓ Exportar mis anotaciones|↓ Export my annotations|↓ Exportar minhas anotações
+¡Zona candidata! Ir al alunizaje →|Candidate zone! Go to the landing →|Zona candidata! Ir para o pouso →
+¡Félicette está a salvo! Volver →|Félicette is safe! Back →|Félicette está a salvo! Voltar →
+Probar otro sector ↗|Try another sector ↗|Testar outro setor ↗
+Volver al primer sector ↺|Back to the first sector ↺|Voltar ao primeiro setor ↺
+Miremos una vez más, sin apuro.|Let's take another look, no rush.|Vamos olhar de novo, sem pressa.
+Podés desmarcar esos cuadrantes y buscar otro con la capa de pendientes.|Unselect those cells and look for another using the slope layer.|Desmarque esses quadrantes e procure outro com a camada de inclinações.
+PASO 2 · EL MOMENTO|STEP 2 · TIMING|PASSO 2 · O MOMENTO
+¿Y si viajamos otra semana?|What if we travel another week?|E se viajarmos em outra semana?
+El mismo sitio puede cambiar con la fecha. Compará tu momento elegido con siete días después.|The same site changes with the date. Compare your chosen time with seven days later.|O mesmo local pode mudar conforme a data. Compare o momento escolhido com sete dias depois.
+PASO 3 · LA ENERGÍA|STEP 3 · ENERGY|PASSO 3 · A ENERGIA
+Que no se apague tu aventura.|Keep your adventure powered.|Não deixe sua aventura apagar.
+Elegí la capacidad de batería y cómo orientar el panel. Mirá cómo cambia la energía disponible.|Choose battery capacity and panel orientation. See how available energy changes.|Escolha a capacidade da bateria e como orientar o painel. Veja como muda a energia disponível.
+PASO 4 · LA CONEXIÓN|STEP 4 · COMMUNICATION|PASSO 4 · A CONEXÃO
+¿Cómo enviamos noticias a casa?|How do we send news home?|Como enviamos notícias para casa?
+Una antena más alta puede despejar obstáculos. Si la Tierra queda oculta, podés guardar los datos para enviarlos después.|A taller antenna may clear obstacles. If Earth is hidden, store your data and send it later.|Uma antena mais alta pode superar obstáculos. Se a Terra ficar oculta, guarde os dados para enviá-los depois.
+MISIÓN SIMULADA · APRENDIZAJE COMPLETADO|SIMULATED MISSION · LEARNING COMPLETED|MISSÃO SIMULADA · APRENDIZADO CONCLUÍDO
+PASO 5 · LA REVISIÓN|STEP 5 · REVIEW|PASSO 5 · A REVISÃO
+Tu misión tiene un plan.|Your mission has a plan.|Sua missão tem um plano.
+Cada decisión cuenta.|Every decision matters.|Cada decisão conta.
+Descubriste cómo lugar, fecha, energía y horizonte se relacionan. Podés cambiar tus elecciones y volver a comparar.|You discovered how site, date, energy and horizon relate. Change your choices and compare again.|Você descobriu como local, data, energia e horizonte se relacionam. Mude suas escolhas e compare novamente.
+Revisá tu configuración antes de la cuenta regresiva. Las advertencias forman parte del aprendizaje.|Review your settings before the countdown. Warnings are part of learning.|Revise sua configuração antes da contagem regressiva. Os avisos fazem parte do aprendizado.
+Descubrí cuándo hay luz y contacto|Discover when sunlight and contact are available|Descubra quando há luz e contato
+Podés mirar el mismo momento desde el rover, desde arriba o con la Luna de perfil.|View the same moment from the rover, from above or from the side of the Moon.|Veja o mesmo momento a partir do rover, de cima ou com a Lua de perfil.
+Elegí una fecha y tocá Explorar esta fecha.|Choose a date and tap Explore this date.|Escolha uma data e toque em Explorar esta data.
+Mové el tiempo y cambiá de vista: observá cuándo el Sol ilumina el panel o queda oculto.|Move through time and change views: see when sunlight reaches the panel or becomes blocked.|Avance no tempo e mude a vista: observe quando o Sol ilumina o painel ou fica oculto.
+Marcá horarios, pedí pistas y probá tu plan. Félicette explica qué pasó.|Mark times, ask for hints and test your plan. Félicette explains what happened.|Marque horários, peça pistas e teste seu plano. Félicette explica o que aconteceu.
+No hace falta acertar de entrada. Las pistas y los reintentos forman parte del juego.|You do not need to get it right first time. Hints and retries are part of the game.|Não precisa acertar de primeira. As pistas e novas tentativas fazem parte do jogo.
+Prepará la energía para seguir|Prepare your energy for the journey|Prepare a energia para continuar
+El panel genera energía y la batería guarda una parte para los momentos sin generación.|The panel generates energy and the battery stores some for times without generation.|O painel gera energia e a bateria guarda uma parte para os momentos sem geração.
+Elegí la capacidad de batería y cómo se orienta el panel.|Choose battery capacity and how the panel is oriented.|Escolha a capacidade da bateria e como o painel é orientado.
+Mirá la energía que genera el panel y si queda consumo sin cubrir.|Check the energy generated by the panel and any unmet demand.|Veja a energia gerada pelo painel e se resta consumo sem cobertura.
+Probá otra combinación si falta energía; Félicette puede proponerte un rescate.|Try another combination if energy is insufficient; Félicette may suggest a rescue.|Teste outra combinação se faltar energia; Félicette pode propor um resgate.
+Una batería más grande almacena más: no crea luz ni energía por sí sola.|A larger battery stores more: it does not create sunlight or energy.|Uma bateria maior armazena mais: não cria luz nem energia por si só.
+Buscá el camino hacia la Tierra|Find the path to Earth|Encontre o caminho até a Terra
+Para mandar fotos, la Tierra tiene que superar el horizonte del rover.|To send photos, Earth must be above the rover's horizon.|Para enviar fotos, a Terra precisa estar acima do horizonte do rover.
+Probá la altura de la antena y observá si cambian las ventanas.|Try different antenna heights and see if the windows change.|Teste a altura da antena e observe se as janelas mudam.
+Decidí si podés guardar datos para enviarlos después o necesitás contacto continuo.|Decide whether to store data for later or require continuous contact.|Decida se pode guardar dados para enviar depois ou se precisa de contato contínuo.
+Revisá los cortes que aparecen: Félicette te explica cómo ajustar tu estrategia.|Review the outages: Félicette explains how to adjust your strategy.|Revise as interrupções: Félicette explica como ajustar sua estratégia.
+Tierra visible es una oportunidad geométrica; todavía falta validar el enlace de radio.|Earth visibility is a geometric opportunity; the radio link still needs validation.|Terra visível é uma oportunidade geométrica; ainda falta validar o enlace de rádio.
+Uní las decisiones de tu aventura|Bring your adventure's decisions together|Junte as decisões da sua aventura
+El resumen aparece primero para que puedas revisar tu plan sin buscar al final.|The summary comes first so you can review your plan without searching at the end.|O resumo aparece primeiro para você revisar seu plano sem procurar no final.
+Leé el resumen y volvé a una decisión si querés cambiar algo.|Read the summary and return to a decision if you want to make a change.|Leia o resumo e volte a uma decisão se quiser mudar algo.
+Probá la misión para ver su cierre con Félicette.|Try the mission to see its ending with Félicette.|Teste a missão para ver o final com Félicette.
+Descargá tu plan o abrí el laboratorio para investigar más.|Download your plan or open the laboratory to investigate further.|Baixe seu plano ou abra o laboratório para investigar mais.
+Aprender a comparar es el objetivo. Completar el recorrido no certifica una misión real.|Learning to compare is the goal. Completing the journey does not certify a real mission.|Aprender a comparar é o objetivo. Completar o percurso não certifica uma missão real.
+EXPLORÁ EL ESCENARIO DE TU MISIÓN|EXPLORE YOUR MISSION SCENARIO|EXPLORE O CENÁRIO DA SUA MISSÃO
+Luna, Tierra y Sol.|Moon, Earth and Sun.|Lua, Terra e Sol.
+Elegí dónde y cuándo alunizar. Compará luz solar y comunicación con la Tierra.|Choose where and when to land. Compare sunlight and communication with Earth.|Escolha onde e quando pousar. Compare luz solar e comunicação com a Terra.
+EXPLORACIÓN 3D|3D EXPLORATION|EXPLORAÇÃO 3D
+Explorar 18 alunizajes históricos|Explore 18 historic lunar landings|Explorar 18 pousos lunares históricos
+Referencia y contexto ↗|Reference and context ↗|Referência e contexto ↗
+ALUNIZAJES HISTÓRICOS|HISTORIC LUNAR LANDINGS|POUSOS LUNARES HISTÓRICOS
+Programa|Program|Programa
+Todos los programas|All programs|Todos os programas
+Seleccionar misión|Select a mission|Selecionar missão
+Mapa NASA ↗|NASA map ↗|Mapa NASA ↗
+Comunicación|Communication|Comunicação
+Iluminación|Illumination|Iluminação
+Evaluar este sitio ↓|Assess this site ↓|Avaliar este local ↓
+Comparar sitios y fechas ↗|Compare sites and dates ↗|Comparar locais e datas ↗
+Sitio|Site|Local
+Fecha UTC|UTC date|Data UTC
+Altura del observador (m)|Observer height (m)|Altura do observador (m)
+Modo|Mode|Modo
+Actual|Current|Atual
+Luz solar|Sunlight|Luz solar
+Tierra visible|Earth visible|Terra visível
+Ambos visibles|Both visible|Ambos visíveis
+Mayor sombra|Longest shadow|Maior sombra
+Mayor corte|Longest outage|Maior interrupção
+Horizonte local|Local horizon|Horizonte local
+Cargando archivo NASA…|Loading NASA archive…|Carregando arquivo NASA…
+Archivo NASA cargado|NASA archive loaded|Arquivo NASA carregado
+Elevación|Elevation|Elevação
+Azimut|Azimuth|Azimute
+Distancia|Distance|Distância
+Fase lunar|Lunar phase|Fase lunar
+Pendiente|Slope|Inclinação
+Elevación z|Elevation z|Elevação z
+Elevación × pendiente|Elevation × slope|Elevação × inclinação
+Antena A sobre suelo (m)|Antenna A above ground (m)|Antena A sobre o solo (m)
+Antena B sobre suelo (m)|Antenna B above ground (m)|Antena B sobre o solo (m)
+Frecuencia (GHz)|Frequency (GHz)|Frequência (GHz)
+Potencia TX (dBm)|TX power (dBm)|Potência TX (dBm)
+Ganancia por antena (dBi)|Gain per antenna (dBi)|Ganho por antena (dBi)
+Sensibilidad RX (dBm)|RX sensitivity (dBm)|Sensibilidade RX (dBm)
+Perfil del enlace rover ↔ base lunar|Rover ↔ lunar base link profile|Perfil do enlace rover ↔ base lunar
+PERFIL DEMOSTRATIVO|DEMONSTRATION PROFILE|PERFIL DEMONSTRATIVO
+━ Trayectoria directa|━ Direct path|━ Trajetória direta
+┄ Primera zona de Fresnel|┄ First Fresnel zone|┄ Primeira zona de Fresnel
+▰ Terreno + curvatura|▰ Terrain + curvature|▰ Terreno + curvatura
+LÍNEA DE VISTA|LINE OF SIGHT|LINHA DE VISADA
+PÉRDIDA EN ESPACIO LIBRE|FREE-SPACE PATH LOSS|PERDA NO ESPAÇO LIVRE
+Modelo ideal|Ideal model|Modelo ideal
+POTENCIA RX IDEAL|IDEAL RX POWER|POTÊNCIA RX IDEAL
+2 dB de pérdidas adicionales asumidas|2 dB of assumed additional losses|2 dB de perdas adicionais presumidas
+MARGEN IDEAL|IDEAL MARGIN|MARGEM IDEAL
+Sin pérdidas por obstrucción|Without obstruction losses|Sem perdas por obstrução
+Probá con tu perfil de elevación|Try your own elevation profile|Teste seu perfil de elevação
+↑ Importar perfil CSV|↑ Import CSV profile|↑ Importar perfil CSV
+↓ CSV de ejemplo|↓ Sample CSV|↓ CSV de exemplo
+Restaurar demo|Restore demo|Restaurar demonstração
+UNA DECISIÓN, DOS ESCENARIOS|ONE DECISION, TWO SCENARIOS|UMA DECISÃO, DOIS CENÁRIOS
+¿Qué sitio y fecha favorecen tu misión?|Which site and date favor your mission?|Qual local e data favorecem sua missão?
+Cambiá el lugar o la fecha de cada escenario y compará iluminación y visibilidad terrestre durante los siguientes siete días.|Change the site or date of each scenario and compare illumination and Earth visibility over the following seven days.|Mude o local ou a data de cada cenário e compare iluminação e visibilidade da Terra nos sete dias seguintes.
+Misma fecha · comparar sitios|Same date · compare sites|Mesma data · comparar locais
+Mismo sitio · comparar fechas|Same site · compare dates|Mesmo local · comparar datas
+Intercambiar A ↔ B|Swap A ↔ B|Trocar A ↔ B
+Escenario A|Scenario A|Cenário A
+Escenario B|Scenario B|Cenário B
+7 DÍAS|7 DAYS|7 DIAS
+Sitio A|Site A|Local A
+Sitio B|Site B|Local B
+Borde de Shackleton|Shackleton rim|Borda de Shackleton
+Macizo Malapert|Malapert massif|Maciço Malapert
+Cresta de conexión|Connecting ridge|Crista de conexão
+Inicio UTC · A|UTC start · A|Início UTC · A
+Inicio UTC · B|UTC start · B|Início UTC · B
+Comparación de condiciones|Condition comparison|Comparação de condições
+HORIZONTES LOLA MUESTREADOS|SAMPLED LOLA HORIZONS|HORIZONTES LOLA AMOSTRADOS
+Escenario|Scenario|Cenário
+Panel solar: orientación, generación y almacenamiento|Solar panel: orientation, generation and storage|Painel solar: orientação, geração e armazenamento
+MODELO SIMPLIFICADO|SIMPLIFIED MODEL|MODELO SIMPLIFICADO
+Orientación|Orientation|Orientação
+Seguimiento ideal del Sol|Ideal Sun tracking|Rastreamento ideal do Sol
+Panel fijo|Fixed panel|Painel fixo
+Azimut del panel (° desde norte)|Panel azimuth (° from north)|Azimute do painel (° a partir do norte)
+Inclinación desde horizontal (°)|Tilt from horizontal (°)|Inclinação a partir da horizontal (°)
+Área del panel (m²)|Panel area (m²)|Área do painel (m²)
+Eficiencia eléctrica (%)|Electrical efficiency (%)|Eficiência elétrica (%)
+Pérdidas agregadas supuestas (%)|Assumed total losses (%)|Perdas totais presumidas (%)
+Eficiencia de carga (%)|Charging efficiency (%)|Eficiência de carga (%)
+Carga inicial de batería (%)|Initial battery charge (%)|Carga inicial da bateria (%)
+Período|Period|Período
+7 días terrestres (168 h)|7 Earth days (168 h)|7 dias terrestres (168 h)
+Un ciclo solar lunar aproximado (709 h)|One approximate lunar solar cycle (709 h)|Um ciclo solar lunar aproximado (709 h)
+GENERACIÓN ELÉCTRICA|ELECTRICAL GENERATION|GERAÇÃO ELÉTRICA
+Integración horaria del período|Hourly integration over the period|Integração horária do período
+CARGA ACUMULADA ACEPTADA|TOTAL ACCEPTED CHARGE|CARGA ACUMULADA ACEITA
+Puede sumar varios ciclos de batería|May include several battery cycles|Pode incluir vários ciclos de bateria
+ENERGÍA FINAL EN BATERÍA|FINAL BATTERY ENERGY|ENERGIA FINAL NA BATERIA
+Limitada por capacidad utilizable|Limited by usable capacity|Limitada pela capacidade utilizável
+DEMANDA NO CUBIERTA|UNMET DEMAND|DEMANDA NÃO ATENDIDA
+Déficit después de usar la batería|Deficit after using the battery|Déficit após usar a bateria
+Supuestos y significado de los porcentajes|Assumptions and meaning of percentages|Premissas e significado das porcentagens
+ENERGÍA ELÉCTRICA|ELECTRICAL ENERGY|ENERGIA ELÉTRICA
+Operar durante la sombra|Operating in shadow|Operar durante a sombra
+Batería utilizable (Wh)|Usable battery capacity (Wh)|Bateria utilizável (Wh)
+Consumo eléctrico (W)|Electrical load (W)|Consumo elétrico (W)
+Autonomía ideal = energía utilizable / consumo|Ideal autonomy = usable energy / load|Autonomia ideal = energia utilizável / consumo
+REFERENCIA ARGENTINA|ARGENTINE REFERENCE|REFERÊNCIA ARGENTINA
+Supervivencia térmica del rover|Rover thermal survival|Sobrevivência térmica do rover
+Calor|Heat|Calor
+Electricidad RF|RF electricity|Eletricidade RF
+Leer estudio de factibilidad ↗|Read the feasibility study ↗|Ler estudo de viabilidade ↗
+REVISIÓN EN EQUIPO|TEAM REVIEW|REVISÃO EM EQUIPE
+¿Con qué área te identificás?|Which field do you identify with?|Com qual área você se identifica?
+Dejanos tu devolución|Leave your feedback|Deixe seu feedback
+Nombre o alias (opcional)|Name or nickname (optional)|Nome ou apelido (opcional)
+Área que evaluás|Area you are reviewing|Área que está avaliando
+Claridad de la interfaz|Interface clarity|Clareza da interface
+Sin puntuar|Not rated|Sem avaliação
+1 · Muy confusa|1 · Very confusing|1 · Muito confusa
+2 · Confusa|2 · Confusing|2 · Confusa
+3 · Entendible con ayuda|3 · Understandable with help|3 · Compreensível com ajuda
+4 · Clara|4 · Clear|4 · Clara
+5 · Muy clara|5 · Very clear|5 · Muito clara
+¿Qué entendiste y qué mejorarías? *|What did you understand and what would you improve? *|O que você entendeu e o que melhoraria? *
+¿Qué podrías aportar desde tu especialidad?|What could you contribute from your field?|Como poderia contribuir com sua especialidade?
+Copiar feedback|Copy feedback|Copiar feedback
+↓ Descargar feedback (.md)|↓ Download feedback (.md)|↓ Baixar feedback (.md)
+Borrar borrador|Delete draft|Apagar rascunho
+Qué es real y qué es demostrativo|What is real and what is illustrative|O que é real e o que é demonstrativo
+Componente|Component|Componente
+Estado|Status|Estado
+Fuente / alcance|Source / scope|Fonte / alcance
+Datos NASA incluidos|NASA data included|Dados NASA incluídos
+Aproximación calculada|Calculated approximation|Aproximação calculada
+Textura visual|Visual texture|Textura visual
+Imagen de referencia|Reference image|Imagem de referência
+Terreno, pendientes y horizonte|Terrain, slopes and horizon|Terreno, inclinações e horizonte
+Sintéticos|Synthetic|Sintéticos
+Perfil importado|Imported profile|Perfil importado
+Datos del usuario|User data|Dados do usuário
+Modelo simplificado|Simplified model|Modelo simplificado
+Alunizajes históricos sobre el globo|Historic lunar landings on the globe|Pousos lunares históricos no globo
+Fuentes del caso NASA y de la API|Sources for the NASA case and API|Fontes do caso NASA e da API
+LOLA de 5 m por sitio|5 m LOLA data by site|LOLA de 5 m por local
+LOLA regional|Regional LOLA|LOLA regional
+Exploración visual en 3D|Visual exploration in 3D|Exploração visual em 3D
+Tierra 3D · NASA|3D Earth · NASA|Terra 3D · NASA
+Sol en 3D|Sun in 3D|Sol em 3D
+Fuentes de ingeniería|Engineering sources|Fontes de engenharia
+Procedencia de la interfaz|Interface provenance|Origem da interface
+Prototipo educativo independiente, sin aval de NASA. Los resultados no deben usarse para operaciones de vuelo.|Independent educational prototype, not endorsed by NASA. Results must not be used for flight operations.|Protótipo educativo independente, sem aval da NASA. Os resultados não devem ser usados em operações de voo.
+Archivo de referencia 2025 · UTC|2025 reference archive · UTC|Arquivo de referência 2025 · UTC
+Sol · modelo 3D de NASA|Sun · NASA 3D model|Sol · modelo 3D da NASA
+Arrastrá para rotar y usá el zoom para explorar.|Drag to rotate and zoom to explore.|Arraste para girar e use o zoom para explorar.
+Vista ilustrativa; sin escala respecto de la Luna y la Tierra.|Illustrative view; not to scale with the Moon and Earth.|Vista ilustrativa; sem escala em relação à Lua e à Terra.
+Fuente NASA ↗|NASA source ↗|Fonte NASA ↗
+¿SABÍAS QUE…?|DID YOU KNOW…?|VOCÊ SABIA…?
+Leer la fuente ↗|Read the source ↗|Ler a fonte ↗
+¡Comienza tu misión!|Your mission begins!|Sua missão começa!
+¡Empieza tu preparación!|Your preparation begins!|Sua preparação começa!
+¡Vamos a la Luna… en la simulación!|Let's go to the Moon… in the simulation!|Vamos à Lua… na simulação!
+Cerrar|Close|Fechar
+· Alunizaje sobre un corte de Site01; simulación educativa.|· Landing on a Site01 profile; educational simulation.|· Pouso em um perfil de Site01; simulação educativa.
+Aprendemos con escenarios de ejemplo. Las decisiones usan horizontes de práctica y energía estimada. El globo incorpora altitud LOLA; los casos NASA guardados tienen sus propias fechas. No se calculan trayectorias ni temperatura del rover.|We learn with example scenarios. Decisions use practice horizons and estimated energy. The globe includes LOLA elevations; saved NASA cases have their own dates. Rover trajectories and temperature are not calculated.|Aprendemos com cenários de exemplo. As decisões usam horizontes de prática e energia estimada. O globo inclui altitude LOLA; os casos NASA salvos têm suas próprias datas. Não são calculadas trajetórias nem a temperatura do rover.
+02 / COMUNICACIONES|02 / COMMUNICATIONS|02 / COMUNICAÇÕES
+Modelo 3D · NASA|3D model · NASA|Modelo 3D · NASA
+⛶ Explorar Tierra|⛶ Explore Earth|⛶ Explorar a Terra
+Arrastrá para rotar · zoom|Drag to rotate · zoom|Arraste para girar · zoom
+01 / PUNTO DE OBSERVACIÓN|01 / OBSERVATION POINT|01 / PONTO DE OBSERVAÇÃO
+ARRASTRÁ PARA ROTAR|DRAG TO ROTATE|ARRASTE PARA GIRAR
+Cara visible ◎|Near side ◎|Face visível ◎
+Polo sur ↙|South pole ↙|Polo sul ↙
+03 / ILUMINACIÓN|03 / ILLUMINATION|03 / ILUMINAÇÃO
+⛶ Explorar Sol|⛶ Explore the Sun|⛶ Explorar o Sol
+Cargando catálogo…|Loading catalogue…|Carregando catálogo…
+Puntos de alunizaje, no límites de zonas. Selección basada en LROC 2016; no incluye todas las misiones. Los símbolos se amplían para facilitar su selección.|Landing points, not zone boundaries. Selection based on LROC 2016; not all missions are included. Symbols are enlarged for easier selection.|Pontos de pouso, não limites de zonas. Seleção baseada em LROC 2016; não inclui todas as missões. Os símbolos são ampliados para facilitar a seleção.
+Luna ↔ Tierra|Moon ↔ Earth|Lua ↔ Terra
+Sol → Luna|Sun → Moon|Sol → Lua
+POLO SUR LUNAR / LABORATORIO DE ESCENARIOS|LUNAR SOUTH POLE / SCENARIO LABORATORY|POLO SUL LUNAR / LABORATÓRIO DE CENÁRIOS
+Evaluar un sitio|Assess a site|Avaliar um local
+Elegí un sitio y una fecha para explorar luz solar y comunicación directa.|Choose a site and date to explore sunlight and direct communication.|Escolha um local e uma data para explorar luz solar e comunicação direta.
+↓ Exportar escenario|↓ Export scenario|↓ Exportar cenário
+Práctica: NASA SVS 2025–2026 y horizonte LOLA muestreado.|Practice: NASA SVS 2025–2026 and sampled LOLA horizon.|Prática: NASA SVS 2025–2026 e horizonte LOLA amostrado.
+Los paneles turquesa incorporan LOLA y JPL reales con fecha propia. Los escenarios de práctica mantienen relieve demostrativo; ningún resultado es operativo.|Turquoise panels include real LOLA and JPL data with their own dates. Practice scenarios retain illustrative terrain; no result is operational.|Os painéis turquesa incluem dados reais LOLA e JPL com datas próprias. Os cenários de prática mantêm relevo demonstrativo; nenhum resultado é operacional.
+Ver metodología ↗|See methodology ↗|Ver metodologia ↗
+Sitio de estudio|Study site|Local de estudo
+A · Borde de Shackleton|A · Shackleton rim|A · Borda de Shackleton
+B · Macizo Malapert|B · Malapert massif|B · Maciço Malapert
+C · Cresta de conexión|C · Connecting ridge|C · Crista de conexão
+Fecha / hora UTC|UTC date / time|Data / hora UTC
+Altura de observación|Observation height|Altura de observação
+PUNTO ILUSTRATIVO|ILLUSTRATIVE POINT|PONTO ILUSTRATIVO
+Serie de análisis: 7 días|Analysis series: 7 days|Série de análise: 7 dias
+TIERRA · ELEVACIÓN LOCAL|EARTH · LOCAL ELEVATION|TERRA · ELEVAÇÃO LOCAL
+Geometría esférica|Spherical geometry|Geometria esférica
+SOL · ELEVACIÓN LOCAL|SUN · LOCAL ELEVATION|SOL · ELEVAÇÃO LOCAL
+Sin eclipse ni relieve real|Without eclipses or real terrain|Sem eclipses nem relevo real
+VISIBILIDAD EN 7 DÍAS|VISIBILITY OVER 7 DAYS|VISIBILIDADE EM 7 DIAS
+Con horizonte LOLA muestreado|With a sampled LOLA horizon|Com horizonte LOLA amostrado
+MAYOR CORTE EN 7 DÍAS|LONGEST OUTAGE OVER 7 DAYS|MAIOR INTERRUPÇÃO EM 7 DIAS
+Ventanas confirmadas a resolución horaria|Windows confirmed at hourly resolution|Janelas confirmadas com resolução horária
+Lo que ve el sitio: Sol y Tierra|The view from the site: Sun and Earth|O que o local vê: Sol e Terra
+TERRENO DEMO|DEMO TERRAIN|TERRENO DEMONSTRATIVO
+La curva marca el relieve del horizonte local. Un objetivo es visible cuando queda por encima de ella en su dirección.|The curve shows the local terrain horizon. A target is visible when it is above the curve in its direction.|A curva mostra o relevo do horizonte local. Um alvo é visível quando está acima dela na sua direção.
+EXPLORÁ CÓMO CAMBIA EL HORIZONTE|EXPLORE HOW THE HORIZON CHANGES|EXPLORE COMO O HORIZONTE MUDA
+▶ Recorrer horas|▶ Play through hours|▶ Percorrer horas
+Hora del escenario en los siguientes siete días|Scenario hour within the following seven days|Hora do cenário nos sete dias seguintes
+● Tierra|● Earth|● Terra
+● Sol|● Sun|● Sol
+▰ Horizonte ilustrativo|▰ Illustrative horizon|▰ Horizonte ilustrativo
+LUZ SOLAR POTENCIAL|POTENTIAL SUNLIGHT|LUZ SOLAR POTENCIAL
+La luz disponible orienta el potencial solar; no equivale a potencia eléctrica generada.|Available sunlight indicates solar potential; it is not equivalent to generated electrical power.|A luz disponível indica o potencial solar; não equivale à potência elétrica gerada.
+COMUNICACIÓN DIRECTA|DIRECT COMMUNICATION|COMUNICAÇÃO DIRETA
+Visibilidad geométrica hacia la Tierra; el enlace también depende de la estación y del sistema de radio.|Geometric visibility of Earth; the link also depends on the station and radio system.|Visibilidade geométrica da Terra; o enlace também depende da estação e do sistema de rádio.
+Ventanas de operación|Operating windows|Janelas de operação
+7 días · muestras cada 1 hora · UTC|7 days · hourly samples · UTC|7 dias · amostras a cada hora · UTC
+■ Tierra visible|■ Earth visible|■ Terra visível
+■ Sol visible|■ Sun visible|■ Sol visível
+■ Coincidencia|■ Overlap|■ Coincidência
+■ Sin visibilidad|■ No visibility|■ Sem visibilidade
+Ventanas calculadas sobre el horizonte LOLA muestreado; no equivalen a disponibilidad de servicio de radio.|Windows calculated from the sampled LOLA horizon; not equivalent to radio service availability.|Janelas calculadas sobre o horizonte LOLA amostrado; não equivalem à disponibilidade de serviço de rádio.
+Exploración local del terreno|Local terrain exploration|Exploração local do terreno
+SUPERFICIE SINTÉTICA|SYNTHETIC SURFACE|SUPERFÍCIE SINTÉTICA
+Capa local demostrativa|Local demonstration layer|Camada local demonstrativa
+Terreno favorable por pendiente|Terrain favorable by slope|Terreno favorável pela inclinação
+Altitud solo en zonas bajo el límite|Elevation only in zones below the limit|Altitude apenas nas zonas abaixo do limite
+Pendiente continua|Continuous slope|Inclinação contínua
+Área ilustrativa de 1 × 1 km. Las pendientes se calculan a partir de diferencias centrales, con celdas de 5 m.|Illustrative 1 × 1 km area. Slopes use central differences with 5 m cells.|Área ilustrativa de 1 × 1 km. As inclinações são calculadas por diferenças centrais, com células de 5 m.
+DEL DATASET A LA DECISIÓN|FROM DATASET TO DECISION|DO DATASET À DECISÃO
+¿Qué mide la fórmula?|What does the formula measure?|O que a fórmula mede?
+La inclinación máxima local del suelo. No mide si una montaña distante bloquea la Tierra.|The maximum local ground slope. It does not measure whether a distant mountain blocks Earth.|A inclinação máxima local do solo. Não mede se uma montanha distante bloqueia a Terra.
+Pendiente mediana · demo|Median slope · demo|Inclinação mediana · demonstração
+Límite de pendiente ilustrativo|Illustrative slope threshold|Limite ilustrativo de inclinação
+Celdas bajo el límite|Cells below the limit|Células abaixo do limite
+El límite no es un requisito de ningún vehículo. La aptitud requiere considerar rugosidad, rocas, escala y errores del DEM.|The limit is not a requirement for any vehicle. Suitability also requires roughness, rocks, scale and DEM errors to be considered.|O limite não é requisito de nenhum veículo. A aptidão exige considerar rugosidade, rochas, escala e erros do DEM.
+Abrir dataset LOLA de 5 m ↗|Open 5 m LOLA dataset ↗|Abrir dataset LOLA de 5 m ↗
+Conexión prevista a datos reales|Planned connection to real data|Conexão prevista com dados reais
+LOLA Site04: elevaciones|LOLA Site04: elevations|LOLA Site04: elevações
+, pendientes|, slopes|, inclinações
+e incertidumbres|and uncertainties|e incertezas
+. El escenario de práctica no carga GeoTIFF; el caso NASA de arriba utiliza sus resultados procesados. El perfil CSV se puede importar en Radioenlace.|. The practice scenario does not load GeoTIFF; the NASA case above uses processed results. CSV profiles can be imported in Radio link.|. O cenário de prática não carrega GeoTIFF; o caso NASA acima usa resultados processados. Perfis CSV podem ser importados em Enlace de rádio.
+Modelo lunar esférico, sin refracción. El margen ideal no predice un enlace operativo si existe obstrucción. No modela multitrayecto, difracción, ruido ni adaptación de modulación.|Spherical lunar model, without refraction. Ideal margin does not predict an operational link when obstructed. Multipath, diffraction, noise and modulation adaptation are not modeled.|Modelo lunar esférico, sem refração. A margem ideal não prevê um enlace operacional se houver obstrução. Não modela multipercurso, difração, ruído nem adaptação de modulação.
+CSV UTF-8 con columnas|UTF-8 CSV with columns|CSV UTF-8 com colunas
+. Distancias crecientes desde 0, en metros; al menos tres puntos. Importar reemplaza únicamente este perfil.|. Increasing distances from 0, in meters; at least three points. Importing replaces only this profile.|. Distâncias crescentes a partir de 0, em metros; pelo menos três pontos. A importação substitui apenas este perfil.
+Cada porcentaje se calcula en el intervalo de siete días de su escenario. Muestras horarias; relieve real de Site01 y radio limitado. La comparación incluye un balance energético simplificado; la luz por sí sola no equivale a watts y la visibilidad no garantiza servicio de radio. Ubicaciones de Site01, no sitios aprobados para alunizaje.|Each percentage uses its scenario's seven-day interval. Hourly samples; real Site01 terrain and a limited radius. The comparison includes a simplified energy balance; sunlight alone does not equal watts and visibility does not guarantee radio service. These are Site01 locations, not approved landing sites.|Cada porcentagem usa o intervalo de sete dias do seu cenário. Amostras horárias; relevo real de Site01 e raio limitado. A comparação inclui um balanço energético simplificado; luz por si só não equivale a watts e visibilidade não garante serviço de rádio. São locais de Site01, não áreas aprovadas para pouso.
+La orientación modifica la incidencia. La conversión del panel y las pérdidas modifican la energía eléctrica. La batería solo almacena el excedente que puede aceptar.|Orientation changes incidence. Panel conversion and losses change electrical energy. The battery only stores the surplus it can accept.|A orientação altera a incidência. A conversão do painel e as perdas alteram a energia elétrica. A bateria só armazena o excedente que consegue aceitar.
+Incidencia: coseno entre la normal del panel y la dirección solar, recortado a cero y condicionado por el horizonte. Potencia = 1.361 W/m² × área × eficiencia × incidencia × (1 − pérdidas). La irradiancia se asume constante a distancia solar media; no se modelan eclipses ni variación de distancia.|Incidence: cosine between the panel normal and the Sun direction, clipped at zero and constrained by the horizon. Power = 1,361 W/m² × area × efficiency × incidence × (1 − losses). Irradiance is constant at mean solar distance; eclipses and distance changes are not modeled.|Incidência: cosseno entre a normal do painel e a direção solar, limitado a zero e condicionado pelo horizonte. Potência = 1.361 W/m² × área × eficiência × incidência × (1 − perdas). A irradiância é constante na distância solar média; não são modelados eclipses nem variações de distância.
+Las pérdidas agregadas son un supuesto de escenario: no son un porcentaje medido de polvo, temperatura ni «clima». No hay lluvia ni nubosidad terrestre. Temperatura del panel, degradación, polvo, límites de carga, autodescarga y gestión térmica necesitan modelos adicionales.|Total losses are a scenario assumption, not a measured percentage of dust, temperature or weather. There is no Earth-like rain or cloud cover. Panel temperature, degradation, dust, charging limits, self-discharge and thermal management require additional models.|As perdas totais são uma premissa do cenário, não uma porcentagem medida de poeira, temperatura ou clima. Não há chuva nem nuvens como na Terra. Temperatura do painel, degradação, poeira, limites de carga, autodescarga e gestão térmica exigem modelos adicionais.
+El ciclo solar medio dura aproximadamente 29 días, 12 horas y 44 minutos (708,73 h). Las 709 muestras son una aproximación. Día y noche no se reparten necesariamente en mitades en un sitio polar: hay que calcular el horizonte y las fechas.|The mean solar cycle lasts about 29 days, 12 hours and 44 minutes (708.73 h). The 709 samples are an approximation. Day and night are not necessarily equal at a polar site: the horizon and dates must be calculated.|O ciclo solar médio dura cerca de 29 dias, 12 horas e 44 minutos (708,73 h). As 709 amostras são uma aproximação. Dia e noite não têm necessariamente a mesma duração em um local polar: é preciso calcular o horizonte e as datas.
+NASA · irradiancia de referencia|NASA · reference irradiance|NASA · irradiância de referência
+NASA · ciclo lunar|NASA · lunar cycle|NASA · ciclo lunar
+NASA · entorno térmico|NASA · thermal environment|NASA · ambiente térmico
+Estimación aislada de autonomía a consumo constante. El resultado no simula temperatura, batería real ni toda la misión.|Standalone autonomy estimate at constant load. The result does not simulate temperature, a real battery or the whole mission.|Estimativa isolada de autonomia com consumo constante. O resultado não simula temperatura, bateria real nem a missão inteira.
+El trabajo sobre fuentes nucleares para misiones argentinas considera unidades calefactoras de radioisótopos (RHU) para supervivencia durante la noche lunar.|Research on nuclear sources for Argentine missions considers radioisotope heater units (RHU) for lunar-night survival.|O trabalho sobre fontes nucleares para missões argentinas considera unidades aquecedoras de radioisótopos (RHU) para sobreviver à noite lunar.
+Una RHU puede aportar calor. No alimenta por sí sola el transmisor ni elimina una obstrucción de comunicaciones.|An RHU can provide heat. It does not power the transmitter on its own or remove a communication obstruction.|Uma RHU pode fornecer calor. Não alimenta sozinha o transmissor nem elimina uma obstrução de comunicação.
+Referencia conceptual. No se incorporan prestaciones nucleares ni temperaturas operativas a esta simulación.|Conceptual reference. Nuclear performance and operating temperatures are not included in this simulation.|Referência conceitual. Desempenho nuclear e temperaturas operacionais não são incluídos nesta simulação.
+Elegí una sección para explorarla y contar qué entendiste, qué te falta y qué mejorarías. Podés evaluar más de una.|Choose a section to explore and tell us what you understood, what is missing and what you would improve. You can review more than one.|Escolha uma seção para explorar e conte o que entendeu, o que falta e o que melhoraria. Você pode avaliar mais de uma.
+El borrador se guarda solo en este navegador. Al terminar, copiá o descargá el comentario y envialo al equipo; no se envía automáticamente.|The draft is saved only in this browser. When finished, copy or download it and send it to the team; it is not sent automatically.|O rascunho é salvo apenas neste navegador. Ao terminar, copie ou baixe o comentário e envie à equipe; ele não é enviado automaticamente.
+Fase, distancia y puntos subsolar / subterrestre|Phase, distance and subsolar / sub-Earth points|Fase, distância e pontos subsolar / subterrestre
+SVS 5415 · datos horarios de 2025 y 2026|SVS 5415 · hourly data for 2025 and 2026|SVS 5415 · dados horários de 2025 e 2026
+Azimut y elevación local|Local azimuth and elevation|Azimute e elevação local
+Luna esférica, puntos subsolar/subterrestre; corrección de paralaje terrestre. No Horizons/SPICE.|Spherical Moon, subsolar/sub-Earth points; Earth parallax correction. Not Horizons/SPICE.|Lua esférica, pontos subsolar/subterrestre; correção de paralaxe terrestre. Não usa Horizons/SPICE.
+Cory Gross / MoonDemo · Clementine · licencia MIT incluida|Cory Gross / MoonDemo · Clementine · MIT license included|Cory Gross / MoonDemo · Clementine · licença MIT incluída
+. No se usa como DEM.|. Not used as a DEM.|. Não é usada como DEM.
+Superficies de prueba en los gráficos de práctica; el caso NASA de arriba incorpora LOLA procesado.|Test surfaces in the practice charts; the NASA case above includes processed LOLA data.|Superfícies de teste nos gráficos de prática; o caso NASA acima inclui LOLA processado.
+Procesamiento local en el navegador; sin subida a servidor.|Local browser processing; no server upload.|Processamento local no navegador; sem envio ao servidor.
+Curvatura lunar, Fresnel y pérdidas en espacio libre. Sin propagación completa.|Lunar curvature, Fresnel and free-space losses. Not full propagation.|Curvatura lunar, Fresnel e perdas no espaço livre. Sem propagação completa.
+18 puntos de Apollo, Surveyor, Luna y Chang’e 3 a partir de|18 Apollo, Surveyor, Luna and Chang'e 3 sites based on|18 pontos de Apollo, Surveyor, Luna e Chang'e 3 a partir de
+LROC / ASU, 28 de julio de 2016|LROC / ASU, July 28, 2016|LROC / ASU, 28 de julho de 2016
+. Coordenadas ME y longitudes este normalizadas a −180…180°. Los módulos Apollo también se contrastaron con|. ME coordinates and east longitudes normalized to −180…180°. Apollo modules were also checked against|. Coordenadas ME e longitudes leste normalizadas para −180…180°. Os módulos Apollo também foram comparados com
+. La textura es ilustrativa y la proyección simplificada no sirve para navegación precisa. Este catálogo es independiente de los puntos demostrativos del planificador.|. The texture is illustrative and the simplified projection is unsuitable for precise navigation. This catalogue is separate from the planner's demonstration points.|. A textura é ilustrativa e a projeção simplificada não serve para navegação precisa. Este catálogo é independente dos pontos demonstrativos do planejador.
+. Hay que reconciliar referencias, alturas, cobertura y resolución efectiva.|. Reference frames, heights, coverage and effective resolution must be reconciled.|. É preciso compatibilizar referenciais, alturas, cobertura e resolução efetiva.
+USGS · mosaico LROC WAC de 100 m|USGS · 100 m LROC WAC mosaic|USGS · mosaico LROC WAC de 100 m
+: referencia para una futura capa de imagen; no está incorporado ni sustituye las elevaciones.|: reference for a future imagery layer; not included and not a substitute for elevation data.|: referência para uma futura camada de imagem; não está incluído nem substitui as elevações.
+Modelo de la|Model of|Modelo da
+incluido localmente. Luna, Tierra y Sol se amplían con fines de exploración; sus tamaños, posiciones y distancias en la portada son ilustrativos. La evaluación del sitio se realiza en el gráfico del horizonte local y en las series temporales.|included locally. Moon, Earth and Sun are enlarged for exploration; their sizes, positions and distances on the home page are illustrative. Site assessment uses the local horizon chart and time series.|incluído localmente. Lua, Terra e Sol são ampliados para exploração; seus tamanhos, posições e distâncias na página inicial são ilustrativos. A avaliação do local usa o gráfico do horizonte local e as séries temporais.
+Modelo|Model|Modelo
+, archivo GLB incluido localmente. Visualización con Google model-viewer 1.10.1, la versión utilizada por el visor de referencia; licencia Apache 2.0 incluida. El modelo es visual y no modifica los cálculos de iluminación.|, GLB file included locally. Displayed with Google model-viewer 1.10.1, as used by the reference viewer; Apache 2.0 license included. The model is visual and does not change illumination calculations.|, arquivo GLB incluído localmente. Visualização com Google model-viewer 1.10.1, a versão do visualizador de referência; licença Apache 2.0 incluída. O modelo é visual e não altera os cálculos de iluminação.
+Adaptación de la paleta, navegación lateral y tarjetas del Dashboard ZCS.COM proporcionado por el equipo. Esta aplicación es independiente; no incorpora su base SQLite, agentes, configuración ni historial de red.|Adapted from the palette, sidebar navigation and cards of the team's ZCS.COM Dashboard. This application is independent and does not include its SQLite database, agents, settings or network history.|Adaptação da paleta, navegação lateral e cartões do Dashboard ZCS.COM fornecido pela equipe. Este aplicativo é independente e não inclui seu banco SQLite, agentes, configuração nem histórico de rede.
+Escena 3D de Tierra, Luna y Sol. Arrastrá o usá las flechas para girar.|3D scene of Earth, Moon and Sun. Drag or use the arrow keys to rotate.|Cena 3D da Terra, Lua e Sol. Arraste ou use as setas para girar.
+Félicette te invita a jugar|Félicette invites you to play|Félicette convida você a jogar
+Los Lunares · inicio|Los Lunares · home|Los Lunares · início
+Los Lunares con la huellita verde de Félicette|Los Lunares with Félicette's green paw print|Los Lunares com a pegada verde de Félicette
+Logo de Los Lunares con la huellita verde de Félicette|Los Lunares logo with Félicette's green paw print|Logo de Los Lunares com a pegada verde de Félicette
+Activar o silenciar sonidos|Enable or mute sound|Ativar ou silenciar sons
+Sonido de la alarma|Alarm sound|Som do alarme
+girar a la izquierda|rotate left|girar à esquerda
+girar a la derecha|rotate right|girar à direita
+Simulación de descenso lunar. Usá izquierda y derecha para girar y arriba o espacio para encender el motor.|Lunar descent simulation. Use left and right to rotate and up or space for thrust.|Simulação de descida lunar. Use esquerda e direita para girar e cima ou espaço para ligar o motor.
+Juego del rover: Descenso perfecto|Rover game: Perfect Descent|Jogo do rover: Descida perfeita
+En este lugar y fecha no encontramos luz solar confirmada en los siete días. Probemos otro lugar o fecha para explorar con el panel.|No confirmed sunlight was found over these seven days at this place and date. Try another place or date to explore with the panel.|Neste local e data não encontramos luz solar confirmada nos sete dias. Vamos testar outro local ou data para explorar com o painel.
+En este lugar y fecha no encontramos horas de Tierra visible en los siete días. Necesitamos cambiar el lugar o el momento.|No Earth visibility was found over these seven days at this place and date. Change the site or timing.|Neste local e data não encontramos horas de Terra visível nos sete dias. Precisamos mudar o local ou o momento.
+Ayudame en dos pasos: primero elegimos una zona candidata y después practicamos un alunizaje suave con el rover.|Help me in two steps: first choose a candidate zone, then practice a gentle rover landing.|Ajude-me em dois passos: primeiro escolhemos uma zona candidata e depois praticamos um pouso suave com o rover.
+La práctica no corrige por sí sola esa elección: vamos a ajustarla para seguir.|Practice does not fix that choice by itself: let's adjust it to continue.|A prática não corrige essa escolha sozinha: vamos ajustá-la para continuar.
+Elegiste una zona candidata y lograste un alunizaje suave en el juego. Ahora revisemos tu plan:|You chose a candidate zone and made a gentle landing in the game. Now let's review your plan:|Você escolheu uma zona candidata e fez um pouso suave no jogo. Agora vamos revisar seu plano:
+¡Necesito tu ayuda!|I need your help!|Preciso da sua ajuda!
+Volvamos a elegir.|Let's choose again.|Vamos escolher novamente.
+Explorar con luz solar|Explore with sunlight|Explorar com luz solar
+Conectar con la Tierra|Connect with Earth|Conectar com a Terra
+Necesito contacto en tiempo real|I need real-time contact|Preciso de contato em tempo real
+Guardar y enviar después|Store and send later|Guardar e enviar depois
+Los cortes de visibilidad son un riesgo para este objetivo.|Visibility outages are a risk for this goal.|As interrupções de visibilidade são um risco para este objetivo.
+Puedo aceptar cortes; los datos esperan hasta el próximo contacto.|I can accept outages; the data waits until the next contact.|Posso aceitar interrupções; os dados aguardam o próximo contato.
+Altura de la antena sobre el terreno real.|Antenna height above real terrain.|Altura da antena sobre o terreno real.
+ANTENA / OBSERVACIÓN|ANTENNA / OBSERVATION|ANTENA / OBSERVAÇÃO
+Seguimiento solar ideal|Ideal solar tracking|Rastreamento solar ideal
+Panel fijo hacia arriba|Panel fixed facing up|Painel fixo voltado para cima
+Ver mi escenario en el laboratorio ↗|View my scenario in the laboratory ↗|Ver meu cenário no laboratório ↗
+↓ Descargar mi plan|↓ Download my plan|↓ Baixar meu plano
+Tu plan, de un vistazo|Your plan at a glance|Seu plano em um olhar
+Tu aventura continúa.|Your adventure continues.|Sua aventura continua.
+3, 2, 1… simular misión 🚀|3, 2, 1… simulate mission 🚀|3, 2, 1… simular missão 🚀
+Aprendiste a planificar|You learned to plan|Você aprendeu a planejar
+SITIO|SITE|LOCAL
+FECHA UTC|UTC DATE|DATA UTC
+PRIORIDAD|PRIORITY|PRIORIDADE
+Tu plan tiene aspectos para revisar|Your plan has items to review|Seu plano tem pontos a revisar
+El balance simplificado cubre las decisiones elegidas|The simplified balance covers your chosen settings|O balanço simplificado cobre as decisões escolhidas
+✓ Comparaste lugares y fechas.|✓ You compared sites and dates.|✓ Você comparou locais e datas.
+✓ Exploraste el Sol y la Tierra sobre el horizonte.|✓ You explored the Sun and Earth above the horizon.|✓ Você explorou o Sol e a Terra sobre o horizonte.
+✓ Elegiste batería, orientación y estrategia de datos.|✓ You chose a battery, orientation and data strategy.|✓ Você escolheu bateria, orientação e estratégia de dados.
+El balance indica energía insuficiente en algunas horas.|The balance indicates insufficient energy during some hours.|O balanço indica energia insuficiente em algumas horas.
+Hay cortes de visibilidad y pediste contacto en tiempo real.|There are visibility outages and you requested real-time contact.|Há interrupções de visibilidade e você pediu contato em tempo real.
+No hay contacto directo en el período: guardar datos no permite enviarlos dentro de estos siete días.|There is no direct contact during this period: storing data does not let you send it within these seven days.|Não há contato direto no período: guardar dados não permite enviá-los dentro destes sete dias.
+Falta validar incertidumbre del terreno, relieve lejano, enlace de radio y supervivencia térmica. Completar el juego no certifica la viabilidad de una misión.|Terrain uncertainty, distant relief, radio link and thermal survival still need validation. Completing the game does not certify mission feasibility.|Ainda falta validar incertezas do terreno, relevo distante, enlace de rádio e sobrevivência térmica. Completar o jogo não certifica a viabilidade de uma missão.
+Tocaste a|You touched down at|Você tocou o solo a
+m/s|m/s|m/s
+: el choque fue de|: impact energy was|: a energia do impacto foi de
+J por kg, dentro de los|J per kg, within the|J por kg, dentro dos
+J/kg que absorben las patas. Te sobró|J/kg landing-leg threshold of this game. You had|J/kg de limite das pernas neste jogo. Restaram
+% de combustible.|% fuel remaining.|% de combustível.
+J por kg,|J per kg,|J por kg,
+veces|times|vezes
+lo que absorben las patas.|the landing-leg threshold in this game.|o limite das pernas neste jogo.
+Ibas de costado a|You were drifting sideways at|Você estava se movendo de lado a
+m/s: al tocar, una pata se clava y la nave vuelca. Inclinando la nave hacia el lado contrario, el empuje frena el movimiento horizontal.|m/s: on contact, a leg catches and the module tips over. Tilt in the opposite direction so thrust slows the sideways motion.|m/s: ao tocar, uma perna prende e o módulo vira. Incline para o lado oposto para o empuxo frear o movimento horizontal.
+Estabas inclinado|The module was tilted|Você estava inclinado
+El suelo tenía una pendiente real de|The ground had a real slope of|O solo tinha uma inclinação real de
+°: con más de 8° la nave se desliza o vuelca.|°: above 8°, the module may slide or tip in this game.|°: acima de 8°, o módulo pode deslizar ou virar neste jogo.
+El Sol nunca sube más de ~1,5° y da la vuelta completa al horizonte cada 29,5 días. Desde este punto, el relieve lo tapa en|The simplified game assumes a Sun elevation up to ~1.5° and a horizon circuit every 29.5 days. From this point, terrain blocks it in|O jogo simplificado assume elevação solar de até ~1,5° e uma volta no horizonte a cada 29,5 dias. Deste ponto, o relevo o bloqueia em
+(terreno real, LOLA):|(real terrain, LOLA):|(terreno real, LOLA):
+(terreno simulado):|(simulated terrain):|(terreno simulado):
+% del sitio tiene pendiente < 10° (puesto|% of the site has slope < 10° (rank|% do local tem inclinação < 10° (posição
+Es|It is|É
+más plano que la mayoría|flatter than most|mais plano que a maioria
+más accidentado que la mayoría|rougher than most|mais acidentado que a maioria
+: buen candidato para bajar.|: a candidate worth studying for landing.|: um candidato a estudar para pousar.
+: hay que elegir bien la plataforma.|: choose the platform carefully.|: é preciso escolher bem a plataforma.
+💡 La gravedad lunar es 1/6 de la terrestre: el mismo módulo pesa en la Luna lo que pesaría un sexto en la Tierra.|💡 Lunar gravity is about 1/6 of Earth's: the same module weighs about a sixth as much on the Moon.|💡 A gravidade lunar é cerca de 1/6 da terrestre: o mesmo módulo pesa aproximadamente um sexto na Lua.
+Estimaciones didácticas del juego, con relieve muestreado a 100 m y curvatura lunar. Los rayos de horizonte pueden recorrer sitios vecinos simulados. Los porcentajes de luz y enlace son aproximaciones ilustrativas; revisá las ventanas temporales del dashboard para tu plan.|Educational game estimates using 100 m terrain samples and lunar curvature. Horizon rays may cross simulated neighboring sites. Sunlight and link percentages are illustrative approximations; review the dashboard time windows for your plan.|Estimativas educativas do jogo com relevo amostrado a 100 m e curvatura lunar. Os raios do horizonte podem cruzar locais vizinhos simulados. As porcentagens de luz e enlace são aproximações ilustrativas; consulte as janelas de tempo do dashboard para seu plano.
+UN MOMENTO CON FÉLICETTE|A MOMENT WITH FÉLICETTE|UM MOMENTO COM FÉLICETTE
+Omitir y seguir →|Skip and continue →|Pular e continuar →
+Tu objetivo ya tiene rumbo.|Your goal has a direction.|Seu objetivo já tem um rumo.
+Una ilustración de lo aprendido. Tus elecciones y sus límites siguen en el plan; esta escena no significa que toda opción sea correcta.|An illustration of what you learned. Your choices and their limits remain in the plan; this scene does not mean every option is correct.|Uma ilustração do que você aprendeu. Suas escolhas e seus limites continuam no plano; esta cena não significa que toda opção esteja correta.
+Año de los datos|Data year|Ano dos dados
+Mes|Month|Mês
+Enero|January|Janeiro
+Febrero|February|Fevereiro
+Marzo|March|Março
+Abril|April|Abril
+Mayo|May|Maio
+Junio|June|Junho
+Julio|July|Julho
+Agosto|August|Agosto
+Septiembre|September|Setembro
+Octubre|October|Outubro
+Noviembre|November|Novembro
+Diciembre|December|Dezembro
+Fechas disponibles: 01/01/2025–24/12/2026. Usamos NASA SVS 2025–2026; los siete días completos deben quedar dentro del archivo. No es una conexión de datos en vivo.|Available dates: Jan 1, 2025–Dec 24, 2026. We use NASA SVS 2025–2026; all seven days must fit within the archive. This is not a live data connection.|Datas disponíveis: 01/01/2025–24/12/2026. Usamos NASA SVS 2025–2026; os sete dias completos precisam estar no arquivo. Não é uma conexão de dados ao vivo.
+Día de inicio · UTC|Start date · UTC|Data de início · UTC
+Hora UTC|UTC hour|Hora UTC
+Explorar esta fecha →|Explore this date →|Explorar esta data →
+Evaluar esta fecha →|Assess this date →|Avaliar esta data →
+Fecha sin aplicar. Tocá el botón de explorar para recalcular el escenario.|Date not applied. Tap the explore button to recalculate the scenario.|Data não aplicada. Toque no botão de explorar para recalcular o cenário.
+EL INICIO DE TU AVENTURA|THE START OF YOUR ADVENTURE|O INÍCIO DA SUA AVENTURA
+Una fecha, siete días para explorar.|One date, seven days to explore.|Uma data, sete dias para explorar.
+Tu lugar elegido:|Your selected site:|Seu local escolhido:
+. Cambiar la fecha recalcula el mismo terreno.|. Changing the date recalculates the same terrain.|. Mudar a data recalcula o mesmo terreno.
+← Una semana antes|← One week earlier|← Uma semana antes
+Una semana después →|One week later →|Uma semana depois →
+DECISIÓN 3 · EL MOMENTO|DECISION 3 · TIMING|DECISÃO 3 · O MOMENTO
+Jugá con el tiempo. Encontrá tu ventana.|Play with time. Find your window.|Jogue com o tempo. Encontre sua janela.
+Mové el reloj, mirá cómo cambia el cielo y elegí cuándo intentarías enviar noticias a casa.|Move the clock, watch the sky change and choose when you would try to send news home.|Mova o relógio, veja como o céu muda e escolha quando tentaria enviar notícias para casa.
+FÉLICETTE TE PROPONE UN RETO|FÉLICETTE HAS A CHALLENGE FOR YOU|FÉLICETTE PROPÕE UM DESAFIO
+¿Cuándo mandamos nuestra primera foto?|When should we send our first photo?|Quando enviamos nossa primeira foto?
+Primero mirá el cielo. Después marcá uno o más bloques de seis horas para practicar. Probá tu plan y descubrí qué ayuda o qué falta.|First look at the sky. Then select one or more six-hour blocks to practice. Test your plan and discover what helps or what is missing.|Primeiro olhe o céu. Depois marque um ou mais blocos de seis horas para praticar. Teste seu plano e descubra o que ajuda ou o que falta.
+No hace falta acertar a la primera. Las pistas están para ayudarte.|You do not need to get it right first time. Hints are here to help.|Não precisa acertar de primeira. As pistas estão aqui para ajudar.
+TRES MIRADAS, EL MISMO RELOJ|THREE VIEWS, THE SAME CLOCK|TRÊS OLHARES, O MESMO RELÓGIO
+¿Qué está pasando allá afuera?|What is happening out there?|O que está acontecendo lá fora?
+Mové el tiempo y cambiá de vista para descubrirlo.|Move through time and change views to find out.|Avance no tempo e mude a vista para descobrir.
+Desde el rover|From the rover|A partir do rover
+Desde arriba · órbitas|From above · orbits|De cima · órbitas
+La Luna de perfil|The Moon in profile|A Lua de perfil
+LO QUE VE TU ROVER|YOUR ROVER'S VIEW|O QUE SEU ROVER VÊ
+El cielo también tiene caminos.|The sky has paths too.|O céu também tem caminhos.
+▶ Ver pasar el tiempo|▶ Watch time pass|▶ Ver o tempo passar
+Mové el tiempo de tu misión|Move through mission time|Avance no tempo da missão
+Arrastrá este punto para mover el tiempo|Drag this point to move through time|Arraste este ponto para avançar no tempo
+CÓMO JUGAR|HOW TO PLAY|COMO JOGAR
+Elegí una fecha y mové el reloj.|Choose a date and move the clock.|Escolha uma data e mova o relógio.
+Marcá bloques para intentar comunicar.|Select blocks to try communicating.|Marque blocos para tentar se comunicar.
+Probá y ajustá: Félicette te cuenta qué pasó.|Try and adjust: Félicette explains what happened.|Teste e ajuste: Félicette explica o que aconteceu.
+✦ Mostrarme las ventanas|✦ Show me the windows|✦ Mostrar as janelas
+Podés pedir pistas todas las veces que quieras.|Ask for hints as often as you like.|Peça pistas quantas vezes quiser.
+TU PLAN DE TRANSMISIONES|YOUR TRANSMISSION PLAN|SEU PLANO DE TRANSMISSÕES
+Pintá los momentos de tu aventura.|Mark the moments of your adventure.|Marque os momentos da sua aventura.
+Cada botón representa seis horas. Podés tocarlo o arrastrar sobre varios.|Each button represents six hours. Tap one or drag across several.|Cada botão representa seis horas. Toque em um ou arraste sobre vários.
+Limpiar selección|Clear selection|Limpar seleção
+▶ Probar mi plan|▶ Test my plan|▶ Testar meu plano
+○ Sin seleccionar|○ Not selected|○ Não selecionado
+● Cian: elegido|● Cyan: selected|● Ciano: selecionado
+☼ Amarillo: horas con luz|☼ Yellow: hours with sunlight|☼ Amarelo: horas com luz
+◎ Azul: horas con Tierra visible|◎ Blue: hours with Earth visible|◎ Azul: horas com Terra visível
+¿Qué datos estamos usando?|Which data are we using?|Quais dados estamos usando?
+Primero aplicá la fecha nueva. El cielo todavía muestra la última fecha confirmada.|Apply the new date first. The sky still shows the last confirmed date.|Aplique primeiro a nova data. O céu ainda mostra a última data confirmada.
+¡Encontraste una ventana para practicar!|You found a practice window!|Você encontrou uma janela para praticar!
+¡Probemos otro horario!|Let's try another time!|Vamos testar outro horário!
+Volver a elegir horarios|Choose times again|Escolher horários novamente
+¡Buen trabajo, explorador!|Well done, explorer!|Bom trabalho, explorador!
+¡Oh! Ese horario necesita un ajuste.|Oh! That time needs adjusting.|Ah! Esse horário precisa de um ajuste.
+En algunos bloques la Tierra se esconde detrás del horizonte. Activá las pistas y probá un horario con seis horas de ventana.|Earth hides behind the horizon during some blocks. Enable hints and try a time with a full six-hour window.|Em alguns blocos a Terra fica atrás do horizonte. Ative as pistas e teste um horário com seis horas de janela.
+La batería actual no alcanza en esos momentos. Podemos probar otro horario o ajustar la energía en el siguiente paso.|The current battery is insufficient at those times. Try another time or adjust energy in the next step.|A bateria atual não é suficiente nesses momentos. Podemos testar outro horário ou ajustar a energia no próximo passo.
+UNA PISTA PARA SEGUIR|A HINT TO KEEP GOING|UMA PISTA PARA CONTINUAR
+Esa selección necesita cambiar.|That selection needs to change.|Essa seleção precisa mudar.
+Entendido · elegir de nuevo →|Got it · choose again →|Entendi · escolher novamente →
+Félicette te da una pista|Félicette gives you a hint|Félicette dá uma pista
+Limpiamos la selección. Elegí de nuevo con la pista de Félicette.|We cleared your selection. Choose again with Félicette's hint.|Limpamos a seleção. Escolha novamente com a pista de Félicette.
+Esa selección no cumple todos los criterios. Limpiamos los cuadrantes marcados para que puedas volver a elegir.|That selection does not meet all the criteria. We cleared the selected cells so you can choose again.|Essa seleção não cumpre todos os critérios. Limpamos os quadrantes marcados para você escolher novamente.
+Buscá un cuadrante con al menos 80% de píxeles verdes y relieve local de 20 m o menos. No alcanza con que una parte se vea verde. Tocá un cuadrante para leer sus medidas.|Find a cell with at least 80% green pixels and local relief of 20 m or less. Partly green is not enough. Tap a cell to read its measurements.|Busque um quadrante com pelo menos 80% de pixels verdes e relevo local de até 20 m. Não basta que parte dele pareça verde. Toque em um quadrante para ver suas medidas.
+Zona lista · pasar al descenso →|Zone ready · start the descent →|Zona pronta · iniciar a descida →
+Una opción para comparar.|An option to compare.|Uma opção para comparar.
+¡El panel tiene luz!|The panel has sunlight!|O painel tem luz!
+La Tierra quedó oculta por el horizonte: guardemos las fotos para una próxima ventana.|Earth is hidden by the horizon: let's save the photos for a later window.|A Terra ficou oculta pelo horizonte: vamos guardar as fotos para uma próxima janela.
+Paisaje ilustrativo, sin escala. La Luna no tiene un cielo azul: el cielo permanece negro, incluso con luz solar. Las posiciones exactas están en el horizonte de abajo.|Illustrative landscape, not to scale. The Moon does not have a blue sky: it stays black even in sunlight. Calculated positions are shown on the horizon below.|Paisagem ilustrativa, sem escala. A Lua não tem céu azul: ele permanece preto mesmo com luz solar. As posições calculadas estão no horizonte abaixo.
+Ventana confirmada|Confirmed window|Janela confirmada
+Sin ventana confirmada|No confirmed window|Sem janela confirmada
+Retroceder un día|Go back one day|Voltar um dia
+Retroceder seis horas|Go back six hours|Voltar seis horas
+Avanzar seis horas|Advance six hours|Avançar seis horas
+Avanzar un día|Advance one day|Avançar um dia
+Vistas de la misión|Mission views|Vistas da missão
+Posiciones del Sol y la Tierra respecto del horizonte local real|Sun and Earth positions relative to the real local horizon|Posições do Sol e da Terra em relação ao horizonte local real
+Minimizar consejo|Minimize advice|Minimizar conselho
+Ocultar consejo de Félicette|Hide Félicette's advice|Ocultar conselho de Félicette
+Félicette te explica esta etapa|Félicette explains this stage|Félicette explica esta etapa
+Félicette te acompaña a planificar las transmisiones|Félicette helps you plan transmissions|Félicette ajuda a planejar as transmissões
+Terreno real de Site01 y geometría NASA aproximada. Solo se confirma el horizonte dentro del radio y resolución indicados. El verde no certifica un aterrizaje; el balance no calcula temperatura ni servicio de radio.|Real Site01 terrain and approximate NASA geometry. The horizon is confirmed only within the stated radius and resolution. Green does not certify a landing; the balance does not calculate temperature or radio service.|Terreno real de Site01 e geometria NASA aproximada. O horizonte só é confirmado dentro do raio e resolução indicados. O verde não certifica um pouso; o balanço não calcula temperatura nem serviço de rádio.
+No se pudieron cargar las traducciones. Recargá la página.|Translations could not be loaded. Reload the page.|Não foi possível carregar as traduções. Recarregue a página.

@@ -60,3 +60,12 @@ Se incorporó el entrenamiento de selección de cuadrantes con estética Los Lun
 
 ### Juego actualizado: Descenso perfecto
 El rescate combina dos partes: elegir una zona candidata y después completar el alunizaje del rover, con la estética de Los Lunares. Abrí `iniciar_dashboard.bat` para jugar dentro de la misión, o `iniciar_minijuego.bat` para practicar. Si tenés la página abierta, recargala con Ctrl+F5. La ayuda, los límites y la exportación local están en «Cómo jugar · Datos».
+
+
+### Idiomas y portada interactiva
+El selector de cabecera ofrece español, inglés y portugués y conserva la preferencia en este navegador. El rover y la lectura de terreno heredan el idioma. La nueva tarjeta de inicio abre Descenso perfecto sin iniciar una misión. Sus registros siguen siendo locales; no se envían automáticamente a NASA.
+
+La portada muestra Tierra, Luna y Sol en 3D, con rotación manual, pausa y respeto de movimiento reducido. El logo definitivo conserva la huellita superior y tiene fondo transparente.
+
+### Calendario y ayudas
+La misión usa NASA SVS horario de 2025–2026, y relieve LOLA Site01. Se puede elegir año y mes dentro de 01/01/2025–24/12/2026 para conservar siete días completos. No se consulta un dataset en vivo. Una elección incorrecta de cuadrantes se limpia y abre una pista; al segundo error sugiere un cuadrante candidato sin seleccionarlo automáticamente.

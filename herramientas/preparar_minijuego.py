@@ -116,7 +116,7 @@ def main():
     descent_moon=ROOT/"fuentes/descenso-original/assets/moon_1024.jpg"
     if descent_moon.exists():shutil.copyfile(descent_moon,assets/"moon_1024.jpg")
     shared=ROOT/"dist/assets"
-    for name in ["felicette-green.png","felicette-terrain.png","los-lunares-huellita.png"]:
+    for name in ["felicette-green.png","felicette-terrain.png","los-lunares-final.png"]:
         source=shared/name
         if source.exists():shutil.copyfile(source,assets/name)
     print(json.dumps({"directory":str(DEST),"rounds":len(rounds),"candidates":[sum(t['status']=='candidate' for t in r['tiles']) for r in rounds]},indent=2))
