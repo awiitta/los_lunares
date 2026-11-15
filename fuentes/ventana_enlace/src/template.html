@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ventana de enlace · Site01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080c;--panel:#10131b;--line:#232838;--txt:#e7e9ef;--mut:#8a91a6;--acc:#ff5a3c;--earth:#4da3ff;--sun:#ffc43d;--ok:#3ddc97;--bad:#ff5a5a}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',system-ui,sans-serif}
+header{padding:12px 18px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+h1{font-size:17px;font-weight:600;margin:0}
+.coords{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mut)}
+.coords b{color:var(--txt);font-weight:500}
+.sp{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button,select,input[type=date]{font:inherit;font-size:12.5px;color:var(--txt);background:#1a1f2c;border:1px solid #2e3548;border-radius:6px;padding:5px 10px;cursor:pointer}
+input[type=date]{color-scheme:dark;padding:4px 8px}
+button:hover,select:hover{border-color:#4a5470}
+button.on{background:#2a1712;border-color:var(--acc);color:#ffd9cf}
+button.go{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+button.go:hover{filter:brightness(1.1)}
+button:disabled{opacity:.45;cursor:default}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 330px;gap:1px;background:var(--line)}
+.card{background:var(--bg);display:flex;flex-direction:column;min-width:0}
+.card h2{margin:0;font-size:12.5px;font-weight:600;padding:8px 12px;background:var(--panel);border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:baseline}
+.card h2 small{font-weight:400;color:var(--mut);font-size:11.5px}
+.cv{position:relative;width:100%}
+.cv canvas{display:block;width:100%;height:100%;touch-action:none}
+#cardOrb .cv,#cardSide .cv{height:clamp(190px,28vh,270px)}
+#cardSky{grid-column:1/3}
+#cardSky .cv{height:clamp(170px,25vh,250px)}
+#cardTl{grid-column:1/3}
+#cardTl .cv{height:135px}
+#cardTl.flash{animation:fl 1.2s ease 2}
+@keyframes fl{50%{box-shadow:inset 0 0 0 2px var(--acc)}}
+#toast{position:fixed;left:50%;top:62px;transform:translateX(-50%);z-index:20;max-width:min(560px,92vw);background:#1a1f2c;border:1px solid var(--acc);border-radius:10px;padding:12px 16px;font-size:13.5px;line-height:1.45;box-shadow:0 10px 30px rgba(0,0,0,.6);display:none}
+#toast.show{display:block}
+#toast .x{float:right;margin:-4px -6px 0 10px;background:none;border:0;color:var(--mut);font-size:16px;padding:0 4px}
+#toast .stars{font-size:18px}
+#side{grid-column:3;grid-row:1/4;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:12px;overflow:auto;contain:size;min-height:100%}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:12.5px;color:var(--mut)}
+.box h3{margin:0 0 6px;color:var(--txt);font-size:13.5px;font-weight:600}
+.box p{margin:4px 0;line-height:1.45}
+.k{display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:12px}
+.k b{color:var(--txt);font-weight:500;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+.k .e{color:var(--earth)} .k .s{color:var(--sun)}
+.bar2{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;background:var(--panel);border-top:1px solid var(--line);font-size:12.5px}
+.bar2 .date{font-family:'IBM Plex Mono',monospace;color:var(--txt);margin-left:6px;min-width:150px}
+.bar2 input[type=range]{flex:1;min-width:120px;accent-color:var(--acc)}
+.meter{height:8px;background:#1a1f2c;border-radius:4px;overflow:hidden;margin:4px 0 2px}
+.meter i{display:block;height:100%;background:var(--ok)}
+.log{font-size:12px;line-height:1.45;max-height:260px;overflow:auto}
+.log div{padding:4px 0;border-bottom:1px solid var(--line)}
+.log .bad{color:#ffb4b4} .log .ok{color:#b7f5d8}
+.stars{font-size:20px;letter-spacing:3px;color:var(--sun)}
+.cyc{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:11.5px}
+.cyc b{font-family:'IBM Plex Mono',monospace;color:var(--txt);font-weight:500}
+.note{font-size:11px;color:var(--mut);padding:8px 14px;border-top:1px solid var(--line);line-height:1.5}
+.help{font-size:11.5px;color:var(--mut);padding:6px 12px;background:var(--panel);border-top:1px solid var(--line)}
+.help b{color:var(--txt);font-weight:500}
+@media (max-width:1050px){
+  .wrap{grid-template-columns:1fr}
+  #cardSky,#cardTl{grid-column:1}
+  #side{grid-column:1;grid-row:auto;contain:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Ventana de enlace</h1>
+  <span class="coords">Base en <b>Site01</b> · <b>89,46° S, 222,5° E</b> · a ~16 km del polo sur lunar</span>
+  <div class="sp">
+    <select id="selMis"></select>
+    <span id="freeBox" hidden>inicio <input type="date" id="freeDate" min="2025-01-01" max="2035-12-31"></span>
+    <button id="btnHelp" title="Mostrar en la línea de tiempo cuándo se ven la Tierra y el Sol">Ayudas: no</button>
+    <button id="btnClear">Borrar plan</button>
+    <button id="btnRun" class="go">▶ Ejecutar misión</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="card" id="cardOrb"><h2>Órbitas <small>vista desde arriba de la eclíptica · sin escala</small></h2><div class="cv"><canvas id="cOrb"></canvas></div></div>
+  <div class="card" id="cardSide"><h2>La Luna de perfil <small>inclinación del eje ×4 para que se vea</small></h2><div class="cv"><canvas id="cSide"></canvas></div></div>
+
+  <aside id="side">
+    <div class="box" id="misBox"></div>
+    <div class="box"><h3>Cómo se juega</h3><p>1. Mové la fecha y mirá el cielo: ¿cuándo está la Tierra arriba de la línea punteada? ¿Cuándo hay Sol?</p><p>2. Pintá con el mouse (o el dedo) los bloques de la fila <b style="color:var(--acc)">plan</b>, abajo.</p><p>3. Apretá <b>Ejecutar misión</b>. Sin la Tierra a la vista, el bloque gasta energía y no envía nada. Si la batería llega a 0, la base se congela.</p></div>
+    <div class="box">
+      <h3>En la fecha del cursor</h3>
+      <div class="k" id="stateK"></div>
+    </div>
+    <div class="box" id="resBox" hidden></div>
+    <div class="box">
+      <h3>Los relojes que se cruzan</h3>
+      <div class="cyc">
+        <b>27,21 d</b><span><b style="color:var(--earth)">Mes dracónico</b> · la Luna cruza la eclíptica. Con el eje inclinado 6,7° respecto de su órbita, el polo sur se asoma a la Tierra y se esconde: es la libración en latitud.</span>
+        <b>29,53 d</b><span><b style="color:var(--sun)">Mes sinódico</b> · de luna nueva a luna nueva. Es el día lunar: el Sol da una vuelta completa al horizonte de la base.</span>
+        <b>346,6 d</b><span><b style="color:var(--sun)">Año de eclipses</b> · el eje de la Luna está inclinado solo 1,5° respecto del Sol: medio año el polo sur tiene el Sol arriba y medio año abajo.</span>
+        <b>27,55 d</b><span>Mes anomalístico · de perigeo a perigeo. Mueve la Tierra de lado (libración en longitud).</span>
+      </div>
+      <p>Como esos períodos no coinciden, las buenas ventanas se corren de un mes al otro. Por eso hay que mirar las fechas.</p>
+    </div>
+  </aside>
+
+  <div class="card" id="cardSky">
+    <h2>Cielo desde la base <small>horizonte de 360° · escala vertical exagerada</small></h2>
+    <div class="cv"><canvas id="cSky"></canvas></div>
+  </div>
+
+  <div class="card" id="cardTl">
+    <h2>Plan de la misión <small>cada bloque son 6 h de transmisión · 54 GB si hay enlace</small></h2>
+    <div class="cv"><canvas id="cTl"></canvas></div>
+    <div class="bar2">
+      <button id="bD-">◀◀ día</button><button id="bH-">◀ 6 h</button>
+      <button id="bPlay">▶ reproducir</button>
+      <button id="bH+">6 h ▶</button><button id="bD+">día ▶▶</button>
+      <span class="date" id="dateLbl"></span>
+      <input type="range" id="rng" min="0" max="1000" value="0">
+    </div>
+  </div>
+</div>
+<div class="note">Posiciones de la Luna y el Sol con fórmulas analíticas de Meeus (<i>Astronomical Algorithms</i>, cap. 25, 47 y 53), con un error de ~0,1°. Libración óptica, sin nutación ni libración física. <b>El horizonte es ideal (terreno plano)</b>: el relieve real de Site01 todavía no tapa el cielo. Energía: panel solar de 1 kW (6 kWh por bloque con el disco solar entero a la vista), generador de base de 0,1 kW, consumo de supervivencia de 0,125 kW, transmisor de 1,2 kW y batería de 60 kWh. La antena necesita la Tierra al menos 0,5° sobre el horizonte.</div>
+
+<div id="toast"></div>
+<script>/*ASTRO*/</script>
+<script>
+(() => {
+const SITE = {lat:-89.46, lon:222.5};
+const P = {cap:60, rtg:0.6, base:0.75, tx:7.2, solar:6, margin:0.5, sunR:0.267, gb:54};
+const SLOT_H = 6;
+const MISSIONS = [
+  {id:'m1', name:'1 · Verano polar', start:'2026-12-01', days:30, txt:'El Sol no se pone en todo el mes. El único límite es <b>ver la Tierra</b>: el polo sur se asoma a ella y se esconde cada ~27 días.'},
+  {id:'m2', name:'2 · Se va el Sol', start:'2027-01-10', days:40, txt:'Termina el verano polar. Cada día lunar el Sol pasa <b>menos tiempo sobre el horizonte</b> y la batería empieza a mandar.'},
+  {id:'m3', name:'3 · Vuelve el Sol', start:'2027-06-20', days:45, txt:'Arrancás en <b>noche polar</b>. Si transmitís de entrada, te quedás sin energía antes de que vuelva el Sol.'},
+  {id:'free', name:'Libre · elegí la fecha', start:'2027-09-01', days:30, txt:'Elegí cualquier fecha de inicio entre 2025 y 2035. El objetivo se calcula solo con lo que permiten los astros.'}
+];
+const $ = id => document.getElementById(id);
+const fmt = (x, d=1) => x.toFixed(d).replace('.', ',').replace('-', '−');
+const pad = n => String(n).padStart(2,'0');
+const fdate = t => { const d = new Date(t); return `${pad(d.getUTCDate())}/${pad(d.getUTCMonth()+1)}/${d.getUTCFullYear()} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`; };
+const fshort = t => { const d = new Date(t); return `${pad(d.getUTCDate())}/${pad(d.getUTCMonth()+1)} ${pad(d.getUTCHours())} h`; };
+const store = { get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} } };
+
+function sunFrac(el){ const r = P.sunR; if (el >= r) return 1; if (el <= -r) return 0;
+  const a = Math.acos(1 - (r + el) / r); return (a - Math.sin(2*a)/2) / Math.PI; }
+function sky(t){ const st = ASTRO.state(new Date(t)); return { st, E: ASTRO.local(SITE, st.earthSub), S: ASTRO.local(SITE, st.sunSub) }; }
+
+// ---------- estado ----------
+let M, t0, nSlots, slots, plan, cursor = 0, helps = false, usedHelps = false, run = null, playing = false;
+
+function buildMission(m){
+  M = m;
+  t0 = Date.parse(m.start + 'T00:00:00Z');
+  nSlots = m.days * 24 / SLOT_H;
+  slots = [];
+  for (let i = 0; i < nSlots; i++){
+    let e = 0, s = 0, info = null;
+    for (let k = 0; k < 3; k++){
+      const t = t0 + (i*SLOT_H + k*2 + 1) * 3600e3, x = sky(t);
+      e += x.E.el / 3; s += sunFrac(x.S.el) / 3;
+      if (k === 1) info = x;
+    }
+    slots.push({ e, s, t: t0 + i*SLOT_H*3600e3, info });
+  }
+  // trazas para el cielo (cada 2 h)
+  trace = [];
+  for (let h = 0; h <= m.days*24; h += 2){ const x = sky(t0 + h*3600e3); trace.push({ E: x.E, S: x.S }); }
+  azC = circMean(trace.map(p => p.E.az));
+  target = Math.max(1, Math.floor(0.9 * bestGreedy()));
+  const saved = store.get('enlace_plan_' + key());
+  plan = new Array(nSlots).fill(false);
+  if (saved && saved.length === nSlots) plan = saved.slice();
+  usedHelps = !!store.get('enlace_help_' + key());
+  run = null; $('resBox').hidden = true; hideToast(); cursor = 0; $('rng').max = nSlots * SLOT_H; $('rng').value = 0;
+  renderMission(); drawAll();
+}
+const key = () => M.id === 'free' ? 'free_' + M.start : M.id;
+let trace = [], azC = 0, target = 0;
+function circMean(a){ let x = 0, y = 0; for (const v of a){ x += Math.cos(v*Math.PI/180); y += Math.sin(v*Math.PI/180); } return ASTRO.norm(Math.atan2(y, x) * 180 / Math.PI); }
+
+function step(b, sl, tx){ return Math.min(P.cap, b + P.rtg + P.solar*sl.s - P.base - (tx ? P.tx : 0)); }
+function bestGreedy(){
+  // transmite cuando ve la Tierra, solo si el resto de la misión sin transmitir no vacía la batería
+  let b = P.cap, n = 0;
+  for (let i = 0; i < nSlots; i++){
+    const sl = slots[i];
+    if (sl.e > P.margin){
+      let c = step(b, sl, true), ok = c > 0;
+      for (let j = i+1; ok && j < nSlots; j++){ c = step(c, slots[j], false); if (c <= 0) ok = false; }
+      if (ok){ b = step(b, sl, true); n++; continue; }
+    }
+    b = step(b, sl, false);
+  }
+  return n;
+}
+
+function simulate(){
+  let b = P.cap, sent = 0, wasted = [], minB = b, fail = null; const bat = [b];
+  for (let i = 0; i < nSlots; i++){
+    const sl = slots[i], tx = plan[i];
+    b = step(b, sl, tx);
+    if (tx){ if (sl.e > P.margin) sent++; else wasted.push(i); }
+    bat.push(Math.max(b, 0)); minB = Math.min(minB, b);
+    if (b <= 0){ fail = i; break; }
+  }
+  return { sent, wasted, minB, fail, bat, end: b };
+}
+
+// ---------- canvas ----------
+function prep(c){ const r = c.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+  if (c.width !== Math.round(r.width*d) || c.height !== Math.round(r.height*d)){ c.width = Math.round(r.width*d); c.height = Math.round(r.height*d); }
+  const g = c.getContext('2d'); g.setTransform(d,0,0,d,0,0); g.clearRect(0,0,r.width,r.height); return [g, r.width, r.height]; }
+const tCur = () => t0 + cursor * 3600e3;
+
+function drawPhase(g, x, y, r, k, ang, lit, dark){
+  g.save(); g.translate(x, y); g.rotate(ang);
+  g.fillStyle = dark; g.beginPath(); g.arc(0,0,r,0,Math.PI*2); g.fill();
+  if (k > 0.002){
+    g.fillStyle = lit; g.beginPath(); g.arc(0,0,r,-Math.PI/2,Math.PI/2,false);
+    const rx = Math.abs(2*k-1)*r;
+    if (k >= 0.5) g.ellipse(0,0,rx,r,0,Math.PI/2,3*Math.PI/2,false);
+    else g.ellipse(0,0,rx,r,0,Math.PI/2,-Math.PI/2,true);
+    g.fill();
+  }
+  g.restore();
+}
+
+function drawOrb(x){
+  const [g, W, H] = prep($('cOrb')); const cx = W/2, cy = H/2 + 6, R = Math.min(W, H) * 0.32;
+  const st = x.st, ls = st.sun.lam * Math.PI/180, lm = st.moon.lam * Math.PI/180;
+  // dirección del Sol
+  const sx = cx + Math.cos(ls) * Math.min(W*0.46, H*0.40), sy = cy - Math.sin(ls) * Math.min(W*0.46, H*0.40);
+  const grd = g.createRadialGradient(sx,sy,0,sx,sy,22); grd.addColorStop(0,'#fff3c4'); grd.addColorStop(.4,'#ffc43d'); grd.addColorStop(1,'rgba(255,196,61,0)');
+  g.fillStyle = grd; g.beginPath(); g.arc(sx,sy,22,0,7); g.fill();
+  g.fillStyle = '#ffc43d'; g.font = '11px IBM Plex Sans, sans-serif'; g.textAlign = 'center'; g.fillText('al Sol', sx, sy + (sy > cy ? 32 : -26));
+  // línea de nodos
+  const Om = (125.0445479 - 1934.1362891 * st.T) * Math.PI/180;
+  g.setLineDash([3,4]); g.strokeStyle = '#3a4258'; g.beginPath();
+  g.moveTo(cx - Math.cos(Om)*R*1.25, cy + Math.sin(Om)*R*1.25); g.lineTo(cx + Math.cos(Om)*R*1.25, cy - Math.sin(Om)*R*1.25); g.stroke(); g.setLineDash([]);
+  g.fillStyle = '#5c6580'; g.font = '10px IBM Plex Sans, sans-serif';
+  g.fillText('nodo ☊', cx + Math.cos(Om)*R*1.32, cy - Math.sin(Om)*R*1.32 + 3);
+  // órbita
+  g.strokeStyle = '#2e3548'; g.lineWidth = 1; g.beginPath(); g.arc(cx,cy,R,0,7); g.stroke();
+  // trayectoria de la misión
+  // Tierra
+  const dirS = Math.atan2(-(sy-cy), sx-cx);
+  drawPhase(g, cx, cy, 13, 0.5, -dirS, '#4da3ff', '#0d2747');
+  g.fillStyle = '#9aa3b8'; g.font = '11px IBM Plex Sans, sans-serif'; g.fillText('Tierra', cx, cy + 28);
+  // Luna
+  const mx = cx + Math.cos(lm)*R, my = cy - Math.sin(lm)*R;
+  drawPhase(g, mx, my, 8, 0.5, -dirS, '#d9dbe2', '#2a2e3a');
+  const above = st.moon.bet >= 0;
+  g.fillStyle = above ? '#c9d2ff' : '#ffb39f'; g.font = '10.5px IBM Plex Mono, monospace';
+  g.fillText((above ? '▲ ' : '▼ ') + fmt(Math.abs(st.moon.bet)) + '°', mx, my - 14);
+  g.fillStyle = '#9aa3b8'; g.font = '11px IBM Plex Sans, sans-serif'; g.fillText('Luna', mx, my + 22);
+  // leyenda
+  g.textAlign = 'left'; g.fillStyle = '#8a91a6'; g.font = '11px IBM Plex Sans, sans-serif';
+  const k = (1 - Math.cos(st.elong*Math.PI/180)) / 2;
+  g.fillText(`Elongación ${fmt(st.elong,0)}° · ${phaseName(st.elong)}`, 10, 18);
+  g.fillText(`Luna ${above ? 'sobre' : 'bajo'} la eclíptica (β ${fmt(st.moon.bet)}°)`, 10, 34);
+  g.fillText('☊ = donde la órbita cruza la eclíptica', 10, H - 10);
+}
+function phaseName(e){ if (e < 12 || e > 348) return 'luna nueva'; if (e < 80) return 'creciente'; if (e < 100) return 'cuarto creciente';
+  if (e < 168) return 'gibosa creciente'; if (e < 192) return 'luna llena'; if (e < 260) return 'gibosa menguante'; if (e < 280) return 'cuarto menguante'; return 'menguante'; }
+
+function drawMoonTilt(g, cx, cy, r, b, label, color, el, body){
+  const EX = 4, t = b * EX * Math.PI/180;
+  g.fillStyle = '#1c2030'; g.strokeStyle = '#3a4258'; g.beginPath(); g.arc(cx,cy,r,0,7); g.fill(); g.stroke();
+  // eje (norte en ángulo 90°+b·EX medido desde +x hacia arriba; la dirección del cuerpo está a la izquierda)
+  const nx = Math.cos(Math.PI/2 + t), ny = -Math.sin(Math.PI/2 + t);
+  g.strokeStyle = '#8a91a6'; g.setLineDash([4,3]); g.beginPath(); g.moveTo(cx - nx*r*1.35, cy - ny*r*1.35); g.lineTo(cx + nx*r*1.35, cy + ny*r*1.35); g.stroke(); g.setLineDash([]);
+  // ecuador
+  g.strokeStyle = '#2e3548'; g.beginPath(); g.moveTo(cx - ny*r, cy + nx*r); g.lineTo(cx + ny*r, cy - nx*r); g.stroke();
+  g.fillStyle = '#8a91a6'; g.font = '10px IBM Plex Sans, sans-serif'; g.textAlign = 'center';
+  g.fillText('N', cx + nx*r*1.5, cy + ny*r*1.5 + 3);
+  // polo sur y base
+  const px = cx - nx*r, py = cy - ny*r;
+  // plano del horizonte (tangente)
+  g.strokeStyle = '#6b7390'; g.beginPath(); g.moveTo(px - ny*44, py + nx*44); g.lineTo(px + ny*44, py - nx*44); g.stroke();
+  g.fillStyle = '#ff5a3c'; g.beginPath(); g.arc(px,py,3.5,0,7); g.fill();
+  g.fillStyle = '#ffd9cf'; g.fillText('base', px + 18, py + 14);
+  // rayo al cuerpo (hacia la izquierda)
+  const vis = el > 0;
+  g.strokeStyle = vis ? color : '#5a3030'; g.lineWidth = 1.6; g.setLineDash(vis ? [] : [4,4]);
+  g.beginPath(); g.moveTo(px, py); g.lineTo(px - r*1.6, py); g.stroke(); g.setLineDash([]); g.lineWidth = 1;
+  g.fillStyle = color; g.beginPath(); g.arc(px - r*1.6 - 7, py, 6, 0, 7); g.fill();
+  g.textAlign = 'center'; g.fillStyle = '#e7e9ef'; g.font = '11.5px IBM Plex Sans, sans-serif';
+  g.fillText(label, cx, cy - r - 26);
+  g.font = '10.5px IBM Plex Mono, monospace'; g.fillStyle = vis ? color : '#ff9b9b';
+  g.fillText(`${body} a ${fmt(el)}° ${vis ? '· a la vista' : '· bajo el horizonte'}`, cx, cy + r + 46);
+  g.fillStyle = '#8a91a6'; g.fillText(`latitud sub-${body === 'Tierra' ? 'terrestre' : 'solar'} ${fmt(b)}°`, cx, cy + r + 62);
+}
+function drawSide(x){
+  const [g, W, H] = prep($('cSide')); const r = Math.min(W/4.6, H/4.2);
+  drawMoonTilt(g, W*0.27, H*0.43, r, x.st.earthSub.b, 'Hacia la Tierra', '#4da3ff', x.E.el, 'Tierra');
+  drawMoonTilt(g, W*0.75, H*0.43, r, x.st.sunSub.b, 'Hacia el Sol', '#ffc43d', x.S.el, 'Sol');
+}
+
+// cielo
+let skyMap = null;
+function drawSky(x){
+  const [g, W, H] = prep($('cSky')); const L = 58, Rm = 14, T = 14, B = 26;
+  const elMin = -8, elMax = 8, pw = W - L - Rm, ph = H - T - B;
+  const X = az => L + ((ASTRO.norm(az - azC + 180)) / 360) * pw;
+  const Y = el => T + (elMax - el) / (elMax - elMin) * ph;
+  skyMap = { X, Y };
+  // cielo y suelo
+  const gs = g.createLinearGradient(0, T, 0, Y(0)); gs.addColorStop(0,'#05060a'); gs.addColorStop(1,'#0c1020');
+  g.fillStyle = gs; g.fillRect(L, T, pw, Y(0) - T);
+  g.fillStyle = '#17140f'; g.fillRect(L, Y(0), pw, T + ph - Y(0));
+  // grilla
+  g.font = '10px IBM Plex Mono, monospace'; g.textAlign = 'right';
+  for (let e = elMin; e <= elMax; e += 2){ g.strokeStyle = e === 0 ? '#c9b48a' : '#1d2232'; g.lineWidth = e === 0 ? 1.5 : 1;
+    g.beginPath(); g.moveTo(L, Y(e)); g.lineTo(L + pw, Y(e)); g.stroke(); g.fillStyle = '#6b7390'; g.fillText(fmt(e,0) + '°', L - 6, Y(e) + 3); }
+  g.lineWidth = 1;
+  g.setLineDash([5,4]); g.strokeStyle = 'rgba(77,163,255,.5)'; g.beginPath(); g.moveTo(L, Y(P.margin)); g.lineTo(L+pw, Y(P.margin)); g.stroke(); g.setLineDash([]);
+  g.textAlign = 'left'; g.fillStyle = 'rgba(77,163,255,.75)'; g.fillText('margen antena 0,5°', L + 6, Y(P.margin) - 4);
+  g.fillStyle = '#c9b48a'; g.fillText('horizonte ideal', L + 6, Y(0) + 13);
+  // rumbos
+  g.textAlign = 'center';
+  for (const [a, n] of [[0,'N'],[90,'E'],[180,'S · polo'],[270,'O']]){ const xx = X(a);
+    g.strokeStyle = '#1d2232'; g.beginPath(); g.moveTo(xx, T); g.lineTo(xx, T + ph); g.stroke();
+    g.fillStyle = '#8a91a6'; g.fillText(n, xx, H - 9); }
+  // trazas
+  const dot = (p, col, ok) => { g.fillStyle = ok ? col : 'rgba(120,120,140,.25)'; g.fillRect(X(p.az) - 1, Y(p.el) - 1, 2, 2); };
+  for (const p of trace){ dot(p.S, 'rgba(255,196,61,.45)', p.S.el > -P.sunR); dot(p.E, 'rgba(77,163,255,.55)', p.E.el > P.margin); }
+  // Sol
+  const ry = ph / (elMax - elMin);
+  const sxp = X(x.S.az), syp = Y(x.S.el), sr = Math.max(4, P.sunR * ry);
+  const grd = g.createRadialGradient(sxp, syp, 0, sxp, syp, sr*4); grd.addColorStop(0,'rgba(255,220,120,.9)'); grd.addColorStop(1,'rgba(255,196,61,0)');
+  g.save(); g.beginPath(); g.rect(L, T, pw, Y(0) - T); g.clip();
+  g.fillStyle = grd; g.beginPath(); g.arc(sxp, syp, sr*4, 0, 7); g.fill();
+  g.fillStyle = '#fff1c2'; g.beginPath(); g.arc(sxp, syp, sr, 0, 7); g.fill();
+  // Tierra con su fase
+  const exp = X(x.E.az), eyp = Y(x.E.el), er = Math.max(7, 0.95 * ry);
+  const k = (1 + Math.cos(x.st.elong * Math.PI/180)) / 2;
+  let dx = ASTRO.norm(x.S.az - x.E.az + 180) - 180, dy = -(x.S.el - x.E.el) * 3;
+  drawPhase(g, exp, eyp, er, k, Math.atan2(dy, dx), '#4da3ff', '#0b1c33');
+  g.restore();
+  // marcas bajo el horizonte
+  g.font = '11px IBM Plex Sans, sans-serif';
+  const lab = (xx, yy, txt, col) => { g.fillStyle = col; g.fillText(txt, Math.min(Math.max(xx, L + 40), L + pw - 40), Math.min(Math.max(yy, T + 12), T + ph - 4)); };
+  lab(exp, eyp - er - 6, x.E.el > 0 ? `Tierra ${fmt(x.E.el)}°` : `Tierra ${fmt(x.E.el)}° (oculta)`, x.E.el > P.margin ? '#9fcbff' : '#ff9b9b');
+  lab(sxp, syp + (Math.abs(syp - eyp) < 30 && Math.abs(sxp - exp) < 80 ? 24 : -sr - 8), x.S.el > -P.sunR ? `Sol ${fmt(x.S.el)}°` : `Sol ${fmt(x.S.el)}° (oculto)`, x.S.el > -P.sunR ? '#ffd877' : '#c9a35a');
+  g.textAlign = 'left'; g.fillStyle = '#6b7390'; g.font = '10.5px IBM Plex Sans, sans-serif';
+  g.fillText('puntos: recorrido de la Tierra (azul) y el Sol (amarillo) durante toda la misión', L + 6, T + 12);
+}
+
+// línea de tiempo
+let tlMap = null;
+function drawTl(){
+  const [g, W, H] = prep($('cTl')); const L = 58, Rm = 14, rulY = 4, rulH = 22, rowY = 32, rowH = 34, batY = rowY + rowH + 8, batH = H - batY - 6;
+  const pw = W - L - Rm, sw = pw / nSlots, X = i => L + i * sw;
+  tlMap = { L, pw, sw, rulY, rulH, rowY, rowH };
+  g.font = '10px IBM Plex Mono, monospace'; g.textAlign = 'center';
+  // regla
+  g.fillStyle = '#10131b'; g.fillRect(L, rulY, pw, rulH);
+  for (let d = 0; d <= M.days; d++){ const xx = X(d * 24 / SLOT_H);
+    g.strokeStyle = '#2e3548'; g.beginPath(); g.moveTo(xx, rulY + (d % 5 ? 14 : 6)); g.lineTo(xx, rulY + rulH); g.stroke();
+    if (d % 5 === 0 && d < M.days){ const dt = new Date(t0 + d * 86400e3); g.fillStyle = '#8a91a6'; g.fillText(`${pad(dt.getUTCDate())}/${pad(dt.getUTCMonth()+1)}`, xx + 1, rulY + 11); } }
+  g.textAlign = 'right'; g.fillStyle = '#6b7390'; g.fillText('fecha', L - 6, rulY + 15); g.fillText('plan', L - 6, rowY + 21); g.fillText('batería', L - 6, batY + 12);
+  // ayudas
+  for (let i = 0; i < nSlots; i++){
+    const sl = slots[i];
+    g.fillStyle = '#141925'; g.fillRect(X(i) + 0.5, rowY, Math.max(1, sw - 1), rowH);
+    if (helps){
+      if (sl.e > P.margin){ g.fillStyle = 'rgba(77,163,255,.28)'; g.fillRect(X(i) + 0.5, rowY, Math.max(1, sw - 1), rowH); }
+      g.fillStyle = `rgba(255,196,61,${0.15 + 0.6*sl.s})`; if (sl.s > 0.01) g.fillRect(X(i) + 0.5, rowY + rowH - 6, Math.max(1, sw - 1), 6);
+    }
+    if (plan[i]){
+      let col = '#ff5a3c';
+      if (run && (run.fail === null || i <= run.fail)) col = sl.e > P.margin ? '#3ddc97' : '#ff5a5a';
+      g.fillStyle = col; g.fillRect(X(i) + 0.5, rowY + 6, Math.max(1, sw - 1), rowH - 14);
+    }
+  }
+  // batería (después de ejecutar) o proyección oculta
+  g.fillStyle = '#0c0f16'; g.fillRect(L, batY, pw, batH);
+  if (run){
+    const n = run.shown;
+    g.strokeStyle = '#3ddc97'; g.lineWidth = 1.5; g.beginPath();
+    for (let i = 0; i <= n && i < run.bat.length; i++){ const xx = L + i * sw, yy = batY + batH - (run.bat[i] / P.cap) * batH; i ? g.lineTo(xx, yy) : g.moveTo(xx, yy); }
+    g.stroke(); g.lineWidth = 1;
+    if (run.fail !== null && n >= run.fail + 1){ const xx = L + (run.fail + 1) * sw; g.fillStyle = '#ff5a5a'; g.font = '11px IBM Plex Sans, sans-serif'; g.textAlign = 'center'; g.fillText('✖ batería en 0', Math.min(xx, L + pw - 50), batY + batH - 4); }
+  } else { g.fillStyle = '#3a4258'; g.textAlign = 'left'; g.font = '10.5px IBM Plex Sans, sans-serif'; g.fillText('la curva de batería aparece al ejecutar la misión', L + 8, batY + batH/2 + 4); }
+  // cursor
+  const cx = L + (cursor / SLOT_H) * sw;
+  g.strokeStyle = '#ffe14d'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(cx, rulY); g.lineTo(cx, H - 4); g.stroke(); g.lineWidth = 1;
+  g.fillStyle = '#ffe14d'; g.beginPath(); g.moveTo(cx - 5, rulY); g.lineTo(cx + 5, rulY); g.lineTo(cx, rulY + 7); g.fill();
+}
+
+function renderState(x){
+  const st = x.st, kE = (1 + Math.cos(st.elong*Math.PI/180)) / 2, kM = 1 - kE;
+  const vis = x.E.el > P.margin, sf = sunFrac(x.S.el);
+  $('stateK').innerHTML = `
+    <span>Fecha</span><b>${fdate(tCur())}</b>
+    <span class="e">Tierra: elevación</span><b class="e">${fmt(x.E.el,2)}°</b>
+    <span class="e">Tierra: azimut</span><b class="e">${fmt(x.E.az)}°</b>
+    <span class="e">Libración en latitud</span><b class="e">${fmt(st.earthSub.b,2)}°</b>
+    <span class="e">Libración en longitud</span><b class="e">${fmt(st.earthSub.l,2)}°</b>
+    <span class="s">Sol: elevación</span><b class="s">${fmt(x.S.el,2)}°</b>
+    <span class="s">Disco solar visible</span><b class="s">${fmt(sf*100,0)} %</b>
+    <span class="s">Latitud sub-solar</span><b class="s">${fmt(st.sunSub.b,2)}°</b>
+    <span>Fase lunar (desde la Tierra)</span><b>${fmt(kM*100,0)} % · ${phaseName(st.elong)}</b>
+    <span>Fase de la Tierra (desde la base)</span><b>${fmt(kE*100,0)} %</b>
+    <span>Enlace posible</span><b style="color:${vis ? 'var(--ok)' : 'var(--bad)'}">${vis ? 'sí' : 'no'}</b>
+    <span>Carga solar</span><b style="color:${sf > 0 ? 'var(--sun)' : 'var(--mut)'}">${fmt(sf, 2)} kW</b>`;
+  $('dateLbl').textContent = fdate(tCur());
+}
+
+function renderMission(){
+  const nPlan = plan.filter(Boolean).length, best = store.get('enlace_best_' + key());
+  const end = new Date(t0 + M.days * 86400e3 - 1);
+  $('misBox').innerHTML = `<h3>${M.name}</h3>
+    <p>${fdate(t0).slice(0,10)} → ${pad(end.getUTCDate())}/${pad(end.getUTCMonth()+1)}/${end.getUTCFullYear()} · ${M.days} días</p>
+    <p>${M.txt}</p>
+    <div class="k" style="margin-top:6px">
+      <span>Objetivo</span><b>${target} bloques · ${(target*P.gb/1000).toFixed(2).replace('.',',')} TB</b>
+      <span>Bloques en el plan</span><b>${nPlan}</b>
+      <span>Récord</span><b>${best ? best.sent + ' bloques ' + '★'.repeat(best.stars) : '—'}</b>
+    </div>${usedHelps ? '<p style="color:#c9a35a">Usaste ayudas en este intento: máximo ★★.</p>' : ''}`;
+}
+
+function drawAll(){ const x = sky(tCur()); drawOrb(x); drawSide(x); drawSky(x); drawTl(); renderState(x); }
+
+// ---------- interacción ----------
+function setCursor(h){ cursor = Math.max(0, Math.min(nSlots * SLOT_H, h)); $('rng').value = cursor; drawAll(); }
+$('rng').addEventListener('input', e => setCursor(+e.target.value));
+$('bD-').onclick = () => setCursor(cursor - 24); $('bD+').onclick = () => setCursor(cursor + 24);
+$('bH-').onclick = () => setCursor(cursor - 6); $('bH+').onclick = () => setCursor(cursor + 6);
+let playT = null;
+$('bPlay').onclick = () => { playing = !playing; $('bPlay').textContent = playing ? '❚❚ pausa' : '▶ reproducir';
+  if (playing){ if (cursor >= nSlots*SLOT_H) cursor = 0; const tick = () => { if (!playing) return; if (cursor >= nSlots*SLOT_H){ $('bPlay').click(); return; } setCursor(cursor + 2); playT = requestAnimationFrame(tick); }; tick(); } };
+
+let paint = null, lastI = 0;
+const cTl = $('cTl');
+function tlHit(e){ const r = cTl.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+  const i = Math.floor((x - tlMap.L) / tlMap.sw); return { i, x, y, inRow: y >= tlMap.rowY - 2 && y <= tlMap.rowY + tlMap.rowH + 2, inRul: y < tlMap.rowY - 2 }; }
+cTl.addEventListener('pointerdown', e => {
+  if (running) return;
+  const h = tlHit(e); if (h.i < 0 || h.i >= nSlots) return;
+  cTl.setPointerCapture(e.pointerId);
+  if (h.inRow){ paint = !plan[h.i]; plan[h.i] = paint; lastI = h.i; afterEdit(); }
+  else { paint = 'cur'; setCursor(((h.x - tlMap.L) / tlMap.sw) * SLOT_H); }
+});
+cTl.addEventListener('pointermove', e => {
+  if (paint === null) return; const h = tlHit(e);
+  if (paint === 'cur'){ setCursor(((h.x - tlMap.L) / tlMap.sw) * SLOT_H); return; }
+  const i = Math.max(0, Math.min(nSlots - 1, h.i)), a = Math.min(i, lastI), z = Math.max(i, lastI); let ch = false;
+  for (let j = a; j <= z; j++) if (plan[j] !== paint){ plan[j] = paint; ch = true; }
+  lastI = i; if (ch) afterEdit();
+});
+const endPaint = () => { paint = null; }; cTl.addEventListener('pointerup', endPaint); cTl.addEventListener('pointercancel', endPaint);
+function afterEdit(){ hideToast(); run = null; $('resBox').hidden = true; store.set('enlace_plan_' + key(), plan); renderMission(); drawTl(); }
+
+$('btnHelp').onclick = () => { helps = !helps; if (helps){ usedHelps = true; store.set('enlace_help_' + key(), true); }
+  $('btnHelp').textContent = 'Ayudas: ' + (helps ? 'sí' : 'no'); $('btnHelp').classList.toggle('on', helps); renderMission(); drawTl(); };
+$('btnClear').onclick = () => { plan.fill(false); usedHelps = helps; store.set('enlace_help_' + key(), helps); afterEdit(); };
+
+let running = false;
+$('btnRun').onclick = () => {
+  if (running) return;
+  if (!plan.some(Boolean)){
+    toast('<b>Todavía no hay plan.</b> Pintá con el mouse los bloques de la fila <b style="color:var(--acc)">plan</b> (abajo, en «Plan de la misión») en los momentos en que quieras transmitir. Después volvé a apretar <b>Ejecutar misión</b>.');
+    showTl(); return; }
+  if (playing) $('bPlay').click();
+  hideToast(); showTl();
+  run = simulate(); run.shown = 0; running = true; $('btnRun').disabled = true; $('btnRun').textContent = 'Ejecutando…';
+  const last = run.fail !== null ? run.fail + 1 : nSlots, dur = 5000, t1 = performance.now();
+  const anim = now => { const f = Math.min(1, (now - t1) / dur); run.shown = Math.round(f * last); cursor = run.shown * SLOT_H; $('rng').value = cursor; drawAll();
+    if (f < 1) requestAnimationFrame(anim); else finish(); };
+  const finish = () => { running = false; $('btnRun').disabled = false; $('btnRun').textContent = '▶ Ejecutar misión'; try { showResult(); } catch (e) { toast('Error al mostrar el resultado: ' + e.message); } };
+  requestAnimationFrame(anim);
+};
+
+function toast(h){ const el = $('toast'); el.innerHTML = '<button class="x" aria-label="cerrar">✕</button>' + h; el.classList.add('show'); el.querySelector('.x').onclick = hideToast; }
+function hideToast(){ $('toast').classList.remove('show'); }
+function showTl(){ const c = $('cardTl'); try { c.scrollIntoView({ behavior: 'smooth', block: 'end' }); } catch (e) {} c.classList.remove('flash'); void c.offsetWidth; c.classList.add('flash'); }
+function why(i){ const x = slots[i].info;
+  return `Tierra a ${fmt(slots[i].e)}° (libración en latitud ${fmt(x.st.earthSub.b)}°${x.st.earthSub.b > 0 ? ': el polo sur mira para el otro lado' : ''})`; }
+function showResult(){
+  const r = run, box = $('resBox'); box.hidden = false;
+  let stars = 0, html = '';
+  if (r.fail !== null){
+    const sl = slots[r.fail], x = sl.info;
+    html += `<h3 style="color:var(--bad)">La base se congeló</h3>
+      <p>El ${fshort(sl.t)} la batería llegó a 0. ${sl.s < 0.05 ? `No había Sol: estaba a ${fmt(x.S.el)}°, con la latitud sub-solar en ${fmt(x.st.sunSub.b)}° (el polo sur tiene el Sol ${x.st.sunSub.b > 0 ? 'por debajo' : 'apenas arriba'} del horizonte).` : `El Sol daba solo el ${fmt(sl.s*100,0)} % de su energía.`} Antes de eso enviaste ${r.sent} bloques.</p>`;
+  } else {
+    const ok = r.sent >= target;
+    stars = ok ? 1 + (r.wasted.length === 0 ? 1 : 0) + (r.minB >= P.cap * 0.2 ? 1 : 0) : 0;
+    if (usedHelps) stars = Math.min(stars, 2);
+    html += `<h3 style="color:${ok ? 'var(--ok)' : 'var(--sun)'}">${ok ? 'Misión cumplida' : 'Faltaron datos'}</h3>
+      <div class="stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</div>
+      <p>Enviaste <b style="color:var(--txt)">${r.sent} de ${target}</b> bloques (${fmt(r.sent*P.gb/1000,2)} TB). Batería mínima: ${fmt(Math.max(0, r.minB)/P.cap*100,0)} %.</p>
+      <p style="font-size:11.5px">★ objetivo · ★ ningún bloque sin enlace · ★ batería siempre sobre 20 %${usedHelps ? ' · con ayudas, máximo ★★' : ''}</p>`;
+    const best = store.get('enlace_best_' + key());
+    if (!best || stars > best.stars || (stars === best.stars && r.sent > best.sent)) store.set('enlace_best_' + key(), { sent: r.sent, stars });
+  }
+  if (r.wasted.length){
+    html += `<div class="log"><div class="bad"><b>${r.wasted.length} bloque${r.wasted.length > 1 ? 's' : ''} sin enlace</b> (gastaste ${fmt(r.wasted.length * P.tx, 0)} kWh para nada):</div>`;
+    for (const i of r.wasted.slice(0, 6)) html += `<div class="bad">${fshort(slots[i].t)} · ${why(i)}</div>`;
+    if (r.wasted.length > 6) html += `<div>… y ${r.wasted.length - 6} más (en rojo en la línea de tiempo).</div>`;
+    html += '</div>';
+  } else if (r.fail === null) html += '<div class="log"><div class="ok">Todos los bloques tuvieron la Tierra a la vista.</div></div>';
+  box.innerHTML = html; renderMission();
+  const head = r.fail !== null ? `<b style="color:var(--bad)">La base se congeló</b> el ${fshort(slots[r.fail].t)}: la batería llegó a 0.`
+    : `<b style="color:${r.sent >= target ? 'var(--ok)' : 'var(--sun)'}">${r.sent >= target ? 'Misión cumplida' : 'Faltaron datos'}</b> <span class="stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</span><br>Enviaste ${r.sent} de ${target} bloques.`;
+  toast(head + (r.wasted.length ? `<br>${r.wasted.length} bloque${r.wasted.length > 1 ? 's' : ''} sin enlace (en rojo en la línea de tiempo).` : '') + '<br><span style="color:var(--mut);font-size:12px">El detalle está en el panel de la derecha.</span>');
+}
+
+// misiones
+for (const m of MISSIONS){ const o = document.createElement('option'); o.value = m.id; o.textContent = m.name; $('selMis').appendChild(o); }
+const freeM = MISSIONS.find(m => m.id === 'free');
+$('freeDate').value = store.get('enlace_free_date') || freeM.start;
+$('selMis').onchange = () => { const m = MISSIONS.find(v => v.id === $('selMis').value); $('freeBox').hidden = m.id !== 'free';
+  if (m.id === 'free') m.start = $('freeDate').value; buildMission(m); };
+$('freeDate').onchange = () => { if (!$('freeDate').value) return; freeM.start = $('freeDate').value; store.set('enlace_free_date', freeM.start); buildMission(freeM); };
+window.addEventListener('resize', () => drawAll());
+buildMission(MISSIONS[0]);
+})();
+</script>
+</body>
+</html>
